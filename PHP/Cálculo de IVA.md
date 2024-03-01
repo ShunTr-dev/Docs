@@ -1,0 +1,1 @@
+$pasta_sin_el_iva = $pasta / (1 + $porcentaje / 100);

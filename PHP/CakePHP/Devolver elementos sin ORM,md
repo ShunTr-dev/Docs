@@ -1,0 +1,7 @@
+```
+$query = $articles->find();
+
+$query->hydrate(false); // Results as arrays instead of entities
+
+$result = $query->toList(); // Execute the query and return the array
+```
