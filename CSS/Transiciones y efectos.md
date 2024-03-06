@@ -1,25 +1,3 @@
-Pseudoclases
-
-```
-ul li:first-child {
-
-}
-```
-
-Transiciones
-```
-#boton {
-    display: block;
-    transition: all 3s;
-}
-
-#boton:hover {
-    border-radius: 15px;
-    background: red;
-    border: 5px solid red;
-}
-```
-
 Animaciones CSS3
 ```
 #caja {
