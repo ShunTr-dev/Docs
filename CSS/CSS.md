@@ -1,5 +1,5 @@
 # CSS - CASCADING STYLE SHEETS
-Lenguaje de diseño, de estilado, lenguaje declarativo para decribir la presentación de un documento.
+Lenguaje de diseño, de estilado, lenguaje declarativo para describir la presentación de un documento.
 Las hojas de estilo (style sheets), son un conjunto de reglas que escribimos en el "lenguaje" y aplicamos a un documento para mejorar la vista del documento.
 Repecto a la "cascada" se refiere a como se aplican las reglas al documento, ya que se aplican en un orden en específico.
 
@@ -276,7 +276,7 @@ Modelo de la caja: `div`
 
 En línea: `span`
     Se aplica a elementos en línea (`display: inline`) y se comportan de manera diferente a los elementos de bloque.
-    Los elementos en línea ocupan solo el espacio necesario para mostrar su contenido y *no inician una nueva línea*. Varios elementos en línea pueden aparecer en la misma línea si tienen suficiente espacio disponible en el contenedor.
+    Los elementos en línea ocupan solo el espacio necesario para mostrar su contenido y *no inician una nueva línea*. Varios elementos en línea pueden aparecer en la misma línea si tienen suficiente espacio disponible en el contenedor. Estos elementos no tienen alto ni ancho.
     Ejemplos comunes de elementos en línea son `span`, a, `strong`, `em`, `img`, entre otros.
     Las propiedades de tamaño como `width` y `height` no se aplican a los elementos en línea, aunque se pueden aplicar otras propiedades como `padding`, `border`, `margin`, etc.
 
@@ -287,9 +287,36 @@ En resumen, el modelo de la caja se refiere a cómo se representan y se controla
 
     span {
         background: red;
+        width: 500px; /* Esto no funciona por que es un elemento de tipo lína, y por mucho que lo intentemos se va a comportar como texto.*/
+        height: 500px !important; /* Evidentemente esto tampoco funciona */
     }
 ```
 
+### Margin - Border - Padding
+
+![Margin-border-Padding-diagram](../IMG/margin-border-padding.jpg)
+
+Las diferencias entre `margin`, `border` y `padding` son fundamentales en el modelo de caja de CSS y se refieren a diferentes áreas alrededor del contenido de un elemento. Estas son las distinciones clave:
+
+Margin (Margen):
+    `margin` controla el espacio entre el borde del elemento y los elementos adyacentes.
+    Define el espacio externo alrededor de la caja del elemento.
+    No afecta el tamaño del elemento en sí, solo el espacio entre el elemento y otros elementos adyacentes.
+    Se utiliza para controlar el espacio entre elementos en el diseño de la página.
+
+Border (Borde):
+    `border` define el borde alrededor del contenido y el relleno del elemento.
+    Se coloca justo después del relleno y antes del margen.
+    Puede tener un ancho, un estilo (como sólido, punteado, etc.) y un color definido.
+    Define el límite exterior del elemento.
+
+Padding (Relleno):
+    `padding` controla el espacio entre el contenido del elemento y su borde.
+    Define el espacio interno alrededor del contenido de la caja.
+    Afecta al tamaño del elemento, ya que aumenta o disminuye el espacio disponible para el contenido dentro de la caja.
+    Se utiliza para agregar espacio entre el contenido y el borde del elemento.
+
+En resumen, mientras que margin controla el espacio fuera del elemento, border define el límite del elemento y padding controla el espacio entre el contenido del elemento y su borde. Estos tres componentes son esenciales para el diseño y la estructura de una página web en CSS, ya que permiten controlar el espacio y el diseño alrededor de los elementos HTML.
 
 
 
