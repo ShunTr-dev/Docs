@@ -28,7 +28,7 @@ El atributo `class=""` funciona como una referencia y puede ser múltiple.
 La etiqueta de `b` está deprecated, porque hace referencia a la presentación (los estilos) del documento. Sin embargo, tenemos etiquetas que sí hacen referencia a los estilos, como `h1`, esto es porque los navegadores tienen una serie de estilos por defecto. Se llaman `USER AGENT STYLESHEET`.
 
 
-##Página mínima
+## Página mínima
 
 El módulo `doctype` es necesario porque algunos navegadores si no lo pones entran en otro modo de HTML, pero la gran mayoría de ellos no tienen problema o lo añaden ellos.
 En el head ponemos metadatos y otros archivos, es un lugar donde lo que pongamos no se va a renderizar.
@@ -46,7 +46,7 @@ En el body ponemos nuestro contenido.
 </html>
 ```
 
-##Página mínima++
+## Página mínima++
 
 ```html
 <!DOCTYPE html>
@@ -97,7 +97,7 @@ En el body ponemos nuestro contenido.
 </html>
 ```
 
-##HTML Semántico
+## HTML Semántico
 
 El HTML semántico se refiere al uso de etiquetas HTML que tienen un significado específico y claro sobre el contenido que contienen. En lugar de simplemente utilizar etiquetas genéricas como `<div>` o `<span>` para estructurar una página web, el HTML semántico implica el uso de etiquetas que describen el propósito o la función del contenido que contienen.
 
