@@ -294,29 +294,8 @@ En resumen, el modelo de la caja se refiere a cómo se representan y se controla
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 Recursos:
 
 [lenguajecss.com/css/](https://lenguajecss.com/css/)
 [Curso de google de CSS](https://web.dev/learn/css?hl=es)
 [MDN WEB DOCS CSS](https://developer.mozilla.org/es/docs/Web/CSS)
-
-```html
-
-```º------------------------------------------------------------------------+
-
-
-
-```css
-
-```
