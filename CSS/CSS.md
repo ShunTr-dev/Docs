@@ -1,4 +1,7 @@
 # CSS - CASCADING STYLE SHEETS
+
+# [CHEATSHEET](https://quickref.me/css3)
+
 Lenguaje de diseño, de estilado, lenguaje declarativo para describir la presentación de un documento.
 Las hojas de estilo (style sheets), son un conjunto de reglas que escribimos en el "lenguaje" y aplicamos a un documento para mejorar la vista del documento.
 Repecto a la "cascada" se refiere a como se aplican las reglas al documento, ya que se aplican en un orden en específico.
