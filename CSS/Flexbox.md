@@ -1,3 +1,35 @@
+# FLEXBOX
+
+CSS Flexbox (Flexible Box Layout) es un módulo de CSS que proporciona un método más eficiente y predecible para diseñar y distribuir elementos dentro de un contenedor, incluso cuando el tamaño de los elementos y del contenedor es desconocido o dinámico. Flexbox ofrece un sistema de diseño unidimensional, lo que significa que se centra en el diseño de una fila o columna de elementos a la vez.
+
+Algunas características y ventajas clave de Flexbox incluyen:
+
+- Diseño flexible y dinámico: Permite a los elementos dentro de un contenedor ajustarse automáticamente según el tamaño del contenedor y el tamaño de los elementos, lo que facilita la creación de diseños adaptables y responsivos.
+
+- Ordenamiento de elementos: Los elementos pueden ser reorganizados fácilmente en función del diseño deseado, independientemente de su orden en el HTML.
+
+- Alineación y distribución: Proporciona varias propiedades para alinear y distribuir elementos dentro de un contenedor, como alinear al centro, alinear a la izquierda, distribuir uniformemente, etc.
+
+- Espaciado flexible: Ofrece un control preciso sobre el espacio entre los elementos, tanto dentro como fuera del contenedor.
+
+- Nesting (Anidamiento) simplificado: Los contenedores flexibles se pueden anidar dentro de otros contenedores flexibles, lo que facilita la creación de diseños complejos y jerárquicos.
+
+- Compatibilidad multiplataforma: Flexbox es compatible con la mayoría de los navegadores modernos, lo que lo convierte en una opción sólida para el diseño de interfaces de usuario en la web.
+
+En resumen, CSS Flexbox es una poderosa herramienta de diseño que simplifica la creación de diseños flexibles y responsivos en la web, ofreciendo un mayor control sobre la disposición y distribución de los elementos en una página.
+
+
+
+
+
+
+
+
+
+
+
+
+
 VARIABLES
 :root {
 	--rojo: red;

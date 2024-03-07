@@ -310,7 +310,7 @@ En resumen, el modelo de la caja se refiere a cómo se representan y se controla
 
 ### Margin - Border - Padding
 
-![Margin-border-Padding-diagram](../IMG/margin-border-padding.jpg)
+![Margin-border-Padding-diagram](../IMG/css/margin-border-padding.jpg)
 
 Las diferencias entre `margin`, `border` y `padding` son fundamentales en el modelo de caja de CSS y se refieren a diferentes áreas alrededor del contenido de un elemento. Estas son las distinciones clave:
 
@@ -334,11 +334,61 @@ Padding (Relleno):
 
 En resumen, mientras que margin controla el espacio fuera del elemento, border define el límite del elemento y padding controla el espacio entre el contenido del elemento y su borde. Estos tres componentes son esenciales para el diseño y la estructura de una página web en CSS, ya que permiten controlar el espacio y el diseño alrededor de los elementos HTML.
 
+Una cosa a tener en cuenta es que cuando se le da un tamaño a una caja, no se tiene en cuenta ni el borde ni el margen, por lo tanto el valor al final va a ser el valor introducido + borde + margen. Esto es por que por defecto la propiedad de `box-sizing` viene con el valor de `content-box`, si le ponemos el valor de `border-box` el valor que le pongamos en el `width` o en el `heigth` será el valor que tendrá al final la caja teniendo en cuenta el borde y el margen.
+
+## Overflow
+![CSS is awesome](../IMG/css/css-is-awesome.jpg)
+
+La propiedad CSS overflow se utiliza para controlar cómo se maneja el contenido que desborda el área del contenedor en el que está contenido. En otras palabras, determina qué sucede cuando el contenido es más grande que el área visible de un elemento.
+
+Existen varias opciones para la propiedad overflow:
+
+- `visible`: Es el **valor predeterminado**. El contenido que desborda el área del contenedor será visible fuera de los límites del contenedor, lo que significa que sobresaldrá del contenedor.
+
+- `hidden`: Cualquier contenido que desborde el área del contenedor será cortado y no será visible fuera de los límites del contenedor. Esto significa que el contenido recortado no será visible para el usuario.
+
+- `scroll`: Se mostrarán barras de desplazamiento (tanto horizontales como verticales) para permitir al usuario desplazarse por el contenido que desborda el área del contenedor. Aunque el contenido desbordado está disponible, puede que no sea visible sin usar las barras de desplazamiento.
+
+- `auto`: Este valor es similar a scroll, pero solo se muestran las barras de desplazamiento cuando es necesario. Si el contenido no desborda el contenedor, no se mostrarán barras de desplazamiento.
+
+- `inherit`: Hereda el comportamiento de desbordamiento de su elemento padre.
+
+La propiedad overflow es útil para manejar situaciones en las que el contenido de un elemento es demasiado grande para caber en su contenedor, permitiendo al diseñador controlar cómo se maneja y muestra el contenido excedente.
+
+Evidentemente esto se puede combinar con diferentes técnicas, si tienes un cuadro de texto con `overflow: hidden;`, siempre puedes combinarlo con un `text-overflow: ellipsis;` para que el desbordamiento acabe con `...`. El valor por defecto del `text-overflow` es `clip`.
+
+## Position
+La propiedad position se utiliza para controlar el método de posicionamiento de un elemento en relación con su contenedor o elementos adyacentes. La propiedad position tiene varios valores posibles que determinan cómo se coloca un elemento en la página.
+
+Aquí están los valores posibles para la propiedad position:
+
+- `static`: Es el valor predeterminado para todos los elementos. Los elementos con posición estática **se colocan en el flujo normal del documento**. Es decir, se colocan en el orden en que aparecen en el HTML, uno debajo del otro.
+
+- `relative`: Coloca el elemento en relación con su posición original. Permite desplazar el elemento de su posición original utilizando las propiedades top, right, bottom y left. Esto no afecta la posición de los otros elementos.
+
+- `absolute`: Posiciona el elemento en relación con su primer ancestro posicionado (elemento padre que tiene un valor de posición diferente a static) o en relación con el elemento de nivel superior (<html>). No deja espacio vacío para el elemento en el flujo normal del documento, por lo que puede superponerse a otros elementos. Cuando ponemos una propiedad que tiene el valor de `absolute`, podemos poner otros atributos, que son `top`, `rigth`, `left`, `bottom`,... que son como unas coordenadas que toman por valor el tamaño del documento (la ventana). Para que estos valores estén dentro del contenedor padre, el contenedor padre debe tener la propiedad de `position: relative;`. Con esto creamos un punto relativo, el cual todos los hijos lo pueden usar como referencia. Con la posición de `absolute`, se podría llegar a centrar un contendor, con `top: 0;`, `bottom: 0;`, `left: 0:`, `rigth: 0;`, `margin: auto;`, ya que detecta que tiene que tener la misma distancia por todos los sitios, con el `margin: auto;` se acaba de centrar. La forma acortada de hacer esto es con `inset: 0;` y con el margen. Esto funciona muy bien para modales, dialogos, pero no es la forma más correcta de centar un `div`.
+
+- `fixed`: Posiciona el elemento en **relación con la ventana del navegador, independientemente del desplazamiento**. Se mantiene fijo en su posición incluso cuando el usuario desplaza la página. El elemento fixed es fijo en el viewport. Y no le afecta el `position: relative;`.
+
+- `sticky`: Actúa como relative **hasta que el elemento alcanza una cierta posición de desplazamiento** (definida por las propiedades top, right, bottom o left), momento en el que se comporta como fixed en relación con su contenedor más cercano con una propiedad de overflow que no sea visible.
+
+## Contexto de apilamiento
+- [z-index MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context)
+
+Se refiere a cómo se organizan y se superponen los elementos cuando se utilizan propiedades de posicionamiento como `position: relative;`, `position: absolute;`, `position: fixed;` y `position: sticky;`.
+
+Cuando un elemento tiene un valor de posición que no es `static`, como `relative`, `absolute`, `fixed`, o `sticky`, y se superpone con otros elementos, su orden de apilamiento (`z-index`) y su relación con los elementos hermanos y contenedores se definen en función de su contexto de apilamiento.
+
+Los elementos dentro del mismo contexto de apilamiento se apilan unos encima de otros según varios factores, como su orden de aparición en el HTML, su posición y su valor de `z-index`. Los elementos con un valor de `z-index` más alto se superponen a los elementos con un valor de `z-index` más bajo en el mismo contexto de apilamiento.
+
+Los diferentes contextos de apilamiento se forman dependiendo de varios factores, como los elementos padre con un valor de posición diferente de `static`, los elementos con propiedades de transformación o de perspectiva, los elementos con propiedades de filtro, y otros factores.
 
 
 
-Recursos:
 
-[lenguajecss.com/css/](https://lenguajecss.com/css/)
-[Curso de google de CSS](https://web.dev/learn/css?hl=es)
-[MDN WEB DOCS CSS](https://developer.mozilla.org/es/docs/Web/CSS)
+## Recursos:
+
+- [lenguajecss.com/css/](https://lenguajecss.com/css/)
+- [Curso de google de CSS](https://web.dev/learn/css?hl=es)
+- [MDN WEB DOCS CSS](https://developer.mozilla.org/es/docs/Web/CSS)
+- [Curso de CSS de midudev](https://www.youtube.com/playlist?list=PLUofhDIg_38q7l8gV4IVCz_pjUeyD99_j)
