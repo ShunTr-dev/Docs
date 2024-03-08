@@ -403,11 +403,36 @@ Además, los elementos flotantes pueden colapsar el contenedor padre si no se to
 ```
 La primera sección establece un "clearfix" mediante la creación de un elemento <div> con la clase clearfix.
 La clase .clearfix está diseñada para limpiar los floats, lo que significa que soluciona el problema del colapso del contenedor padre cuando contiene elementos flotantes.
-Para limpiar los floats, se establece float: none; para asegurarse de que ningún elemento flote a la izquierda o a la derecha, y clear: both; para asegurarse de que el elemento <div> se coloque después de los elementos flotantes.
+Para limpiar los floats, se establece `float: none;` para asegurarse de que ningún elemento flote a la izquierda o a la derecha, y `clear: both;` para asegurarse de que el elemento <div> se coloque después de los elementos flotantes.
 
-Aunque el posicionamiento de cajas con float ha sido una técnica comúnmente utilizada en el pasado, en la actualidad se prefieren enfoques más modernos como Flexbox y CSS Grid para diseños más complejos y flexibles. Sin embargo, float sigue siendo útil en ciertas situaciones, como el diseño de columnas simples o flotar imágenes junto al texto.
+Aunque el posicionamiento de cajas con float ha sido una técnica comúnmente utilizada en el pasado, en la actualidad se prefieren enfoques más modernos como Flexbox y CSS Grid para diseños más complejos y flexibles. Sin embargo, `float` sigue siendo útil en ciertas situaciones, como el diseño de columnas simples o flotar imágenes junto al texto.
 
+## Custom Properties - (Variables)
+Las variables en CSS, también conocidas como Custom Properties, son contenedores de información que se pueden reutilizar a lo largo del documento. Estas variables son declaradas y definidas por el autor del estilo (generalmente en el bloque :root o en un selector específico) y luego pueden ser utilizadas en cualquier lugar dentro del alcance de la regla. Las variables en CSS tienen nombres que comienzan con doble guión `--`, seguidos por el nombre de la variable.
 
+```css
+:root {
+  --color-primary: #007bff;
+  --color-secondary: #ff7f0e;
+}
+
+/* Utilizando las variables */
+.heading {
+  color: var(--color-primary);
+}
+
+.paragraph {
+  color: var(--color-secondary);
+}
+```
+
+Las variables CSS proporcionan varias ventajas:
+
+- Reutilización: Puedes definir valores que se utilizan repetidamente en tu hoja de estilo y luego cambiarlos fácilmente en un solo lugar.
+- Mantenimiento: Las variables pueden hacer que tu código sea más claro y fácil de mantener, ya que puedes nombrar los valores de forma descriptiva.
+- Dinamismo: Las variables pueden ser modificadas dinámicamente usando JavaScript, lo que permite cambios en el estilo en tiempo real.
+
+Es importante tener en cuenta que las variables tienen un alcance limitado a su contenedor padre (como el `:root` o un selector específico). Esto significa que las variables definidas dentro de un selector no estarán disponibles fuera de él.
 
 ## Recursos:
 
