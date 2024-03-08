@@ -1,4 +1,4 @@
-# FLEXBOX
+# [FLEXBOX](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
 
 CSS Flexbox (Flexible Box Layout) es un módulo de CSS que proporciona un método más eficiente y predecible para diseñar y distribuir elementos dentro de un contenedor, incluso cuando el tamaño de los elementos y del contenedor es desconocido o dinámico. Flexbox ofrece un sistema de diseño unidimensional, lo que significa que se centra en el diseño de una fila o columna de elementos a la vez.
 
@@ -54,6 +54,30 @@ Esto permite tener un contenedor que sea flexible y alinear los contenedores de 
 	}
 </style>
 ```
+## [CSS Grid](https://github.com/ShunTr-dev/Docs/blob/main/CSS/CSS%20Grid.md) vs [CSS Flex](https://github.com/ShunTr-dev/Docs/blob/main/CSS/CSS%20Flex.md)
+CSS Grid y CSS Flexbox son dos herramientas poderosas para el diseño de diseños en CSS, pero tienen diferentes enfoques y funcionalidades. Estas son las diferencias clave entre CSS Grid y CSS Flexbox:
+
+- Modelo de disposición:
+* CSS Grid: Funciona en **dos dimensiones** (filas y columnas) y permite colocar elementos en una cuadrícula bidimensional.
+* CSS Flexbox: Funciona en **una dimensión** (fila o columna) y es ideal para organizar elementos en una sola dirección, como una fila o una columna.
+
+- Flexibilidad:
+* CSS Grid: Proporciona un mayor control sobre el diseño de la página, permitiendo dividir el espacio del contenedor en filas y columnas definidas por el desarrollador.
+* CSS Flexbox: Ofrece flexibilidad en la alineación y distribución de elementos en una sola dirección, pero puede no ser tan adecuado para diseños bidimensionales complejos.
+
+- Alineación:
+* CSS Grid: Permite alinear elementos tanto en el eje de las filas como en el de las columnas, utilizando propiedades como justify-items, align-items, justify-content, align-content, entre otras.
+* CSS Flexbox: Se enfoca en la alineación de elementos a lo largo de un solo eje, con propiedades como justify-content y align-items.
+
+- Orden de los elementos:
+* CSS Grid: Facilita cambiar el orden de los elementos en la cuadrícula sin alterar el orden en el HTML, lo que brinda una mayor flexibilidad en el diseño.
+* CSS Flexbox: También permite cambiar el orden de los elementos, pero principalmente a lo largo de un eje único.
+
+- Uso recomendado:
+* CSS Grid: Es más adecuado para diseños de página complejos y bidimensionales, como esquemas de mosaicos, cuadrículas de imágenes y diseños de estilo editorial.
+* CSS Flexbox: Es útil para alinear y distribuir elementos en una sola dirección, como menús de navegación, barras laterales y diseños de elementos en línea.
+
+En resumen, CSS Grid es ideal para diseñar diseños bidimensionales complejos y controlar el flujo de contenido en una página web, mientras que CSS Flexbox es más adecuado para organizar elementos en una sola dirección de manera flexible y eficiente. Ambos pueden utilizarse juntos según las necesidades específicas de diseño de un proyecto.
 
 ## flex-direction
 La propiedad `flex-direction` se utiliza para establecer la dirección principal en la que se disponen los elementos dentro de un contenedor flexible. Determina si los elementos hijos se disponen en una fila o en una columna, y si se colocan de izquierda a derecha, de derecha a izquierda, de arriba hacia abajo o de abajo hacia arriba.

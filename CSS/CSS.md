@@ -34,7 +34,7 @@ Un documento que no tenga estilado nada, sigue teniendo estilos por defecto, est
 ```
 
 
-## Selectores
+## [Selectores](https://frontend30.com/css-selectors-cheatsheet/)
 
 ### Selector universal
 Toma todos los elementos del documento
