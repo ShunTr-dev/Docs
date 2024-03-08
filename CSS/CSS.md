@@ -285,14 +285,14 @@ Una medida que podemos usar en función de lo que estamos viendo es el `viewport
 El "modelo de la caja" y el concepto de "en línea" son dos formas diferentes de representar el flujo y el comportamiento de los elementos en una página web en HTML y CSS.
 
 Modelo de la caja: `div`
-    Se aplica a elementos de bloque (`display: block`) y define cada elemento como una caja rectangular que contiene contenido, relleno, borde y margen.
-    Los elementos de bloque ocupan todo el ancho disponible en su contenedor y *comienzan en una nueva línea*, lo que significa que ocupan su propio espacio en el diseño de la página y no se superponen con otros elementos de bloque.
+Se aplica a elementos de bloque (`display: block`) y define cada elemento como una caja rectangular que contiene contenido, relleno, borde y margen.
+Los elementos de bloque ocupan todo el ancho disponible en su contenedor y *comienzan en una nueva línea*, lo que significa que ocupan su propio espacio en el diseño de la página y no se superponen con otros elementos de bloque.
 
 En línea: `span`
-    Se aplica a elementos en línea (`display: inline`) y se comportan de manera diferente a los elementos de bloque.
-    Los elementos en línea ocupan solo el espacio necesario para mostrar su contenido y *no inician una nueva línea*. Varios elementos en línea pueden aparecer en la misma línea si tienen suficiente espacio disponible en el contenedor. Estos elementos no tienen alto ni ancho.
-    Ejemplos comunes de elementos en línea son `span`, a, `strong`, `em`, `img`, entre otros.
-    Las propiedades de tamaño como `width` y `height` no se aplican a los elementos en línea, aunque se pueden aplicar otras propiedades como `padding`, `border`, `margin`, etc.
+Se aplica a elementos en línea (`display: inline`) y se comportan de manera diferente a los elementos de bloque.
+Los elementos en línea ocupan solo el espacio necesario para mostrar su contenido y *no inician una nueva línea*. Varios elementos en línea pueden aparecer en la misma línea si tienen suficiente espacio disponible en el contenedor. Estos elementos no tienen alto ni ancho.
+Ejemplos comunes de elementos en línea son `span`, a, `strong`, `em`, `img`, entre otros.
+Las propiedades de tamaño como `width` y `height` no se aplican a los elementos en línea, aunque se pueden aplicar otras propiedades como `padding`, `border`, `margin`, etc.
 
 En resumen, el modelo de la caja se refiere a cómo se representan y se controlan los elementos de bloque en una página web, mientras que "en línea" se refiere a cómo se representan y se comportan los elementos en línea.
 
@@ -315,22 +315,22 @@ En resumen, el modelo de la caja se refiere a cómo se representan y se controla
 Las diferencias entre `margin`, `border` y `padding` son fundamentales en el modelo de caja de CSS y se refieren a diferentes áreas alrededor del contenido de un elemento. Estas son las distinciones clave:
 
 Margin (Margen):
-    `margin` controla el espacio entre el borde del elemento y los elementos adyacentes.
-    Define el espacio externo alrededor de la caja del elemento.
-    No afecta el tamaño del elemento en sí, solo el espacio entre el elemento y otros elementos adyacentes.
-    Se utiliza para controlar el espacio entre elementos en el diseño de la página.
+`margin` controla el espacio entre el borde del elemento y los elementos adyacentes.
+Define el espacio externo alrededor de la caja del elemento.
+No afecta el tamaño del elemento en sí, solo el espacio entre el elemento y otros elementos adyacentes.
+Se utiliza para controlar el espacio entre elementos en el diseño de la página.
 
 Border (Borde):
-    `border` define el borde alrededor del contenido y el relleno del elemento.
-    Se coloca justo después del relleno y antes del margen.
-    Puede tener un ancho, un estilo (como sólido, punteado, etc.) y un color definido.
-    Define el límite exterior del elemento.
+`border` define el borde alrededor del contenido y el relleno del elemento.
+Se coloca justo después del relleno y antes del margen.
+Puede tener un ancho, un estilo (como sólido, punteado, etc.) y un color definido.
+Define el límite exterior del elemento.
 
 Padding (Relleno):
-    `padding` controla el espacio entre el contenido del elemento y su borde.
-    Define el espacio interno alrededor del contenido de la caja.
-    Afecta al tamaño del elemento, ya que aumenta o disminuye el espacio disponible para el contenido dentro de la caja.
-    Se utiliza para agregar espacio entre el contenido y el borde del elemento.
+`padding` controla el espacio entre el contenido del elemento y su borde.
+Define el espacio interno alrededor del contenido de la caja.
+Afecta al tamaño del elemento, ya que aumenta o disminuye el espacio disponible para el contenido dentro de la caja.
+Se utiliza para agregar espacio entre el contenido y el borde del elemento.
 
 En resumen, mientras que margin controla el espacio fuera del elemento, border define el límite del elemento y padding controla el espacio entre el contenido del elemento y su borde. Estos tres componentes son esenciales para el diseño y la estructura de una página web en CSS, ya que permiten controlar el espacio y el diseño alrededor de los elementos HTML.
 
@@ -412,17 +412,17 @@ Las variables en CSS, también conocidas como **Custom Properties**, son contene
 
 ```css
 :root {
-  --color-primary: #007bff;
-  --color-secondary: #ff7f0e;
+    --color-primary: #007bff;
+    --color-secondary: #ff7f0e;
 }
 
 /* Utilizando las variables */
 .heading {
-  color: var(--color-primary);
+    color: var(--color-primary);
 }
 
 .paragraph {
-  color: var(--color-secondary);
+    color: var(--color-secondary);
 }
 ```
 
