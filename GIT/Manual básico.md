@@ -1,145 +1,135 @@
-Herramientas para poder utilizar GIT de manera GRÁFICA
+```markdown
+# Guía Básica de Git
+
+## Herramientas Gráficas para Utilizar Git
+
 - Sourcetree
 - GitKraken
 - GitHub Desktop
 
-Para poder usarlo debemos instalarlo desde git-scm.com/downloads
-En caso de hacerlo desde windows es necesario instalar el Git BASH -TOTALMENTE NECESARIO, NO USES LA TERMINAL DE WINDOWS-
+Para comenzar, es necesario instalar Git desde [git-scm.com/downloads](https://git-scm.com/downloads). Si estás utilizando Windows, es imprescindible instalar Git BASH en lugar de utilizar la terminal de Windows.
 
-Configuración Inicial
-```
+## Configuración Inicial
+
+```bash
 git --version
 git config --global user.name "Pablo Martínez"
-git config --global user.email repaco9@gmail.com
-git config --global color.ui auto //Enable some colorization of Git output
-git config --global core.editor "code --wait" //para usar el vscode como editor
-git config --global -e //para ver el archivo de configuración
+git config --global user.email tuemail@gmail.com
+git config --global color.ui auto # Habilita la colorización de la salida de Git
+git config --global core.editor "code --wait" # Configura VSCode como el editor por defecto
+git config --global -e # Abre el archivo de configuración global en el editor
 ```
 
-Configuración de core.autocrlf
-(Por probar) Windows usa para los saltos de línea CR y LF y Linux/Mac usa LF, por lo tanto los usuarios de WINDOWS deben tener la config a TRUE y los usuarios de Linux/MAC lo deben tener a con el valor de INPUT
-```
+### Configuración de core.autocrlf
+
+En entornos Windows, se utilizan los caracteres CR y LF para los saltos de línea, mientras que en Linux/Mac se utiliza solo LF. Por lo tanto, los usuarios de Windows deben configurar esto en TRUE, mientras que los usuarios de Linux/Mac deben configurarlo en INPUT.
+
+```bash
 git config --global core.autocrlf true
 ```
 
-Para ver las cosas que se pueden configurar en el global
-```
+Para ver las opciones de configuración global disponibles:
+```bash
 git config -h
 ```
 
-Comandos
-```
-ls //Listado de archivos y carpetas
-pwd //Ruta en la que se encuentra la terminal
-cd <ruta> //Moverse entre carpetas
-mkdir //crear una carpeta
+## Comandos Útiles
+
+```bash
+ls # Lista archivos y carpetas
+pwd # Muestra la ruta actual
+cd <ruta> # Cambia de directorio
+mkdir # Crea un nuevo directorio
 ```
 
-Iniciar un Repositorio
-```
-(En la ruta del repo)
-git init [project name]
-git clone [project url] //Downloads a project with the entire history from the remote repository.
+## Iniciar un Repositorio
+
+```bash
+# En la ruta del repositorio
+git init [nombre del proyecto]
+git clone [URL del proyecto] # Descarga un proyecto con todo su historial desde el repositorio remoto
 ```
 
-Añadir un archivo a un repo
-```
+## Añadir Archivos a un Repositorio
+
+```bash
 git add archivo.txt
-git add .txt //añade todos los archivos txt
-git add . //Añade todos los archivos (No recomendado)
+git add *.txt # Añade todos los archivos .txt
+git add . # Añade todos los archivos (no recomendado)
 ```
 
-```
-git status //Displays the status of your working directory. Options include new, staged, and modified files. It will retrieve branch name, current commit identifier, and changes pending commit.
+```bash
+git status # Muestra el estado del directorio de trabajo
 git status -s
 ```
 
-Para hacer el COMMIT
-```
+## Realizar un COMMIT
+
+```bash
 git commit -m "Propósito del commit"
-git commit //abre el editor para configurar el commit
+git commit # Abre el editor para ingresar un mensaje de commit
 ```
 
-Uso habitual
-```
-git add [file] //Add a file to the staging area. Use in place of the full file path to add all changed files from the current directory down into the directory tree.
-git diff [file] //Show changes between working directory and staging area.
-git diff --staged [file] //Shows any changes between the staging area and the repository.
-git checkout -- [file] //Discard changes in working directory. This operation is unrecoverable.
-git reset [file] //Revert your repository to a previous known working state.
-git commit //Create a new commit from changes added to the staging area. The commit must have a message!
-git rm [file] //Remove file from working directory and staging area.
-git stash //Put current changes in your working directory into stash for later use.
-git stash pop //Apply stored stash content into working directory, and clear stash.
-git stash drop //Delete a specific stash from all your previous stashes.
+## Uso Habitual
 
-git restore --staged archivo.txt //Para quitar un archivo del estado staged
-git restore archivo.txt //Para recuperar un archivo del repo
-```
-
-Git branching
-```
-git branch [-a] //List all local branches in repository. With -a: show all branches (with remote).
-git branch [branch_name] //Create new branch, referencing the current HEAD.
-git checkout [-b][branch_name] //Switch working directory to the specified branch. With -b: Git will create the specified branch if it does not exist.
-git merge [from name] //Join specified [from name] branch into your current branch (the one you are on currently).
-git branch -d [name] //Remove selected branch, if it is already merged into any other. -D instead of -d forces deletion.
+```bash
+git add [archivo] # Añade un archivo al área de preparación
+git diff [archivo] # Muestra los cambios entre el directorio de trabajo y el área de preparación
+git diff --staged [archivo] # Muestra los cambios entre el área de preparación y el repositorio
+git checkout -- [archivo] # Descarta los cambios en el directorio de trabajo (operación irreversible)
+git reset [archivo] # Revierte el repositorio a un estado previamente conocido
+git commit # Crea un nuevo commit con los cambios añadidos al área de preparación
+git rm [archivo] # Elimina un archivo del directorio de trabajo y del área de preparación
+git stash # Guarda los cambios actuales en un almacén temporal para usarlos más tarde
+git stash pop # Aplica los cambios almacenados en el directorio de trabajo y los elimina del almacén
+git stash drop # Elimina un almacén específico
+git restore --staged archivo.txt # Quita un archivo del área de preparación
+git restore archivo.txt # Recupera un archivo del repositorio
 ```
 
-Review your work
-```
-git log [-n count] //List commit history of current branch. -n count limits list to last n commits.
-git log --oneline --graph --decorate //An overview with reference labels and history graph. One commit per line.
-git log ref.. //List commits that are present on the current branch and not merged into ref. A ref can be a branch name or a tag name.
-git log ..ref //List commit that are present on ref and not merged into current branch.
-git reflog //List operations (e.g. checkouts or commits) made on local repository
-git log --oneline
+## Ramificación en Git
+
+```bash
+git branch [-a] # Lista todas las ramas locales del repositorio
+git branch [nombre_rama] # Crea una nueva rama, referenciando la rama actual
+git checkout [-b] [nombre_rama] # Cambia al directorio de trabajo a la rama especificada
+git merge [nombre_rama] # Fusiona la rama especificada con la rama actual
+git branch -d [nombre_rama] # Elimina la rama seleccionada, si ya ha sido fusionada
 ```
 
-Reverting changes
-```
-git reset [--hard] [target reference] //Switches the current branch to the target reference, leaving a difference as an uncommitted change. When --hard is used, all changes are discarded.
-git revert [commit sha] //Create a new commit, reverting changes from the specified commit. It generates an inversion of changes.
+## Revisar tu Trabajo
+
+```bash
+git log [-n cantidad] # Muestra el historial de commits de la rama actual
+git log --oneline --graph --decorate # Ofrece una visión general del historial con etiquetas de referencia y gráfico de historia
+git log ref.. # Lista los commits que están presentes en la rama actual pero no fusionados en la referencia
+git log ..ref # Lista los commits que están presentes en la referencia pero no fusionados en la rama actual
+git reflog # Lista las operaciones realizadas en el repositorio local
 ```
 
-Synchronizing repositories
+## Revertir Cambios
+
+```bash
+git reset [--hard] [referencia_objetivo] # Cambia la rama actual a la referencia objetivo, dejando una diferencia como un cambio no confirmado
+git revert [hash_commit] # Crea un nuevo commit revirtiendo los cambios del commit especificado
 ```
-*
-git remote add origin https://github.com akgufdkaufgdks
-*
-git fetch [remote] //Fetch changes from the remote, but not update tracking branches.
-git fetch --prune [remote] //Delete remote Refs that were removed from the remote repository.
-git pull [remote] //Fetch changes from the remote and merge current branch with its upstream.
-git push [--tags] [remote] //Push local changes to the remote. Use --tags to push tags.
-git push -u [remote] [branch] //Push local branch to remote repository. Set its copy as an upstream.
+
+## Sincronizar Repositorios
+
+```bash
+git remote add origin [URL_repositorio_remoto]
+git fetch [remoto] # Descarga los cambios del remoto, pero no actualiza las ramas de seguimiento
+git fetch --prune [remoto] # Elimina las referencias remotas que fueron eliminadas del repositorio remoto
+git pull [remoto] # Descarga los cambios del remoto y fusiona la rama actual con su rama ascendente
+git push [--tags] [remoto] # Envía los cambios locales al remoto. Usa --tags para enviar las etiquetas
+git push -u [remoto] [rama] # Envía una rama local al repositorio remoto y establece su copia como ascendente
 git push -u origin main
 ```
 
-En el archivo .gitignore añadimos los archivos o rutas que no queremos que acaben en el repo (ejemplos para varios lenguajes https://github.com/github/gitignore )
+En el archivo `.gitignore`, se pueden añadir los archivos o rutas que no deseas que sean incluidos en el repositorio.
 ```
-# CakePHP 3
-
-/vendor/*
-/config/app.php
-
-/tmp/cache/models/*
-!/tmp/cache/models/empty
-/tmp/cache/persistent/*
-!/tmp/cache/persistent/empty
-/tmp/cache/views/*
-!/tmp/cache/views/empty
-/tmp/sessions/*
-!/tmp/sessions/empty
-/tmp/tests/*
-!/tmp/tests/empty
-
-/logs/*
-!/logs/empty
-
-# CakePHP 2
-
-/app/tmp/*
-/app/Config/core.php
-/app/Config/database.php
-/vendors/*
+# Ejemplo de .gitignore para varios lenguajes
+# Enlace: https://github.com/github/gitignore
 ```
+
+[ejemplos para varios lenguajes](https://github.com/github/gitignore)

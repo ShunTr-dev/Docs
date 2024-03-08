@@ -1,22 +1,24 @@
-Realizar con cuidado, esto se carga la versión local del repo:
+## Actualizar repo local por la fuerza
 
-(Tener en cuenta Imágenes o archivos especiales de los locales)
+Realizar con cuidado, ya que esto sobrescribirá la versión local del repositorio:
 
-```
+**Nota:** Tener en cuenta imágenes o archivos especiales locales.
+
+```bash
 git fetch origin
 git reset --hard origin/master
 chown -R www-data:www-data ./
 ```
-git - la guía sencilla
 
-Actualizar en vexeta moncake
+### Actualizar y descargar un repo
 
-```
-moncakedev
+```bash
+cd ./carpeta_dev
 git status
-git add app/plugins/centralreservas/models/paciente_resultado_adjunto.php
-git commit -m "Seaslab: multiples adjuntos" app/plugins/centralreservas/models/paciente_resultado_adjunto.php
+git add ./archivo_modificado.txt
+git commit -m "Archivo modificado" ./archivo_modificado.txt
 git push
-moncake
+cd ./carpeta_prod
 git pull
 ```
+
