@@ -143,46 +143,350 @@ También puedes combinar minmax() con otras funciones o valores para crear dise�
 
 
 
-# Ejemplo
+## Ejemplo
 
+Cómo usar de manera correcta CSS Grid. Usamos el `@media` para crear momentos en los que se creen columnas. Pero hay que tener en cuenta el tamaño del contenido, y como se ve.
 ```html
 <div>
-    <img src="" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
 </div>
 
 <style type="text/css">
     div {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap 16px
+        grid-template-columns: 1fr;
+        /*
+        column-gap: 16px;
+        row-gap: 16px;
+        */
+        gap: 16px;
     }
 
+    @media (width > 300px) {
+        div {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (width > 600px) {
+        div {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    img {
+        border-radius: 8px;
+        width: 100%;
+        height: auto; 
+    }
 </style>
-
-
-
 ```
 
 
 
+Lo ideal es hacerlo SIN `@media`.
 
+```html
+<div>
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+    <img src="https://github.com/ShunTr-dev/Docs/blob/main/IMG/this-is-a-test-wp.png" />
+</div>
 
+<style type="text/css">
+    div {
+        display: grid;
+        grid-template-columns: repeat( auto-fill, minmax(200px, 1fr) );
+        gap: 16px;
+        /* Si queremos meterle un número máximo de columnas
+            max-width: 800px;
+            margin: 0 auto;
+        */
+    }
 
+    img {
+        border-radius: 8px;
+        width: 100%;
+        height: auto; 
+    }
+</style>
+```
 
+## auto-fit vs auto-fill
+Ambas auto-fit y auto-fill son opciones en para distribuir el espacio disponible para los elementos en una cuadrícula, pero tienen diferencias en cómo manejan los espacios vacíos o los elementos extra.
 
+- `auto-fit`:
+* Con `auto-fit`, la cuadrícula ajusta automáticamente el número de columnas o filas para adaptarse al tamaño del contenedor. Si hay espacio adicional después de colocar los elementos, se crean nuevas columnas o filas vacías para llenar ese espacio.
+* Si hay más elementos que columnas o filas disponibles, algunos de los elementos pueden sobrepasar el contenedor o superponerse entre sí.
+* `auto-fit` intenta ajustar los elementos en la cuadrícula lo más compactamente posible, reduciendo el espacio vacío entre los elementos.
 
+- `auto-fill`:
+* Con `auto-fill`, la cuadrícula crea el número especificado de columnas o filas, pero puede rellenarlas con elementos adicionales si hay más elementos disponibles.
+* Si hay más elementos que columnas o filas especificadas, los elementos adicionales se colocan en nuevas filas o columnas, y estas filas o columnas vacías se muestran en el diseño.
+* `auto-fill` llena el espacio disponible con elementos, incluso si eso resulta en elementos más separados o más espacio en blanco dentro de la cuadrícula.
 
+## `grid-column-start`,  `grid-column-end`, `grid-row-start` y `grid-row-end`
+Las propiedades `grid-column-start`, `grid-column-end`, `grid-row-start` y `grid-row-end` son propiedades que se utilizan para posicionar y dimensionar elementos dentro de una cuadrícula CSS Grid, permitiendo un control preciso sobre el diseño de la cuadrícula y la colocación de elementos.
 
+1. **grid-column-start y grid-column-end**:
+- `grid-column-start` define en qué línea de la cuadrícula comienza un elemento en el eje de las columnas.
+- `grid-column-end` define en qué línea de la cuadrícula termina un elemento en el eje de las columnas.
+- Ambas propiedades pueden tomar un valor numérico para indicar la línea de la cuadrícula en la que debe comenzar o terminar el elemento, o pueden tomar un valor de nombre para referirse a una línea nombrada dentro de la cuadrícula.
+- Si solo se proporciona una de estas propiedades, el elemento se extenderá hasta el límite de la cuadrícula.
 
+```css
+.item {
+    grid-column-start: 2; /* El elemento comienza en la línea 2 de la cuadrícula */
+    grid-column-end: 4; /* El elemento termina en la línea 4 de la cuadrícula */
+}
+```
 
+2. **grid-row-start y grid-row-end**:
+- `grid-row-start` define en qué línea de la cuadrícula comienza un elemento en el eje de las filas.
+- `grid-row-end` define en qué línea de la cuadrícula termina un elemento en el eje de las filas.
+- Al igual que con `grid-column-start` y `grid-column-end`, pueden tomar valores numéricos o de nombre para indicar las líneas de la cuadrícula.
+- Si solo se proporciona una de estas propiedades, el elemento se extenderá hasta el límite de la cuadrícula en ese eje.
 
+```css
+.item {
+    grid-row-start: 1; /* El elemento comienza en la línea 1 de la cuadrícula */
+    grid-row-end: span 2; /* El elemento se extiende hasta 2 filas desde el punto de inicio */
+}
+```
 
+## Ejemplo BentoGrid
+```html
+<div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+</div>
 
+<style type="text/css">
+    .container{
+        background: #09f;
+        border: 3px solid gray;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: 
+    }
 
+    .container div {
+        background: lightblue;
+        border: 2px white;
+    }
 
+    .container div:first-child {
+        background: lightgreen;
+        border: 2px white;
 
+        /* Para hacerlo con las celdas fijas*/
+        /*
+            grid-column-start: 1;
+            grid-column-end: 2;
+        */
+        grid-column: 1 / 2;
+        /*
+            grid-row-start: 1;
+            grid-row-end: 3;
+        */
+        grid-row: 1 / 3;
 
+        /* Para hacerlo con las celdas dinámicas (No sabes la posición del contenedor)*/
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: span 1;
 
+    }
+</style>
+```
+
+## Ejemplo de layout típico
+
+Forma fácil pero difíl de entender.
+```html
+<section class="container">
+    <header>header</header>
+    <aside>aside</aside>
+    <main>main</main>
+    <footer>footer</footer>
+</section>
+
+<style type="text/css">
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(3, minmax(300px, 1fr));
+        min-height: 100vh;
+    }
+
+    .container header {
+        background: #09f;
+        grid-column: 1/-1;
+    }
+
+    .container aside {
+        background: yellow;
+    }
+
+    .container main {
+        background: red;
+        grid-column: span 2;
+    }
+
+    .container footer {
+        background: ligthcyan;
+        grid-column: 1/-1;
+    }
+
+    body {
+        margin: 0;
+    }
+</style>
+```
+Con definición de áreas.
+```html
+<section class="container">
+    <header>header</header>
+    <aside>aside</aside>
+    <main>main</main>
+    <footer>footer</footer>
+</section>
+
+<style type="text/css">
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(3, minmax(300px, 1fr));
+        min-height: 100vh;
+        grid-template-areas: /* Si en algún punto no queremos poner un container ponemos . */
+            "header header header"
+            "sidebar content content"
+            "footer footer footer"
+    }
+
+    .container header {
+        background: #09f;
+        grid-area: header;
+    }
+
+    .container aside {
+        background: yellow;
+        grid-area: sidebar;
+    }
+
+    .container main {
+        background: red;
+        grid-area: content;
+    }
+
+    .container footer {
+        background: ligthcyan;
+        grid-area: footer;
+    }
+
+    body {
+        margin: 0;
+    }
+</style>
+```
+## `justify-items`
+La propiedad `justify-items` en se utiliza para alinear los elementos de la cuadrícula a lo largo del eje de las columnas dentro de las celdas de la cuadrícula. Esto significa que controla cómo los elementos se alinean horizontalmente dentro de las celdas de la cuadrícula.
+
+Los valores que puede tomar `justify-items` son similares a los de `justify-content`, pero actúan a nivel de celda en lugar de a nivel de contenedor. Aquí están los valores comunes:
+
+- `start`: Los elementos se alinean al inicio del contenedor de la celda.
+- `end`: Los elementos se alinean al final del contenedor de la celda.
+- `center`: Los elementos se alinean en el centro del contenedor de la celda.
+- `stretch`: Los elementos se estiran para llenar el contenedor de la celda.
+- `auto`: Los elementos usan su valor predeterminado.
+
+```css
+.grid-container {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    justify-items: center; /* Todos los elementos en la cuadrícula se alinearán al centro de sus celdas */
+}
+```
+
+En este ejemplo, todos los elementos dentro de la cuadrícula se alinearán al centro de sus celdas, independientemente del tamaño de los elementos o de las celdas de la cuadrícula.
+
+`justify-items` se aplica a todos los elementos dentro de la cuadrícula y sobrescribe cualquier alineación específica de los elementos individuales dentro de las celdas. Esto puede ser útil para establecer un comportamiento uniforme de alineación en toda la cuadrícula.
+
+Para poder hacer esto mismo pero elemento por elemento se tiene que usar `justify-self`.
+
+## align-items
+La propiedad `align-items` en se utiliza para alinear los elementos de la cuadrícula a lo largo del eje de las filas dentro de las celdas de la cuadrícula. Esto significa que controla cómo los elementos se alinean verticalmente dentro de las celdas de la cuadrícula.
+
+Los valores que puede tomar `align-items` son similares a los de `justify-content`. 
+- `start`: Los elementos se alinean al inicio del contenedor de la celda.
+- `end`: Los elementos se alinean al final del contenedor de la celda.
+- `center`: Los elementos se alinean en el centro del contenedor de la celda.
+- `stretch`: Los elementos se estiran para llenar el contenedor de la celda.
+- `baseline`: Los elementos se alinean por la línea de base de su contenido.
+
+Por ejemplo:
+
+```css
+.grid-container {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    align-items: center; /* Todos los elementos en la cuadrícula se alinearán verticalmente en el centro de sus celdas */
+}
+```
+
+`align-items` se aplica a todos los elementos dentro de la cuadrícula y sobrescribe cualquier alineación específica de los elementos individuales dentro de las celdas. Esto puede ser útil para establecer un comportamiento uniforme de alineación en toda la cuadrícula.
+
+Para hacer esto a nivel invididual se tiene que usar `align-self`.
+
+## place-content
+La propiedad `place-content` en es una abreviatura que combina las propiedades `align-content` y `justify-content` en una sola declaración. Esto permite alinear y distribuir los elementos tanto a lo largo del eje de las filas como a lo largo del eje de las columnas de una cuadrícula de manera conveniente.
+
+```css
+.place-content: <align-content> <justify-content>;
+```
+
+Donde `<align-content>` y `<justify-content>` son los valores que se aplicarán a `align-content` y `justify-content`, respectivamente. Ambos valores pueden ser cualquiera de los siguientes:
+
+- `start`: Los elementos se alinean al inicio del contenedor en el eje de las filas (para `align-content`) o en el eje de las columnas (para `justify-content`).
+- `end`: Los elementos se alinean al final del contenedor en el eje de las filas (para `align-content`) o en el eje de las columnas (para `justify-content`).
+- `center`: Los elementos se alinean en el centro del contenedor en el eje de las filas (para `align-content`) o en el eje de las columnas (para `justify-content`).
+- `stretch`: Los elementos se estiran para llenar el contenedor en el eje de las filas (para `align-content`) o en el eje de las columnas (para `justify-content`).
+- `space-around`: Los elementos se distribuyen uniformemente alrededor del contenedor en el eje de las filas (para `align-content`) o en el eje de las columnas (para `justify-content`), con espacio adicional en los extremos.
+- `space-between`: Los elementos se distribuyen uniformemente a lo largo del contenedor en el eje de las filas (para `align-content`) o en el eje de las columnas (para `justify-content`), con espacio entre ellos pero no en los extremos.
+- `space-evenly`: Los elementos se distribuyen uniformemente a lo largo del contenedor en el eje de las filas (para `align-content`) o en el eje de las columnas (para `justify-content`), con espacio igual entre ellos, incluso en los extremos.
+
+Por ejemplo:
+
+```css
+.grid-container {
+    display: grid;
+    place-content: center space-between; /* Alinea y distribuye los elementos verticalmente en el centro y horizontalmente con espacio entre ellos */
+}
+```
+
+Como extra decir que `place-content: center`, alinea totalmente el contenido.
 
 
 # Recursos:
