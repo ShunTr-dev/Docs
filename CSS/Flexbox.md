@@ -193,8 +193,8 @@ Los valores posibles para justify-content son los siguientes:
 ```css
 
 .container {
-  display: flex;
-  justify-content: center; /* Los elementos se alinean en el centro del contenedor */
+	display: flex;
+	justify-content: center; /* Los elementos se alinean en el centro del contenedor */
 }
 ```
 
