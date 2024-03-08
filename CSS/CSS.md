@@ -408,7 +408,7 @@ Para limpiar los floats, se establece `float: none;` para asegurarse de que ning
 Aunque el posicionamiento de cajas con float ha sido una técnica comúnmente utilizada en el pasado, en la actualidad se prefieren enfoques más modernos como Flexbox y CSS Grid para diseños más complejos y flexibles. Sin embargo, `float` sigue siendo útil en ciertas situaciones, como el diseño de columnas simples o flotar imágenes junto al texto.
 
 ## Custom Properties - (Variables)
-Las variables en CSS, también conocidas como Custom Properties, son contenedores de información que se pueden reutilizar a lo largo del documento. Estas variables son declaradas y definidas por el autor del estilo (generalmente en el bloque :root o en un selector específico) y luego pueden ser utilizadas en cualquier lugar dentro del alcance de la regla. Las variables en CSS tienen nombres que comienzan con doble guión `--`, seguidos por el nombre de la variable.
+Las variables en CSS, también conocidas como **Custom Properties**, son contenedores de información que se pueden reutilizar a lo largo del documento. Estas variables son declaradas y definidas por el autor del estilo (generalmente en el bloque `:root` o en un selector específico) y luego pueden ser utilizadas en cualquier lugar dentro del alcance de la regla. Las variables en CSS tienen nombres que comienzan con doble guión `--`, seguidos por el nombre de la variable.
 
 ```css
 :root {

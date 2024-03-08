@@ -62,23 +62,23 @@ La dirección establecida en `flex-direction` es la parte mas significativa de f
 
 ```css
 .container {
-  display: flex;
-  flex-direction: row; /* Los elementos se disponen en una fila horizontal (de izquierda a derecha) */
+	display: flex;
+	flex-direction: row; /* Los elementos se disponen en una fila horizontal (de izquierda a derecha) */
 }
 
 .container-reverse {
-  display: flex;
-  flex-direction: row-reverse; /* Los elementos se disponen en una fila horizontal, pero en dirección inversa (de derecha a izquierda) */
+	display: flex;
+	flex-direction: row-reverse; /* Los elementos se disponen en una fila horizontal, pero en dirección inversa (de derecha a izquierda) */
 }
 
 .container-column {
-  display: flex;
-  flex-direction: column; /* Los elementos se disponen en una columna vertical (de arriba hacia abajo) */
+	display: flex;
+	flex-direction: column; /* Los elementos se disponen en una columna vertical (de arriba hacia abajo) */
 }
 
 .container-column-reverse {
-  display: flex;
-  flex-direction: column-reverse; /* Los elementos se disponen en una columna vertical, pero en dirección inversa (de abajo hacia arriba) */
+	display: flex;
+	flex-direction: column-reverse; /* Los elementos se disponen en una columna vertical, pero en dirección inversa (de abajo hacia arriba) */
 }
 ```
 
@@ -88,18 +88,18 @@ La propiedad `flex-wrap` se utiliza para especificar si los elementos hijos debe
 ```css
 
 .container {
-  display: flex;
-  flex-wrap: nowrap; /* Los elementos no se envuelven y se muestran en una sola línea */
+	display: flex;
+	flex-wrap: nowrap; /* Los elementos no se envuelven y se muestran en una sola línea */
 }
 
 .container-wrap {
-  display: flex;
-  flex-wrap: wrap; /* Los elementos se envuelven en líneas adicionales si no caben en una sola línea */
+	display: flex;
+	flex-wrap: wrap; /* Los elementos se envuelven en líneas adicionales si no caben en una sola línea */
 }
 
 .container-wrap-reverse {
-  display: flex;
-  flex-wrap: wrap-reverse; /* Los elementos se envuelven en líneas adicionales, pero en orden inverso, si no caben en una sola línea */
+	display: flex;
+	flex-wrap: wrap-reverse; /* Los elementos se envuelven en líneas adicionales, pero en orden inverso, si no caben en una sola línea */
 }
 ```
 
@@ -157,19 +157,19 @@ Por defecto, los elementos se ordenan según el orden en el que aparecen en el m
 ```css
 
 .container {
-  display: flex;
+	display: flex;
 }
 
 .item1 {
-  order: 3; /* Este elemento aparecerá tercero */
+	order: 3; /* Este elemento aparecerá tercero */
 }
 
 .item2 {
-  order: 1; /* Este elemento aparecerá primero */
+	order: 1; /* Este elemento aparecerá primero */
 }
 
 .item3 {
-  order: 2; /* Este elemento aparecerá segundo */
+	order: 2; /* Este elemento aparecerá segundo */
 }
 ```
 
@@ -222,7 +222,3 @@ En resumen, `align-items` se aplica a los elementos flexibles dentro del contene
 ![Flexbox CheatSheet](../IMG/css/flexbox-cheatsheet.png)
 - [Flexbox CheatSheet Tricks](https://quickref.me/css3#css-flexbox-tricks)
 ![Flexbox CheatSheet Tricks](../IMG/css/flexbox-cheatsheet-tricks.png)
-
-
-
-
