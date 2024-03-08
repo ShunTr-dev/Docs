@@ -434,7 +434,47 @@ Las variables CSS proporcionan varias ventajas:
 
 Es importante tener en cuenta que las variables tienen un alcance limitado a su contenedor padre (como el `:root` o un selector específico). Esto significa que las variables definidas dentro de un selector no estarán disponibles fuera de él.
 
-## Recursos:
+# Diseño web responsive
+
+El diseño web responsive en CSS se refiere a la práctica de crear sitios web que se adaptan y responden de manera fluida a diferentes tamaños de pantalla y dispositivos, como computadoras de escritorio, tablets y teléfonos móviles. En lugar de diseñar múltiples versiones del mismo sitio para diferentes dispositivos, el diseño web responsive utiliza técnicas de CSS (Cascading Style Sheets) para ajustar el diseño, el tamaño de los elementos y la disposición del contenido según las características del dispositivo y la resolución de pantalla del usuario.
+
+Algunas de las técnicas comunes utilizadas en el diseño web responsive con CSS incluyen el uso de unidades de medida relativas como porcentajes y EM, así como también el uso de medios de consulta (media queries) para aplicar estilos específicos según las características del dispositivo, como el ancho de la pantalla. Esto permite que un sitio web se vea y funcione bien en una amplia gama de dispositivos, sin necesidad de crear múltiples versiones del mismo sitio.
+
+## Media Queries
+
+Las media queries son una característica de CSS que permite aplicar estilos específicos a un documento basado en características específicas del dispositivo, como el ancho de la pantalla, la orientación, la resolución de la pantalla, entre otros. Esto permite crear diseños web responsivos que se adaptan a diferentes dispositivos y tamaños de pantalla.
+
+Las media queries se definen utilizando la regla `@media` seguida de una condición entre paréntesis que especifica las características que se deben cumplir para que se apliquen los estilos correspondientes. Por ejemplo:
+
+```css
+@media (max-width: 768px) {
+    /* Estilos que se aplicarán cuando el ancho de la pantalla sea igual o menor a 768px */
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Estilos que se aplicarán cuando el ancho de la pantalla sea mayor o igual a 769px
+        y menor o igual a 1024px */
+}
+```
+
+En este ejemplo, se definen dos media queries. La primera se aplica cuando el ancho de la pantalla es igual o menor a 768px, y la segunda se aplica cuando el ancho de la pantalla es mayor o igual a 769px pero menor o igual a 1024px. Dentro de cada media query, se pueden definir estilos específicos que se aplicarán cuando se cumpla la condición especificada.
+
+Además del ancho de la pantalla, las media queries también pueden utilizar otras características como la altura de la pantalla, la orientación (horizontal o vertical), la resolución de la pantalla, el tipo de dispositivo (por ejemplo, pantalla o impresora), entre otros. Esto permite una gran flexibilidad en la creación de diseños web responsivos que se adaptan a una amplia gama de dispositivos y condiciones de visualización.
+
+## Viewport
+
+El viewport (o "puerto de vista") es el área visible de la ventana del navegador en la que se muestra un sitio web. El viewport puede variar dependiendo del dispositivo y su configuración, como el ancho y la altura de la pantalla, la orientación (horizontal o vertical), la resolución de la pantalla, entre otros factores. Es importante tener en cuenta el viewport al diseñar sitios web responsivos, ya que es el área que determina cómo se mostrará el contenido en el dispositivo del usuario.
+
+La línea `<meta name="viewport" content="width=device-width, user-scalable=no" />` es una etiqueta meta en HTML que se utiliza para configurar el viewport en dispositivos móviles. Aquí está desglosada:
+
+- `name="viewport"`: Indica que esta etiqueta meta está relacionada con la configuración del viewport.
+- `content="width=device-width, user-scalable=no"`: Aquí se especifican las instrucciones para la configuración del viewport. 
+* `width=device-width`: Hace que el ancho del viewport se ajuste automáticamente al ancho del dispositivo, lo que significa que el contenido del sitio web se mostrará correctamente sin necesidad de hacer zoom o scroll horizontal en dispositivos móviles.
+* `user-scalable=no`: Esto desactiva la capacidad de los usuarios para hacer zoom en la página con gestos de pellizco (pinch-to-zoom) en dispositivos táctiles. Esto puede ser útil para evitar que los usuarios modifiquen accidentalmente la escala de la página y desconfiguren la apariencia del diseño.
+
+En resumen, la línea `<meta name="viewport" content="width=device-width, user-scalable=no" />` es una configuración importante para asegurarse de que un sitio web se muestre correctamente en dispositivos móviles, ajustando automáticamente el viewport al ancho del dispositivo y desactivando la capacidad de hacer zoom.
+
+# Recursos:
 
 - [lenguajecss.com/css/](https://lenguajecss.com/css/)
 - [Curso de google de CSS](https://web.dev/learn/css?hl=es)
