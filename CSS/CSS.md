@@ -382,6 +382,30 @@ Los elementos dentro del mismo contexto de apilamiento se apilan unos encima de 
 
 Los diferentes contextos de apilamiento se forman dependiendo de varios factores, como los elementos padre con un valor de posición diferente de `static`, los elementos con propiedades de transformación o de perspectiva, los elementos con propiedades de filtro, y otros factores.
 
+## Float
+El posicionamiento de cajas con `float` es una técnica de diseño en CSS que se utiliza para hacer que los elementos se muevan hacia la izquierda o hacia la derecha de su contenedor, permitiendo que otros elementos fluyan alrededor de ellos. La propiedad `float` se utiliza comúnmente para crear diseños de estilo de revista, donde las imágenes y otros elementos flotan a un lado del texto.
+
+Cuando se aplica la propiedad `float` a un elemento, este se retira del flujo normal del documento y se posiciona en el borde izquierdo o derecho de su contenedor, con otros elementos fluyendo alrededor de él. Dependiendo del valor especificado (`left` o `right`), el elemento se alineará hacia la izquierda o hacia la derecha del contenedor.
+
+Es importante tener en cuenta que los elementos que flotan ya no afectan la disposición de los elementos que siguen en el flujo normal del documento. Por lo tanto, es posible que necesites usar otras técnicas, como el uso de márgenes, para controlar el espaciado entre los elementos flotantes y los elementos que siguen.
+
+Además, los elementos flotantes pueden colapsar el contenedor padre si no se toman las medidas adecuadas. Esto significa que el contenedor padre no reconocerá la altura de los elementos flotantes y puede colapsar alrededor de ellos. Para evitar este problema, se puede utilizar la técnica de "clearfix" o limpieza flotante para forzar al contenedor padre a reconocer la altura de los elementos flotantes.
+
+```html
+<div class="clearfix"></div>
+
+<style type="text/css">
+    .clearfix {
+        float:none;
+        clear: both;
+    }
+</style>
+```
+La primera sección establece un "clearfix" mediante la creación de un elemento <div> con la clase clearfix.
+La clase .clearfix está diseñada para limpiar los floats, lo que significa que soluciona el problema del colapso del contenedor padre cuando contiene elementos flotantes.
+Para limpiar los floats, se establece float: none; para asegurarse de que ningún elemento flote a la izquierda o a la derecha, y clear: both; para asegurarse de que el elemento <div> se coloque después de los elementos flotantes.
+
+Aunque el posicionamiento de cajas con float ha sido una técnica comúnmente utilizada en el pasado, en la actualidad se prefieren enfoques más modernos como Flexbox y CSS Grid para diseños más complejos y flexibles. Sin embargo, float sigue siendo útil en ciertas situaciones, como el diseño de columnas simples o flotar imágenes junto al texto.
 
 
 
