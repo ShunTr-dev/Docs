@@ -79,7 +79,7 @@ CSS Grid y CSS Flexbox son dos herramientas poderosas para el diseño de diseño
 
 En resumen, CSS Grid es ideal para diseñar diseños bidimensionales complejos y controlar el flujo de contenido en una página web, mientras que CSS Flexbox es más adecuado para organizar elementos en una sola dirección de manera flexible y eficiente. Ambos pueden utilizarse juntos según las necesidades específicas de diseño de un proyecto.
 
-## flex-direction
+## `flex-direction`
 La propiedad `flex-direction` se utiliza para establecer la dirección principal en la que se disponen los elementos dentro de un contenedor flexible. Determina si los elementos hijos se disponen en una fila o en una columna, y si se colocan de izquierda a derecha, de derecha a izquierda, de arriba hacia abajo o de abajo hacia arriba.
 
 La dirección establecida en `flex-direction` es la parte mas significativa de flex, ya que sólo puedes trabajar con una dirección (O filas o columnas), siendo esta la diferencia más grande con CSS Grid. En el caso de CSS Grid se trabaja con una malla o cuadrícula.
@@ -106,7 +106,7 @@ La dirección establecida en `flex-direction` es la parte mas significativa de f
 }
 ```
 
-## flex-wrap
+## `flex-wrap`
 La propiedad `flex-wrap` se utiliza para especificar si los elementos hijos deben envolverse o no cuando no haya suficiente espacio en el contenedor para mostrarlos en una sola línea.
 
 ```css
@@ -127,7 +127,7 @@ La propiedad `flex-wrap` se utiliza para especificar si los elementos hijos debe
 }
 ```
 
-## flex-flow
+## `flex-flow`
 La propiedad flex-flow en CSS es una propiedad abreviada que combina las propiedades flex-direction y flex-wrap en una sola declaración. Esto permite especificar tanto la dirección de los elementos dentro del contenedor como si los elementos deben envolverse o no en una sola declaración.
 
 ```css
@@ -136,7 +136,7 @@ La propiedad flex-flow en CSS es una propiedad abreviada que combina las propied
 }
 ```
 
-## flex-grow, flex-shrink, flex-basis
+## `flex-grow`, `flex-shrink`, `flex-basis`
 Las propiedades `flex-grow`, `flex-shrink` y `flex-basis` se utilizan para controlar cómo se distribuye y ajusta el espacio disponible entre estos elementos. 
 
 `flex-grow`:
@@ -172,7 +172,7 @@ La declaración `flex: 1;` es una forma abreviada de establecer las propiedades 
 
 En `flex: 1;` el `1` también **puede considerarse una medida relativa de lo que tienen que ocupar los elementos**. De tal manera que si le ponemos un `2` ese elemento crecerá el doble de tamaño que el resto.
 
-## Order
+## `order`
 
 La propiedad `order` se utiliza para controlar el orden en el que aparecen los elementos dentro del contenedor. Esta propiedad acepta un valor numérico que determina el orden en el que se muestran los elementos en relación con otros elementos en el mismo contenedor.
 
@@ -197,7 +197,7 @@ Por defecto, los elementos se ordenan según el orden en el que aparecen en el m
 }
 ```
 
-## justify-content
+## `justify-content`
 La propiedad `justify-content` se utiliza para alinear los elementos a lo largo del eje principal del contenedor. Esta propiedad permite distribuir el espacio sobrante (o ajustar el espacio faltante) entre los elementos de diferentes maneras, dependiendo del valor especificado.
 
 Los valores posibles para justify-content son los siguientes:

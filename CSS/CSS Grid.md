@@ -75,7 +75,7 @@ Las fracciones (`fr`) son una unidad de medida que se utiliza para distribuir el
  - `grid-template-rows` especifica dos filas. Ambas ocupan una fracción del espacio disponible, pero la segunda fila es el doble de alta que la primera.
 
 
-## grid-template-columns y grid-template-rows
+## `grid-template-columns` y `grid-template-rows`
 `grid-template-columns` y `grid-template-rows` son una propiedad que se utiliza para definir el tamaño y el número de columnas y filas en una cuadrícula. Esta propiedad permite especificar las dimensiones de las columnas y filas de una cuadrícula mediante valores absolutos, relativos o mediante funciones.
 
 ```css
@@ -96,7 +96,7 @@ La propiedad `grid-auto-rows` en se utiliza para establecer el tamaño predeterm
 
 Esta propiedad es útil cuando estás creando una cuadrícula con un número desconocido de elementos y quieres asegurarte de que las filas generadas automáticamente tengan un tamaño consistente. Puedes incluso darle un tamaño a la primera fila con `grid-template-rows: 100px`, y el resto generarlas con el auto.
 
-## repeat()
+## `repeat()`
 La función `repeat()` es una forma de repetir un patrón de columnas (`grid-template-columns`) o filas (`grid-template-rows`) en una cuadrícula. Esto es especialmente útil cuando quieres definir un número repetitivo de columnas o filas con el mismo tamaño.
 
 ```css
@@ -115,7 +115,7 @@ También puedes combinar repeat() con otras funciones o valores para crear patro
 }
 ```
 
-## minmax()
+## `minmax()`
 
 La función `minmax()` en es una función que permite especificar un rango mínimo y máximo para el tamaño de las columnas (`grid-template-columns`) o filas (`grid-template-rows`) en una cuadrícula. Esta función es especialmente útil cuando deseas que las columnas o filas tengan un tamaño flexible dentro de un rango dado.
 
@@ -136,12 +136,6 @@ También puedes combinar minmax() con otras funciones o valores para crear dise�
   grid-template-columns: minmax(100px, 200px) 1fr 1fr;
 }
 ```
-
-
-
-
-
-
 
 ## Ejemplo
 
@@ -191,8 +185,6 @@ Cómo usar de manera correcta CSS Grid. Usamos el `@media` para crear momentos e
 </style>
 ```
 
-
-
 Lo ideal es hacerlo SIN `@media`.
 
 ```html
@@ -228,7 +220,7 @@ Lo ideal es hacerlo SIN `@media`.
 </style>
 ```
 
-## auto-fit vs auto-fill
+## `auto-fit` vs `auto-fill`
 Ambas auto-fit y auto-fill son opciones en para distribuir el espacio disponible para los elementos en una cuadrícula, pero tienen diferencias en cómo manejan los espacios vacíos o los elementos extra.
 
 - `auto-fit`:
@@ -244,7 +236,7 @@ Ambas auto-fit y auto-fill son opciones en para distribuir el espacio disponible
 ## `grid-column-start`,  `grid-column-end`, `grid-row-start` y `grid-row-end`
 Las propiedades `grid-column-start`, `grid-column-end`, `grid-row-start` y `grid-row-end` son propiedades que se utilizan para posicionar y dimensionar elementos dentro de una cuadrícula CSS Grid, permitiendo un control preciso sobre el diseño de la cuadrícula y la colocación de elementos.
 
-1. **grid-column-start y grid-column-end**:
+1. **`grid-column-start` y `grid-column-end`**:
 - `grid-column-start` define en qué línea de la cuadrícula comienza un elemento en el eje de las columnas.
 - `grid-column-end` define en qué línea de la cuadrícula termina un elemento en el eje de las columnas.
 - Ambas propiedades pueden tomar un valor numérico para indicar la línea de la cuadrícula en la que debe comenzar o terminar el elemento, o pueden tomar un valor de nombre para referirse a una línea nombrada dentro de la cuadrícula.
@@ -257,7 +249,7 @@ Las propiedades `grid-column-start`, `grid-column-end`, `grid-row-start` y `grid
 }
 ```
 
-2. **grid-row-start y grid-row-end**:
+2. **`grid-row-start` y `grid-row-end`**:
 - `grid-row-start` define en qué línea de la cuadrícula comienza un elemento en el eje de las filas.
 - `grid-row-end` define en qué línea de la cuadrícula termina un elemento en el eje de las filas.
 - Al igual que con `grid-column-start` y `grid-column-end`, pueden tomar valores numéricos o de nombre para indicar las líneas de la cuadrícula.
@@ -446,8 +438,6 @@ Los valores que puede tomar `align-items` son similares a los de `justify-conten
 - `stretch`: Los elementos se estiran para llenar el contenedor de la celda.
 - `baseline`: Los elementos se alinean por la línea de base de su contenido.
 
-Por ejemplo:
-
 ```css
 .grid-container {
     display: grid;
@@ -460,7 +450,7 @@ Por ejemplo:
 
 Para hacer esto a nivel invididual se tiene que usar `align-self`.
 
-## place-content
+## `place-content`
 La propiedad `place-content` en es una abreviatura que combina las propiedades `align-content` y `justify-content` en una sola declaración. Esto permite alinear y distribuir los elementos tanto a lo largo del eje de las filas como a lo largo del eje de las columnas de una cuadrícula de manera conveniente.
 
 ```css
@@ -477,15 +467,12 @@ Donde `<align-content>` y `<justify-content>` son los valores que se aplicarán 
 - `space-between`: Los elementos se distribuyen uniformemente a lo largo del contenedor en el eje de las filas (para `align-content`) o en el eje de las columnas (para `justify-content`), con espacio entre ellos pero no en los extremos.
 - `space-evenly`: Los elementos se distribuyen uniformemente a lo largo del contenedor en el eje de las filas (para `align-content`) o en el eje de las columnas (para `justify-content`), con espacio igual entre ellos, incluso en los extremos.
 
-Por ejemplo:
-
 ```css
 .grid-container {
     display: grid;
     place-content: center space-between; /* Alinea y distribuye los elementos verticalmente en el centro y horizontalmente con espacio entre ellos */
 }
 ```
-
 Como extra decir que `place-content: center`, alinea totalmente el contenido.
 
 
