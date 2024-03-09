@@ -1,6 +1,8 @@
-Sort an array by a specific key. Maintains index association.
+# Ordenar un array por clave
 
-```
+El siguiente código en PHP proporciona una función `array_sort` que ordena un array asociativo por una clave específica, manteniendo la asociación de índices. Aquí está el código:
+
+```php
 <?php
 
 function array_sort($array, $on, $order=SORT_ASC)
@@ -62,71 +64,8 @@ $people = array(
     )
 );
 
-print_r(array_sort($people, 'age', SORT_DESC)); // Sort by oldest first
-print_r(array_sort($people, 'surname', SORT_ASC)); // Sort by surname
-
-/*
-Array
-(
-    [12345] => Array
-        (
-            [id] => 12345
-            [first_name] => Joe
-            [surname] => Bloggs
-            [age] => 23
-            [sex] => m
-        )
-
-    [12347] => Array
-        (
-            [id] => 12347
-            [first_name] => Amy
-            [surname] => Jones
-            [age] => 21
-            [sex] => f
-        )
-
-    [12346] => Array
-        (
-            [id] => 12346
-            [first_name] => Adam
-            [surname] => Smith
-            [age] => 18
-            [sex] => m
-        )
-
-)
-Array
-(
-    [12345] => Array
-        (
-            [id] => 12345
-            [first_name] => Joe
-            [surname] => Bloggs
-            [age] => 23
-            [sex] => m
-        )
-
-    [12347] => Array
-        (
-            [id] => 12347
-            [first_name] => Amy
-            [surname] => Jones
-            [age] => 21
-            [sex] => f
-        )
-
-    [12346] => Array
-        (
-            [id] => 12346
-            [first_name] => Adam
-            [surname] => Smith
-            [age] => 18
-            [sex] => m
-        )
-
-)
-*/
+print_r(array_sort($people, 'age', SORT_DESC)); // Ordena por edad de mayor a menor
+print_r(array_sort($people, 'surname', SORT_ASC)); // Ordena por apellido de forma ascendente
 
 ?>
 ```

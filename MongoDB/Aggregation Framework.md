@@ -26,7 +26,7 @@ db.persons.aggregate([
     { $match: { gender: 'female' } },
     { $group: { _id: { state: "$location.state" }, totalPersons: { $sum: 1 } } },
         // Le asignamos un DOCUMENT al ID, 
-        // esto se interpretará de una manera especial que permiira agrupar los campos
+        // esto se interpretará de una manera especial que permitira agrupar los campos
         // totalPersons es una key
         // sumamos 1 por cada uno que encuentre
     { $sort: { totalPersons: -1 } }

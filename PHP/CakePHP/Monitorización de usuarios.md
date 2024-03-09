@@ -1,19 +1,21 @@
-Controlador del elemento
+# Monitorización de usuarios en CakePHP
 
-```
+## Controlador del elemento
+
+```php
 /**
- * Triggered AFTER every controller action, and AFTER rendering is complete. This is the LAST controller method to run.
+ * Se ejecuta DESPUÉS de cada acción del controlador y DESPUÉS de que se complete el renderizado. Este es el ÚLTIMO método del controlador en ejecutarse.
  *
  * @since 05/03/2020 - Cakephp 3.6
  * @link https://book.cakephp.org/3/en/controllers.html#controller-callback-methods
  */
 public function afterFilter(Event $event) {
     $save = false;
-    if($this->request->session()->check('User')) {
+    if ($this->request->session()->check('User')) {
         /**
          * Función para guardar las acciones realizadas por los usuarios. 
          * (Se ejecuta por controlador)
-         * Llama a userMonitoringVarInit() que se encuentra en el AppController para iniciarlizar la variable.
+         * Llama a userMonitoringVarInit() que se encuentra en el AppController para inicializar la variable.
          *
          * @since 18/03/2020 - Cakephp 3.6
          */
@@ -69,15 +71,16 @@ public function afterFilter(Event $event) {
                 }
                 break;
         }
-        if($save){
+        if ($save) {
             $this->UserMonitoring->save($newAction);
         }
     }
 }
 ```
-AppController
 
-```
+## AppController
+
+```php
 /**
  * 
  * Función de inicialización de la variable que guarda los datos de monitorización
@@ -95,9 +98,9 @@ AppController
  * @since 05/03/2020 - Cakephp 3.6
  */
 public function userMonitoringVarInit() {
-    if($this->request->session()->check('User')) {
+    if ($this->request->session()->check('User')) {
         //Ejecución cuando un usuario esta logueado.
-        //Inicializamos con valores el objeto que contiene los datos el usuario para su monitarización de acciones.
+        //Inicializamos con valores el objeto que contiene los datos el usuario para su monitorización de acciones.
         $this->loadModel('UserMonitoring');
         $newAction = $this->UserMonitoring->newEntity();
         $newAction->user_id = $this->request->session()->read('User.id');
@@ -120,3 +123,5 @@ public function userMonitoringVarInit() {
     }
 }
 ```
+
+Estos fragmentos de código permiten monitorear las acciones realizadas por los usuarios en CakePHP. La función `afterFilter` en el controlador se encarga de registrar las acciones realizadas después de cada acción del controlador, mientras que la función `userMonitoringVarInit` en el `AppController` inicializa las variables necesarias para el registro de estas acciones.

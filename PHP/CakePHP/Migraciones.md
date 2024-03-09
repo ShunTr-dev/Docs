@@ -1,37 +1,52 @@
-Crear tabla en cake (todo desde el webpath)
+# Migraciones en CakePHP
 
-```
+En CakePHP, las migraciones son una forma conveniente de gestionar la estructura de la base de datos de una aplicación. Aquí se presentan algunas operaciones y ejemplos comunes relacionados con las migraciones en CakePHP:
+
+## Crear tabla en CakePHP
+
+Para crear una nueva migración que incluya la creación de una tabla, puedes utilizar el siguiente comando:
+
+```bash
 bin/cake migrations create NombreDelArchivo name:string visible:boolean created modified
 ```
-- Se crea un archivo en /config/migrations
-Para ejecutar la migración debemos ejecutar:
 
-```
-bin/cake migrations migrate 
-```
-Si ponemos una configuración no deseada podemos poner este comando para deshacer la migración.
+Una vez que se ha creado la migración, se puede ejecutar para aplicar los cambios en la base de datos:
 
+```bash
+bin/cake migrations migrate
 ```
+
+Si necesitas deshacer una migración, puedes utilizar el siguiente comando:
+
+```bash
 bin/cake migrations rollback
 ```
-Para hacer los bakes de los archivos podemos ejecutar todo por separado:
 
-```
+## Generar archivos de modelo, controlador y vistas
+
+Para generar rápidamente archivos de modelo, controlador y vistas relacionados con una tabla de la base de datos, puedes usar el comando `bake`. Puedes hacerlo por separado o generar todos los archivos a la vez:
+
+```bash
 bin/cake bake model Users
 bin/cake bake controller Users
 bin/cake bake template Users
 bin/cake bake template Users add
 bin/cake bake template Users edit
 ```
-O podemos generalo todo de una vez
 
-```
+O simplemente:
+
+```bash
 bin/cake bake all Users
 ```
 
-Ejemplo de migración Creación
+## Ejemplos de migraciones
 
-```
+A continuación se presentan algunos ejemplos de migraciones comunes en CakePHP:
+
+### Creación de tabla
+
+```php
 class CreateFarms extends AbstractMigration {
     public function change()
     {
@@ -41,40 +56,21 @@ class CreateFarms extends AbstractMigration {
             'limit' => 255,
             'null' => false,
         ]);
-        $table->addColumn('cows', 'integer', [
-            'default' => 0,
-            'limit' => 11,
-            'null' => false,
-        ]);
-        $table->addColumn('surface_area', 'float', [
-            'default' => 0,
-            'null' => true,
-        ]);
-        $table->addColumn('last_audit', 'datetime', [
-            'default' => null,
-            'null' => true,
-        ]);
-        $table->addColumn('created', 'datetime', [
-            'default' => null,
-            'null' => false,
-        ]);
-        $table->addColumn('modified', 'datetime', [
-            'default' => null,
-            'null' => false,
-        ]);
+        // Agregar más columnas según sea necesario...
         $table->create();
       
+        // Ejemplo de añadir una clave externa
         $refTable = $this->table('farms');
-        $refTable->addColumn('user_id', 'integer', array('signed' => 'disable'))
-                 ->addForeignKey('user_id', 'users', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+        $refTable->addColumn('user_id', 'integer', ['signed' => 'disable'])
+                 ->addForeignKey('user_id', 'users', 'id', ['delete' => 'CASCADE', 'update' => 'NO_ACTION'])
                  ->update();
     }
 }
 ```
 
-Ejemplo de Alter de meter un campo nuevo:
+### Alterar tabla para añadir un nuevo campo
 
-```
+```php
 class AlterImages extends AbstractMigration {
     public function change() {
         $table = $this->table('images');
@@ -90,22 +86,23 @@ class AlterImages extends AbstractMigration {
     }
 }
 ```
-Ejemplo de hacer un ALTER de un campo EXISTENTE:
 
-```
+### Alterar tabla para modificar un campo existente
+
+```php
 public function up() {
-        $table = $this->table('users');
-        $table->changeColumn('postal_code', 'string', [
-            'limit' => 255,
-            'default' => null,
-            'null' => true,
-        ])->save();
-    }
+    $table = $this->table('users');
+    $table->changeColumn('postal_code', 'string', [
+        'limit' => 255,
+        'default' => null,
+        'null' => true,
+    ])->save();
+}
 ```
 
-Ejemplo creación Borrar un campo:
+### Eliminar un campo de una tabla
 
-```
+```php
 class AlterClinicals extends AbstractMigration {
     public function up() {
         $table = $this->table('clinicals');
@@ -115,9 +112,9 @@ class AlterClinicals extends AbstractMigration {
 }
 ```
 
-Ejemplo de Drop Database
+### Eliminar una tabla completa
 
-```
+```php
 class DropAvoidancesDistancesImages extends AbstractMigration {
     public function change() {
         $table = $this->table('avoidance_distances_images');
@@ -125,3 +122,5 @@ class DropAvoidancesDistancesImages extends AbstractMigration {
     }
 }
 ```
+
+Estos ejemplos cubren las operaciones más comunes relacionadas con las migraciones en CakePHP. Puedes adaptarlos según las necesidades específicas de tu aplicación.

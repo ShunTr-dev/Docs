@@ -1,17 +1,20 @@
+# Orden en CakePHP
+
+A continuación se presenta el código para gestionar el orden en CakePHP:
+
+```php
+if ($this->request->query['sort'] != null && $this->request->query['direction'] != null) {
+    $sort = $this->request->query['sort'];
+    $direction = $this->request->query['direction'];
+} else {
+    $sort = 'ResearchGroups_name_translation.content';
+    $direction = 'ASC';
+}
 ```
 
+Es importante tener en cuenta que si se desea ordenar por otros campos además del pasado explícitamente en un objeto de consulta, se deberá combinar ambos métodos:
 
-if($this->request->query['sort'] != null && $this->request->query['direction'] != null){
-            $sort = $this->request->query['sort'];
-            $direction = $this->request->query['direction'];
-        } else {
-            $sort = 'ResearchGroups_name_translation.content';
-            $direction = 'ASC';
-        }
-```
-Note that if you want to be able to sort by other fields than the one passed explicitly in a query object, you’ll need to mix the two methods:
-
-```
+```php
 $this->paginate['sortWhitelist'] = $this->Users->schema()->columns() + ['Cities.id', 'Cities.name'];
 $query = $this->Users->find()
                      ->contain('Cities')
@@ -19,33 +22,35 @@ $query = $this->Users->find()
 $users = $this->paginate($query);
 ```
 
-```
-if(isset($this->request->query['sort']) && isset($this->request->query['direction'])){
-            $sort = $this->request->query['sort'];
-            $direction = $this->request->query['direction'];
-        } else {
-            $sort = 'ResearchGroups_name_translation.content';
-            $direction = 'ASC';
-        }
-        if(empty($type)){
-            $type = 'active';
-            $researchGroups = $this->paginate(
-                $this->ResearchGroups->find('all', [
-                    'order' => [$sort => $direction],
-                    'conditions' => [
-                        'OR' => [
-                            'end_date >' => date('Y-m-d'),
-                            'end_date is null',
-                        ]
-                    ]
-                ])
-            );
-        } else {
-            $type = 'all';
-            $researchGroups = $this->paginate(
-                $this->ResearchGroups->find('all', [
-                    'order' => [$sort => $direction]
-                ])
-            );
-        }
+En el siguiente fragmento, se muestra cómo manejar el orden en CakePHP:
+
+```php
+if (isset($this->request->query['sort']) && isset($this->request->query['direction'])) {
+    $sort = $this->request->query['sort'];
+    $direction = $this->request->query['direction'];
+} else {
+    $sort = 'ResearchGroups_name_translation.content';
+    $direction = 'ASC';
+}
+if (empty($type)) {
+    $type = 'active';
+    $researchGroups = $this->paginate(
+        $this->ResearchGroups->find('all', [
+            'order' => [$sort => $direction],
+            'conditions' => [
+                'OR' => [
+                    'end_date >' => date('Y-m-d'),
+                    'end_date is null',
+                ]
+            ]
+        ])
+    );
+} else {
+    $type = 'all';
+    $researchGroups = $this->paginate(
+        $this->ResearchGroups->find('all', [
+            'order' => [$sort => $direction]
+        ])
+    );
+}
 ```

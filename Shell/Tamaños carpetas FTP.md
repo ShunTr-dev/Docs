@@ -1,32 +1,31 @@
-Sacar los tamaños de los archivos en FTP:\ Te conectas al servidor:
+# Tamaños de Carpetas en FTP
 
-```
+Para obtener los tamaños de los archivos en un servidor FTP, puedes seguir estos pasos:
+
+1. Conéctate al servidor FTP utilizando el cliente `lftp`:
+   
+```bash
 lftp -u ns3089822.ip-54-36-61.eu,j6JnjgdgPu ftpback-rbx6-7.ovh.net
 ```
-Metes esta línea de código por que los certificados que tenemos son de diferentes versiones y sino se pone no permite la conex
 
-```
+2. Es posible que necesites desactivar la verificación de certificados si estás experimentando problemas de conexión debido a diferentes versiones de certificados:
+   
+```bash
 set ssl:verify-certificate false
 ```
-Se hace un du con las carpetas:
 
-```
-du -hs . ./crabim ./estaticos ./moncake ./primate ./tiendas ./wordpress ./welfaretracker 
-```
-Salida: 27/10/2020
+3. Realiza un comando `du` para obtener los tamaños de las carpetas en el servidor FTP. Por ejemplo, para obtener los tamaños de las carpetas específicas que mencionas:
 
+```bash
+du -hs . ./web ./img ./resources
 ```
-495G    .
-480M    ./crabim
-5.0G    ./estaticos
-313G    ./moncake
-111G    ./primate
-29G     ./tiendas
-37G     ./wordpress
-1.6G    ./welfaretracker
-```
-SI quieres hacer esto en el servidor....
 
-```
+La salida de este comando te proporcionará los tamaños de las carpetas en el servidor FTP.
+
+Si prefieres realizar esta operación en el propio servidor, puedes utilizar el siguiente comando:
+
+```bash
 du -h --max-depth=1
 ```
+
+Este comando te dará el tamaño de las carpetas en el servidor FTP limitando la profundidad de la búsqueda a 1 nivel.

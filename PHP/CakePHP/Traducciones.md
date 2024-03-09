@@ -1,24 +1,26 @@
-Usar con el usuario installer -> contraseña Klap9woy
+# Traducciones en CakePHP
 
-Ir al webroot (para que funcionen los bakes se tiene que hacer desde ahí) y ejecutar
+Para iniciar el proceso de extracción de las traducciones, es necesario dirigirse al directorio raíz del proyecto (webroot) y ejecutar el siguiente comando:
 
+```bash
+bin/cake i18n extract
 ```
-bin/cake i18n extract 
-```
-Con esto arrancamos el motor de búsqueda de srt de i18n, va a preguntar :
 
-Donde buscar, en SRC concretamente, si se añaden los cores del cake da ERROR (no en la creación del POT sino en la ejecución posterior en traducción).
+Este comando activa el motor de búsqueda de traducciones i18n. Durante la ejecución, se solicitarán ciertas configuraciones:
 
-Donde meter los POT, en src/Locale, que es donde están los POT en cake para que los use.
+- **Dónde buscar:** Se debe especificar la carpeta "SRC". Es importante tener en cuenta que si se añaden los cores del Cake, puede producirse un ERROR durante la ejecución posterior en la traducción.
+  
+- **Dónde colocar los archivos POT:** Se recomienda colocar los archivos POT en la carpeta `src/Locale`, que es la ubicación predeterminada en CakePHP para su uso.
 
-Las traducciones se deben meter en carpetas separadas como es / en / etc,.. luego en la carpeta interior se introduce el archivo generado con el editor como default.po (o la extensión que sea no me acuerdo si es esa o no)
+Las traducciones deben organizarse en carpetas separadas, como `/en`, `/es`, etc. Dentro de cada carpeta de idioma, se debe colocar el archivo generado, generalmente denominado `default.po` (o con la extensión correspondiente).
 
-Docu: https://book.cakephp.org/3.0/en/console-and-shells/i18n-shell.html
+Para obtener más información y detalles sobre este proceso, se puede consultar la documentación oficial de CakePHP: [Documentación sobre i18n Shell](https://book.cakephp.org/3.0/en/console-and-shells/i18n-shell.html)
 
-Crear la tabla I18n para idiomas
+## Creación de la tabla I18n para idiomas
 
-```
-//crear tabla de i18n en cake php 3.5 - 3.6
+Para crear la tabla I18n en CakePHP 3.5 - 3.6, se deben ejecutar las siguientes consultas SQL:
+
+```sql
 CREATE TABLE i18n (
    id serial PRIMARY KEY,
    locale char(6) NOT NULL,
@@ -27,22 +29,18 @@ CREATE TABLE i18n (
    field char(255) NOT NULL,
    content text
 );
-create UNIQUE INDEX I18N_LOCALE_FIELD on i18n(locale, model, foreign_key, field);
-create INDEX I18N_FIELD on i18n(model, foreign_key, field);
+CREATE UNIQUE INDEX I18N_LOCALE_FIELD ON i18n(locale, model, foreign_key, field);
+CREATE INDEX I18N_FIELD ON i18n(model, foreign_key, field);
 ```
 
-```
+O utilizando una migración de Phinx:
+
+```php
 <?php
 use Migrations\AbstractMigration;
+
 class CreateI18n extends AbstractMigration
 {
-    /**
-     * Change Method.
-     *
-     * More information on this method is available here:
-     * http://docs.phinx.org/en/latest/migrations.html#the-change-method
-     * @return void
-     */
     public function change()
     {
         $table = $this->table('i18n');
@@ -76,29 +74,49 @@ class CreateI18n extends AbstractMigration
     }
 }
 ```
-Cambiar versiones de PHP + I18n A ver, para cambiar la versión del servidor (esto va un poco como quiere)
 
-```
+## Cambiar versiones de PHP e i18n
+
+Para cambiar la versión de PHP y el entorno i18n, se pueden seguir los siguientes pasos:
+
+1. Editar el archivo `~/.bashrcphp` utilizando un editor de texto como `nano`:
+
+```bash
 nano ~/.bashrcphp
+```
+
+2. Seleccionar la versión de PHP deseada comentando/descomentando las líneas que definen la ruta del ejecutable de PHP:
+
+```bash
 #export PATH=/opt/plesk/php/7.4/bin:$PATH
 #export PATH=/usr/bin/php5.6/bin:$PATH
-. ~/.bashrcphp -v
-
 ```
-Traduccion i18n cake 1.4
 
-```
-Vale, se hace con:
-Versión 5.6
-En la carpeta: cd 
-Con el comando ./cake i18n
+3. Recargar el archivo de configuración `.bashrcphp`:
 
+```bash
+. ~/.bashrcphp
 ```
-Nueva versión
 
+4. Verificar la versión de PHP actualmente configurada:
+
+```bash
+php -v
 ```
+
+Para realizar la traducción i18n en CakePHP 1.4, se debe ejecutar el siguiente comando en la versión 5.6 de PHP, ubicado en la carpeta correspondiente:
+
+```bash
+./cake i18n
+```
+
+Para una versión más reciente, se puede utilizar el siguiente script:
+
+```bash
 shopt -s expand_aliases
 alias php="/usr/bin/php5.6"
 php ./cake i18n
 unalias php
 ```
+
+Estos son los pasos generales para cambiar las versiones de PHP e iniciar el proceso de traducción i18n en diferentes versiones de CakePHP.

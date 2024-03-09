@@ -1,95 +1,49 @@
-Archivos .tar.gz:
+# Comandos para Comprimir Archivos
 
-Comprimir:
+### Archivos .tar.gz:
 
-```
+#### Comprimir:
+```bash
 tar -czvf empaquetado.tar.gz /carpeta/a/empaquetar/
 ```
-Descomprimir:
 
-```
+#### Descomprimir:
+```bash
 tar -xzvf archivo.tar.gz
 ```
-Archivos .tar:
 
-Empaquetar:
+### Archivos .tar:
 
-```
+#### Empaquetar:
+```bash
 tar -cvf paquete.tar /dir/a/comprimir/
 ```
-Desempaquetar:
 
-```
+#### Desempaquetar:
+```bash
 tar -xvf paquete.tar
 ```
-Archivos .gz:
 
-Comprimir:
+### Archivos .gz:
 
-```
+#### Comprimir:
+```bash
 gzip -9 index.php
 ```
-Descomprimir:
 
+#### Descomprimir:
+```bash
+gzip -d index.php.gz
 ```
- gzip -d index.php.gz
-```
-Archivos .zip:
 
-Comprimir:
+### Archivos .zip:
 
-```
+#### Comprimir:
+```bash
 zip archivo.zip carpeta
 ```
-Descomprimir:
 
-```
-unzip archivo.zip
-```Archivos .tar.gz:
-
-Comprimir:
-
-```
-tar -czvf empaquetado.tar.gz /carpeta/a/empaquetar/
-```
-Descomprimir:
-
-```
-tar -xzvf archivo.tar.gz
-```
-Archivos .tar:
-
-Empaquetar:
-
-```
-tar -cvf paquete.tar /dir/a/comprimir/
-```
-Desempaquetar:
-
-```
-tar -xvf paquete.tar
-```
-Archivos .gz:
-
-Comprimir:
-
-```
-gzip -9 index.php
-```
-Descomprimir:
-
-```
- gzip -d index.php.gz
-```
-Archivos .zip:
-
-Comprimir:
-
-```
-zip archivo.zip carpeta
-```
-Descomprimir:
-
-```
+#### Descomprimir:
+```bash
 unzip archivo.zip
 ```

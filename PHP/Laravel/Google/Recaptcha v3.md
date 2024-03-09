@@ -1,3 +1,25 @@
+### Vista Blade
+
+1. La vista blade contiene el formulario de contacto y el script para cargar reCAPTCHA v3. 
+2. Se utiliza un div con la clase `g-recaptcha` para mostrar el reCAPTCHA v3 en la página.
+3. Se utiliza un script para ejecutar reCAPTCHA y obtener el token cuando el usuario envía el formulario.
+
+### Controlador
+
+1. La función `sendcontactmail` en el controlador valida los datos del formulario y verifica el token de reCAPTCHA v3.
+2. Si la puntuación del token es mayor que 0.7 (ajustable según tus necesidades), se envía el correo electrónico de contacto con los datos del formulario.
+3. Si la puntuación es menor o igual a 0.7, se redirige de vuelta a la página de contacto con un mensaje de alerta.
+
+### Ocultar el Badge de reCAPTCHA
+
+Se proporciona un estilo CSS para ocultar el badge de reCAPTCHA, que por defecto aparece en la esquina inferior derecha de la página.
+
+### Notas
+
+- Asegúrate de configurar correctamente las claves de reCAPTCHA en tu aplicación Laravel.
+- Ajusta la puntuación mínima requerida según tus necesidades de seguridad y tolerancia al spam.
+
+Con estos elementos en su lugar, tendrás una implementación básica de reCAPTCHA v3 en tu aplicación Laravel para proteger el formulario de contacto de los ataques de spam.
 ```
 @extends('web.layouts.master')
 @section('content')

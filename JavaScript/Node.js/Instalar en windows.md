@@ -1,37 +1,46 @@
-Ejecutar el powershell de windows como administrador.
+# Instalar en Windows Node.js
 
-Procedemos a instalar Cholatey, que es un gestor de paquetes para windows.
+Para instalar Node.js en Windows, sigue estos pasos:
 
-Ejecuta para saber el estado de los paquetes instalados
+1. **Ejecutar PowerShell como administrador:** Abre PowerShell en tu sistema Windows como administrador. Puedes hacerlo buscando "PowerShell" en el menú de inicio, haciendo clic derecho sobre él y seleccionando "Ejecutar como administrador".
 
-```
+2. **Instalar Chocolatey:** Chocolatey es un gestor de paquetes para Windows que facilita la instalación de software. Para instalarlo, ejecuta los siguientes comandos en PowerShell:
+
+```powershell
 Get-ExecutionPolicy
 ```
-Si devuelve Restricted ejecuta:
 
-```
+Si el resultado es `Restricted`, ejecuta el siguiente comando para cambiar la política de ejecución:
+
+```powershell
 Set-ExecutionPolicy AllSigned
 ```
-Con esto ponemos todos los paquetes como firmados "AllSigned".
 
-Ejecutamos el siguiente comando para instalar chocolatey.
+Luego, ejecuta el siguiente comando para instalar Chocolatey:
 
-```
+```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
-Para comprobar si la instalación finalizó correctamente puedes ejecutar:
 
-```
+3. **Verificar la instalación de Chocolatey:** Para asegurarte de que Chocolatey se haya instalado correctamente, puedes ejecutar el siguiente comando en PowerShell:
+
+```powershell
 choco -v
 ```
-Para instalar node.js
 
-```
+4. **Instalar Node.js:** Una vez que tienes Chocolatey instalado, puedes usarlo para instalar Node.js fácilmente. Ejecuta el siguiente comando en PowerShell:
+
+```powershell
 choco install nodejs.install
 ```
-Le damos a la A para instalar todo. Para comprobar que la instalación se realizó correctamente ejecutamos:
 
-```
+Durante la instalación, se te pedirá que confirmes la instalación. Presiona "A" y luego "Enter" para instalar todo.
+
+5. **Verificar la instalación de Node.js:** Después de la instalación, puedes verificar que Node.js se haya instalado correctamente ejecutando los siguientes comandos en PowerShell:
+
+```powershell
 node -v
 npm -v
 ```
+
+Esto te mostrará las versiones de Node.js y npm instaladas en tu sistema.

@@ -1,25 +1,25 @@
-From: https://themes.artbees.net/blog/custom-setting-page-in-wordpress/
+# Página de Administrador Personalizada en WordPress
 
-In the previous post about WordPress custom admin pages, we defined a custom admin page and explained how to add a new admin page to WordPress.
+En el post anterior sobre páginas de administrador personalizadas de WordPress, definimos una página de administrador personalizada y explicamos cómo agregar una nueva página de administrador a WordPress.
 
-One of the most important usages of WordPress custom admin pages is the Settings Pages. Almost every plugin has custom setting pages, which allows developers to have an option page for their plugin. Some plugins like Akismet ask for integration codes and others have the option to enable or disable their features. WooCommerce has several options to customize shop, and all of them are implemented using Settings API.
+Uno de los usos más importantes de las páginas de administrador personalizadas de WordPress son las páginas de configuración. Casi todos los plugins tienen páginas de configuración personalizadas, lo que permite a los desarrolladores tener una página de opciones para su plugin. Algunos plugins como Akismet solicitan códigos de integración y otros tienen la opción de habilitar o deshabilitar sus funciones. WooCommerce tiene varias opciones para personalizar la tienda, y todas ellas se implementan utilizando la API de Configuración.
 
-In this post, we’ll delve into how to create a custom setting page in WordPress for what we created in the previous post. We’ll also add a new setting and the required UI for it. We’ll then save and use this saved value on the site. Adding a new setting in WordPress
+En este post, profundizaremos en cómo crear una página de configuración personalizada en WordPress para lo que creamos en el post anterior. También agregaremos una nueva configuración y la interfaz de usuario requerida para ella. Luego guardaremos y usaremos este valor guardado en el sitio. Agregar una nueva configuración en WordPress
 
-In order to add new settings to WordPress, we have to use WordPress Settings API. Settings API is a core API that allows developers to add a new custom setting page in WordPress.
+Para agregar nuevas configuraciones a WordPress, debemos usar la API de Configuración de WordPress. La API de Configuración es una API central que permite a los desarrolladores agregar una nueva página de configuración personalizada en WordPress.
 
-This includes functions to register settings, setting the section and setting fields, form rendering and error handling. Before adding settings
+Esto incluye funciones para registrar configuraciones, configurar la sección de configuración y los campos de configuración, renderizar el formulario y manejar errores. Antes de agregar configuraciones
 
-For the first step, we need to make sure we have a form and that it’s set to work with options.php. In the following code that we have a call back function to generate the heading, we need to load settings for the API functions to let our custom settings work with WordPress.
+Para el primer paso, necesitamos asegurarnos de tener un formulario y que esté configurado para funcionar con options.php. En el siguiente código que tenemos una función de devolución de llamada para generar el encabezado, necesitamos cargar las configuraciones para que las funciones de la API nos permitan que nuestras configuraciones personalizadas funcionen con WordPress.
 
-The code from the previous post about how to have a custom admin page can be accessed here.
+El código del post anterior sobre cómo tener una página de administrador personalizada se puede acceder aquí.
 
-We need to change the my_admin_page_contents function to the following:
+Necesitamos cambiar la función my_admin_page_contents a lo siguiente:
 
-```
+```php
 function my_admin_page_contents() {
     ?>
-    <h1> <?php esc_html_e( 'Welcome to my custom admin page.', 'my-plugin-textdomain' ); ?> </h1>
+    <h1> <?php esc_html_e( 'Bienvenido a mi página de administración personalizada.', 'my-plugin-textdomain' ); ?> </h1>
     <form method="POST" action="options.php">
     <?php
     settings_fields( 'sample-page' );
@@ -29,248 +29,229 @@ function my_admin_page_contents() {
     </form>
     <?php
 }
-
 ```
-We just loaded the setting fields and the setting sections (which we will create) and added a submit button to save them. Settings section
 
-A setting section is part of the WordPress settings API which allows developers to have a group of settings under a heading. It’s possible to add a setting section to an existing WordPress admin page or to a new custom admin page.
+Acabamos de cargar los campos de configuración y las secciones de configuración (que crearemos) y agregamos un botón de enviar para guardarlos. Sección de configuración
 
-Here, we are going to add a new setting section to our custom admin page. Adding a new setting section
+Una sección de configuración es parte de la API de configuración de WordPress que permite a los desarrolladores tener un grupo de configuraciones bajo un encabezado. Es posible agregar una sección de configuración a una página de administrador de WordPress existente o a una nueva página de administrador personalizada.
 
-Now, we’ll go ahead and use the add_settings_section function to have a new setting section in our custom admin page which have sample-page as the slug.
+Aquí, vamos a agregar una nueva sección de configuración a nuestra página de administrador personalizada. Agregar una nueva sección de configuración
 
-```
+Ahora, procederemos a utilizar la función add_settings_section para tener una nueva sección de configuración en nuestra página de administrador personalizada que tenga sample-page como el slug.
+
+```php
 add_settings_section(
     'sample_page_setting_section',
-    __( 'Custom settings', 'my-textdomain' ),
+    __( 'Configuraciones personalizadas', 'my-textdomain' ),
     'my_setting_section_callback_function',
     'sample-page'
 );
-
 ```
-In the above code, we have added a new setting section and the arguments are:
 
-```
+En el código anterior, hemos agregado una nueva sección de configuración y los argumentos son:
+
+```php
 <?php add_settings_section( $id, $title, $callback, $page ); ?>
-
 ```
-id A custom slug for the setting section.idAcustomslugforthesettingsection.title Setting section title. Make sure it is translatable. callback A function that adds markups to the settings section.callbackAfunctionthataddsmarkupstothesettingssection.page The page slug that we want to add our settings section.
 
-As we have used a callback function (my_setting_section_callback_function), let’s define it.
+- id Un slug personalizado para la sección de configuración.
+- title Título de la sección de configuración. Asegúrate de que sea traducible.
+- callback Una función que agrega marcados a la sección de configuración.
+- page El slug de la página en la que queremos agregar nuestra sección de configuración.
 
-```
-my_setting_section_callback_function( $args ) {
-    echo '<p>Intro text for our settings section</p>';
+Como hemos usado una función de devolución de llamada (my_setting_section_callback_function), definámosla.
+
+```php
+function my_setting_section_callback_function( $args ) {
+    echo '<p>Texto introductorio para nuestra sección de configuraciones</p>';
 }
-
 ```
-And let’s wrap our codes to a new function to call it on admin_init.
 
-```
+Y envolvamos nuestros códigos en una nueva función para llamarla en admin_init.
+
+```php
 add_action( 'admin_init', 'my_settings_init' );
 
-
 function my_settings_init() {
-
-
     add_settings_section(
         'sample_page_setting_section',
-        __( 'Custom settings', 'my-textdomain' ),
+        __( 'Configuraciones personalizadas', 'my-textdomain' ),
         'my_setting_section_callback_function',
         'sample-page'
     );
 }
 
-
-function my_setting_section_callback_function() {
-    echo '<p>Intro text for our settings section</p>';
+function my_setting_section_callback_function( $args ) {
+    echo '<p>Texto introductorio para nuestra sección de configuraciones</p>';
 }
-
 ```
-The result will be like the following: Custom Setting Page in WordPress 1
 
-Note that WordPress automatically adds a Save Changes button. Settings fields
+El resultado será como el siguiente: Página de Configuración Personalizada en WordPress 1
 
-After having a section for our settings, which includes a title, custom markup and save button, it’s time to have some real settings that will allow us to get some inputs. In order to do that, we’ll use the settings_fields function.
+Ten en cuenta que WordPress agrega automáticamente un botón Guardar cambios. Campos de configuración
 
-settings_fields function is not only for having settings and input markups, but it also adds nonce and takes care of security as well as adds the required actions and functionality to make sure our settings will work. Adding a new setting field
+Después de tener una sección para nuestras configuraciones, que incluye un título, marcado personalizado y botón de guardar, es hora de tener algunas configuraciones reales que nos permitirán obtener algunas entradas. Para hacerlo, usaremos la función settings_fields.
 
-The usage of the settings_fields function is like
+La función settings_fields no solo es para tener configuraciones y marcados de entrada, sino que también agrega nonce y se encarga de la seguridad, así como agrega las acciones y funcionalidades requeridas para asegurar que nuestras configuraciones funcionen. Agregar un nuevo campo de configuración
 
-```
+El uso
+
+ de la función settings_fields es como:
+
+```php
 add_settings_field(
    'my_setting_field',
-   __( 'My custom setting field', 'my-textdomain' ),
+   __( 'Mi campo de configuración personalizado', 'my-textdomain' ),
    'my_setting_markup',
    'sample-page',
    'sample_page_setting_section'
 );
-
 ```
-which is actually
 
-```
+que es en realidad
+
+```php
 <?php add_settings_field( $id, $title, $callback, $page, $section, $args ); ?>
-
 ```
-and the arguments are:
 
-id A custom slug for the setting field.idAcustomslugforthesettingfield.title Setting the field title. page The page slug of which we want to show setting field on it.pageThepageslugofwhichwewanttoshowsettingfieldonit.section The section that we want to show setting field under it. $args Extra arguments. See more here.
+y los argumentos son:
 
-Like adding a setting section, we have a callback function that generates the markup.
+- id Un slug personalizado para el campo de configuración.
+- title Título del campo de configuración.
+- page El slug de la página en la que queremos mostrar el campo de configuración.
+- section La sección en la que queremos mostrar el campo de configuración.
+- $args Argumentos adicionales. Ver más aquí.
 
-```
+Al igual que al agregar una sección de configuración, tenemos una función de devolución de llamada que genera el marcado.
+
+```php
 function my_setting_markup() {
     ?>
-    <label for="my_setting_field"><?php _e( 'My Input', 'my-textdomain' ); ?></label>
-    <input type="text" id="my_setting_field" name="my_setting_field">
-    <?php
-}
-
-```
-We should wrap the settings_fields function to our my_settings_init function. So our code will be:
-
-```
-add_action( 'admin_init', 'my_settings_init' );
-
-
-function my_settings_init() {
-
-
-    add_settings_section(
-        'sample_page_setting_section',
-        __( 'Custom settings', 'my-textdomain' ),
-        'my_setting_section_callback_function',
-        'sample-page'
-    );
-
-
-        add_settings_field(
-           'my_setting_field',
-           __( 'My custom setting field', 'my-textdomain' ),
-           'my_setting_markup',
-           'sample-page',
-           'sample_page_setting_section'
-        );
-
-
-        register_setting( 'sample-page', 'my_custom_settings_options' );
-}
-
-
-
-
-function my_setting_section_callback_function() {
-    echo '<p>Intro text for our settings section</p>';
-}
-
-
-
-
-function my_setting_markup() {
-    ?>
-    <label for="my_setting_field"><?php _e( 'My Input', 'my-textdomain' ); ?></label>
-    <input type="text" id="my_setting_field" name="my_setting_field">
-    <?php
-}
-
-```
-And the output will be Custom Setting Page in WordPress 2
-
-If you try to save the settings, you may see some errors like option page not found. The reason is that we just added markups, but our settings are not registered to WordPress yet, and we’re not ready to save values to the WordPress database. Registering custom settings in WordPress and saving values
-
-The WordPress settings API has the needed functionality for getting and saving values from a setting. So we should use the register_setting function. Using the following code, we’ll register our settings in WordPress.
-
-```
-register_setting( 'sample-page', 'my_setting_field' );
-
-```
-Again, we need to use that in the init. So our code will be:
-
-```
-add_action( 'admin_init', 'my_settings_init' );
-
-
-function my_settings_init() {
-
-
-    add_settings_section(
-        'sample_page_setting_section',
-        __( 'Custom settings', 'my-textdomain' ),
-        'my_setting_section_callback_function',
-        'sample-page'
-    );
-
-
-        add_settings_field(
-           'my_setting_field',
-           __( 'My custom setting field', 'my-textdomain' ),
-           'my_setting_markup',
-           'sample-page',
-           'sample_page_setting_section'
-        );
-
-
-        register_setting( 'sample-page', 'my_setting_field' );
-}
-
-
-
-
-function my_setting_section_callback_function() {
-    echo '<p>Intro text for our settings section</p>';
-}
-
-
-
-
-function my_setting_markup() {
-    ?>
-    <label for="my_setting_field"><?php _e( 'My Input', 'my-textdomain' ); ?></label>
-    <input type="text" id="my_setting_field" name="my_setting_field">
-    <?php
-}
-
-```
-As a final step, we need to make sure we are showing the saved value in the form after getting back to our custom setting page in WordPress.
-
-Let’s add the following code to the my_setting_markup function
-
-```
-value="<?php echo get_option( 'my_setting_field' ); ?>"
-
-```
-And it will be
-
-```
-function my_setting_markup() {
-    ?>
-    <label for="my_setting_field"><?php _e( 'My Input', 'my-textdomain' ); ?></label>
+    <label for="my_setting_field"><?php _e( 'Mi entrada', 'my-textdomain' ); ?></label>
     <input type="text" id="my_setting_field" name="my_setting_field" value="<?php echo get_option( 'my_setting_field' ); ?>">
     <?php
 }
-
 ```
-Wrapping it up, we’ll have our plugin:
 
+Deberíamos envolver la función settings_fields en nuestra función my_settings_init. Entonces nuestro código será:
+
+```php
+add_action( 'admin_init', 'my_settings_init' );
+
+function my_settings_init() {
+    add_settings_section(
+        'sample_page_setting_section',
+        __( 'Configuraciones personalizadas', 'my-textdomain' ),
+        'my_setting_section_callback_function',
+        'sample-page'
+    );
+
+    add_settings_field(
+       'my_setting_field',
+       __( 'Mi campo de configuración personalizado', 'my-textdomain' ),
+       'my_setting_markup',
+       'sample-page',
+       'sample_page_setting_section'
+    );
+
+    register_setting( 'sample-page', 'my_setting_field' );
+}
+
+function my_setting_section_callback_function() {
+    echo '<p>Texto introductorio para nuestra sección de configuraciones</p>';
+}
+
+function my_setting_markup() {
+    ?>
+    <label for="my_setting_field"><?php _e( 'Mi entrada', 'my-textdomain' ); ?></label>
+    <input type="text" id="my_setting_field" name="my_setting_field" value="<?php echo get_option( 'my_setting_field' ); ?>">
+    <?php
+}
 ```
+
+Y la salida será Página de Configuración Personalizada en WordPress 2
+
+Si intentas guardar las configuraciones, es posible que veas algunos errores como opción de página no encontrada. La razón es que acabamos de agregar marcas, pero nuestras configuraciones aún no están registradas en WordPress, y no estamos listos para guardar valores en la base de datos de WordPress. Registrar configuraciones personalizadas en WordPress y guardar valores
+
+La API de configuración de WordPress tiene la funcionalidad necesaria para obtener y guardar valores de una configuración. Por lo tanto, debemos usar la función register_setting. Con el siguiente código, registraremos nuestras configuraciones en WordPress.
+
+```php
+register_setting( 'sample-page', 'my_setting_field' );
+```
+
+Nuevamente, necesitamos usar eso en init. Entonces nuestro código será:
+
+```php
+add_action( 'admin_init', 'my_settings_init' );
+
+function my_settings_init() {
+    add_settings_section(
+        'sample_page_setting_section',
+        __( 'Configuraciones personalizadas', 'my-textdomain' ),
+        'my_setting_section_callback_function',
+        'sample-page'
+    );
+
+    add_settings_field(
+       'my_setting_field',
+       __( 'Mi campo de configuración personalizado', 'my-textdomain' ),
+       'my_setting_markup',
+       'sample-page',
+       'sample_page_setting_section'
+    );
+
+    register_setting( 'sample-page', 'my_setting_field' );
+}
+
+function my_setting_section_callback_function() {
+    echo '<p>Texto introductorio para nuestra sección de configuraciones</p>';
+}
+
+function my_setting_markup() {
+    ?>
+    <label for="my_setting_field"><?php _e( 'Mi entrada', 'my-textdomain' ); ?></label>
+    <input type="text" id="my_setting_field" name="my_setting_field" value="<?php echo get_option( 'my_setting_field' ); ?>">
+    <?php
+}
+```
+
+Como paso final, necesitamos asegurarnos de que estamos mostrando el valor guardado en el formulario después de regresar a nuestra página de configuración personalizada en WordPress.
+
+Agreguemos el siguiente código a la función my_setting_markup
+
+```php
+value="<?php echo get_option( 'my_setting_field' ); ?>"
+```
+
+Y será
+
+```php
+function my_setting_markup() {
+    ?>
+    <label for="my_setting_field"><?php _e( 'Mi entrada', 'my-textdomain' ); ?></label>
+    <input type="text" id="my_setting_field" name="my_setting_field" value="<?php echo get_option( 'my_setting_field' ); ?>">
+    <?php
+}
+```
+
+Resumiendo, tendremos nuestro plugin:
+
+```php
 <?php
 
-
 /*
- * Plugin Name: My custom admin page
- * Description: Adds a custom admin pages with sample styles and scripts.
+ * Plugin Name: Mi página de administración personalizada
+ * Description: Agrega páginas de administrador personalizadas con estilos y scripts de muestra.
  * Version: 1.0.0
  * Author: Artbees
  * Author URI: http://artbees.net
  * Text Domain: my-custom-admin-page
 */
 
-
 function my_admin_menu() {
     add_menu_page(
-        __( 'Sample page', 'my-textdomain' ),
-        __( 'Sample menu', 'my-textdomain' ),
+        __( 'Página de muestra', 'my-textdomain' ),
+        __( 'Menú de muestra', 'my-textdomain' ),
         'manage_options',
         'sample-page',
         'my_admin_page_contents',
@@ -278,12 +259,13 @@ function my_admin_menu() {
         3
     );
 }
-add_action( 'admin_menu', 'my_admin_menu' );
+add_action( 'admin_menu', 'my_admin
 
+_menu' );
 
 function my_admin_page_contents() {
     ?>
-    <h1> <?php esc_html_e( 'Welcome to my custom admin page.', 'my-plugin-textdomain' ); ?> </h1>
+    <h1> <?php esc_html_e( 'Bienvenido a mi página de administración personalizada.', 'my-plugin-textdomain' ); ?> </h1>
     <form method="POST" action="options.php">
     <?php
     settings_fields( 'sample-page' );
@@ -294,58 +276,45 @@ function my_admin_page_contents() {
     <?php
 }
 
-
-
-
 add_action( 'admin_init', 'my_settings_init' );
 
-
 function my_settings_init() {
-
-
     add_settings_section(
         'sample_page_setting_section',
-        __( 'Custom settings', 'my-textdomain' ),
+        __( 'Configuraciones personalizadas', 'my-textdomain' ),
         'my_setting_section_callback_function',
         'sample-page'
     );
 
+    add_settings_field(
+       'my_setting_field',
+       __( 'Mi campo de configuración personalizado', 'my-textdomain' ),
+       'my_setting_markup',
+       'sample-page',
+       'sample_page_setting_section'
+    );
 
-        add_settings_field(
-           'my_setting_field',
-           __( 'My custom setting field', 'my-textdomain' ),
-           'my_setting_markup',
-           'sample-page',
-           'sample_page_setting_section'
-        );
-
-
-        register_setting( 'sample-page', 'my_setting_field' );
+    register_setting( 'sample-page', 'my_setting_field' );
 }
-
-
-
 
 function my_setting_section_callback_function() {
-    echo '<p>Intro text for our settings section</p>';
+    echo '<p>Texto introductorio para nuestra sección de configuraciones</p>';
 }
-
-
-
 
 function my_setting_markup() {
     ?>
-    <label for="my-input"><?php _e( 'My Input' ); ?></label>
+    <label for="my-input"><?php _e( 'Mi entrada' ); ?></label>
     <input type="text" id="my_setting_field" name="my_setting_field" value="<?php echo get_option( 'my_setting_field' ); ?>">
     <?php
 }
 
+?>
 ```
-Now, we have a custom admin page that includes a custom settings page in WordPress. We can save options in the database and retrieve and use it to implement complex functionalities in our plugins.
 
-In order to get the saved value of the added setting, we can use the get_option function. The following code will return the saved value for setting that we have added in this post:
+Ahora, tenemos una página de administrador personalizada que incluye una página de configuración personalizada en WordPress. Podemos guardar opciones en la base de datos y recuperarlas y usarlas para implementar funcionalidades complejas en nuestros plugins.
 
-```
+Para obtener el valor guardado de la configuración agregada, podemos usar la función get_option. El siguiente código devolverá el valor guardado para la configuración que hemos agregado en este post:
+
+```php
 get_option( 'my_setting_field' );
-
 ```
