@@ -316,7 +316,7 @@ Las propiedades `grid-column-start`, `grid-column-end`, `grid-row-start` y `grid
 
 ## Ejemplo de layout típico
 
-Forma fácil pero difíl de entender.
+Forma fácil pero difícil de entender.
 ```html
 <section class="container">
     <header>header</header>
