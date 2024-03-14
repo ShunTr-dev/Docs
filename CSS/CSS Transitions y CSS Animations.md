@@ -255,3 +255,97 @@ En este ejemplo, se define una animación llamada `mover` que desplaza el elemen
 - **Sin JavaScript:** Las animaciones en CSS permiten agregar interactividad y dinamismo a una página web sin necesidad de usar JavaScript.
 - **Mejora del rendimiento:** Las animaciones en CSS suelen ser más eficientes que las animaciones en JavaScript, ya que aprovechan la aceleración por hardware del navegador.
 - **Facilidad de uso:** Con una sintaxis simple, las animaciones en CSS son fáciles de implementar y mantener.
+
+
+
+
+
+## Ejemplo de pulser
+```html
+<div class="pulser"></div>
+
+<style type="test/css">
+    .pulser {
+        width: 50px;
+        height: 50px;
+        background: #09f;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .pulser::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #09f;
+        boder-radius: 50%;
+        z-index: -1;
+        scale: 2;
+        opacity: .5;
+
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-delay: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            scale: 2;
+            opacity: 40%;
+        }
+
+        100% {
+            opacity: 100%;
+        }
+    }
+
+    .pulser:hover {
+        scale: 2;
+        background: purple;
+        box-shadow: 0 0 10px purple;
+        /* En este caso poner el transition en el hover no tiene sentido, ya que cuando se saliese de este estado, volvería a las propiedades iniciales SIN animación */
+    }
+
+    body {
+        display: grid;
+        place-content: center;
+        min-height: 50vh;
+    }
+</style>
+```
+
+## `animation-fill-mode`
+La propiedad `animation-fill-mode` es una propiedad que especifica cómo se aplicarán los estilos al elemento objetivo antes y después de que se ejecute la animación. Esta propiedad determina si el elemento mantiene los estilos aplicados al final de la animación o si vuelve a su estado original.
+
+- **valor:** Puede ser uno de los siguientes:
+  - `none`: No se aplican estilos al elemento antes o después de la animación.
+  - `forwards`: Los estilos del último keyframe se mantienen aplicados al elemento después de la animación.
+  - `backwards`: Los estilos del primer keyframe se aplican al elemento antes de que comience la animación.
+  - `both`: Se aplican los estilos del primer keyframe antes de que comience la animación y los estilos del último keyframe después de que finalice la animación.
+
+```css
+/* Aplica estilos del primer keyframe antes de la animación y del último keyframe después de la animación */
+.elemento {
+    animation-name: animacion;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+@keyframes animacion {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+```

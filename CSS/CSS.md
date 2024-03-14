@@ -192,6 +192,45 @@ li:last-child { /* para que esto solo lo reciba el último hijo */
 }
 ```
 
+## [Nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting)
+El "anidamiento" es una característica que permite escribir estilos de una manera más estructurada y organizada, alineada con la estructura del HTML que están estilizando.
+
+### Sintaxis básica:
+
+Puedes anidar selectores dentro de otros selectores para aplicar estilos a elementos que están anidados dentro de otros elementos. La sintaxis es similar a la estructura del HTML.
+
+```css
+selector-padre {
+    propiedad: valor;
+
+    selector-hijo {
+        propiedad: valor;
+    }
+}
+```
+
+```css
+/* Anidamiento básico */
+.navbar {
+    background-color: #333;
+
+    .menu {
+        padding: 10px;
+    }
+
+    .menu-item {
+        color: white;
+    }
+
+    &:hover {
+        cursor: progress;
+    }
+}
+```
+
+- **Estructura clara y organizada:** El anidamiento facilita la lectura y comprensión del código CSS, ya que refleja la estructura del HTML.
+- **Evita la repetición:** Permite escribir selectores más cortos y legibles, evitando la repetición de nombres de clases.
+
 ## Cascada
 La "cascada" en CSS se refiere al proceso mediante el cual se aplican estilos a los elementos de una página web según un conjunto de reglas específicas. Este proceso se denomina "cascada" porque los estilos se aplican en cascada, lo que significa que pueden ser sobrescritos o heredados según su especificidad y su posición en la hoja de estilos.
 
@@ -480,3 +519,4 @@ En resumen, la línea `<meta name="viewport" content="width=device-width, user-s
 - [Curso de google de CSS](https://web.dev/learn/css?hl=es)
 - [MDN WEB DOCS CSS](https://developer.mozilla.org/es/docs/Web/CSS)
 - [Curso de CSS de midudev](https://www.youtube.com/playlist?list=PLUofhDIg_38q7l8gV4IVCz_pjUeyD99_j)
+- [Como saber si puedes usar un recurso en función de pla implantación en navegadores](https://caniuse.com/)
