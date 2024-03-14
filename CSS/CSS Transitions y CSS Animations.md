@@ -349,3 +349,7 @@ La propiedad `animation-fill-mode` es una propiedad que especifica cómo se apli
     }
 }
 ```
+
+# Enlaces
+
+- [Scroll driven animations](https://scroll-driven-animations.style/)
