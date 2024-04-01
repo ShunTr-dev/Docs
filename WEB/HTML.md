@@ -229,3 +229,4 @@ Ejemplo de HTML Semántico
 Enlaces útiles:
 - [ARIA Techniques](https://developer.mozilla.org/es/docs/Web/Accessibility/ARIA/ARIA_Techniques)
 - [ARIA Roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/roles)
+- [A collection of bad practices in HTML, copied from real websites.](https://www.htmhell.dev/)

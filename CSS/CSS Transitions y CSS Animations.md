@@ -65,7 +65,7 @@ La propiedad `transition-duration` en se utiliza para especificar la duración d
 ```html
 <div class="pulser"></div>
 
-<style type="test/css">
+<style type="text/css">
     .pulser {
         width: 50px;
         height: 50px;
@@ -264,7 +264,7 @@ En este ejemplo, se define una animación llamada `mover` que desplaza el elemen
 ```html
 <div class="pulser"></div>
 
-<style type="test/css">
+<style type="text/css">
     .pulser {
         width: 50px;
         height: 50px;
