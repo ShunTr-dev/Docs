@@ -1,6 +1,8 @@
 ```markdown
 # Guía Básica de Git
 
+Git es un sistema de control de versiones distribuido ampliamente utilizado para el seguimiento de cambios en archivos de código fuente durante el desarrollo de software. Permite a los desarrolladores trabajar en colaboración, mantener un historial de cambios, crear ramas para el desarrollo paralelo y fusionar cambios de manera eficiente. Git es conocido por su velocidad, flexibilidad y robustez, y es fundamental en el desarrollo de software moderno.
+
 ## Herramientas Gráficas para Utilizar Git
 
 - Sourcetree
@@ -13,7 +15,7 @@ Para comenzar, es necesario instalar Git desde [git-scm.com/downloads](https://g
 
 ```bash
 git --version
-git config --global user.name "Pablo Martínez"
+git config --global user.name "Tu Nombre"
 git config --global user.email tuemail@gmail.com
 git config --global color.ui auto # Habilita la colorización de la salida de Git
 git config --global core.editor "code --wait" # Configura VSCode como el editor por defecto
@@ -41,6 +43,8 @@ pwd # Muestra la ruta actual
 cd <ruta> # Cambia de directorio
 mkdir # Crea un nuevo directorio
 ```
+
+La opción de `git remote --verbose`, se utiliza para mostrar información detallada sobre los repositorios remotos asociados con un proyecto de Git. Esta orden mostrará tanto la URL del repositorio remoto como su nombre (por defecto, "origin") y permitirá al usuario ver qué operaciones (como push o fetch) están configuradas para cada repositorio remoto. La opción `--verbose` o `-v` muestra una salida más detallada que simplemente `git remote`.
 
 ## Iniciar un Repositorio
 
@@ -97,8 +101,12 @@ git merge [nombre_rama] # Fusiona la rama especificada con la rama actual
 git branch -d [nombre_rama] # Elimina la rama seleccionada, si ya ha sido fusionada
 ```
 
-## Revisar tu Trabajo
+## Actualizar los cambios de la rama principal (upstream) al fork (main)
+```bash
+git upstream main
+```
 
+## Revisar tu Trabajo
 ```bash
 git log [-n cantidad] # Muestra el historial de commits de la rama actual
 git log --oneline --graph --decorate # Ofrece una visión general del historial con etiquetas de referencia y gráfico de historia
@@ -133,3 +141,14 @@ En el archivo `.gitignore`, se pueden añadir los archivos o rutas que no deseas
 ```
 
 [ejemplos para varios lenguajes](https://github.com/github/gitignore)
+
+
+
+
+
+
+
+
+
+
+Buscar el archivo contributing.md
