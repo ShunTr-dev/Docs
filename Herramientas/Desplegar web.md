@@ -37,3 +37,12 @@ RENDER
 〉 Sitios estáticos y Dockerfiles
 〉 Hasta 100GB de transferencia
 → render․com
+
+
+
+2/ NETLIFY DROP
+¿Necesitas desplegar una página web a Internet?
+¿Tienes el HTML, CSS y JAVASCRIPT?
+
+¡Arrastra los ficheros y ya lo tienes!
+→ netlify․com/drop
