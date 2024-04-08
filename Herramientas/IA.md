@@ -1,4 +1,10 @@
 # Inteligencia artificial
 
 ## [JAN](https://jan.ai/)
-ALternativa a ChatGPT pero offline
+Alternativa a ChatGPT pero offline
+
+## [Lexica](https://lexica.art/)
+Generar imágenes con IA
+
+## [ai2ui](https://ai2ui.co/es)
+Generador de componentes de react por ia
