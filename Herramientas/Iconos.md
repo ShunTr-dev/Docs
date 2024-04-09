@@ -12,3 +12,8 @@ Access 14.8M+ vector icons & stickers
 
 ## [Icon Shock](https://www.iconshock.com/)
 The biggest icon pack: 2 million professional icons library
+
+## [svgl](https://svgl.vercel.app/)
+
+## [Lucide](https://lucide.dev/)
+Beautiful & consistent icons made by the community.

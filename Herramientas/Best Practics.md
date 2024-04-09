@@ -5,6 +5,8 @@
 ### [Laws of ux](https://lawsofux.com/es/)
 Colección de mejores prácticas para ux
 
+### [58 rules for beautiful UI design](https://uxdesign.cc/58-rules-for-stunning-and-effective-user-interface-design-ea4b93f931f6)
+
 ## Patrones de diseño
 
 ### [Guía de patrones de diseño](https://www.patterns.dev/)

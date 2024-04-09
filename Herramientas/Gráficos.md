@@ -11,3 +11,9 @@ CSS data visualization framework
 
 ## [The react graph gallery](https://www.react-graph-gallery.com/)
 Build unique React charts
+
+## [Apex Charts](https://apexcharts.com/)
+Modern & Interactive Open-source Charts
+
+## [lightweight-charts](https://www.tradingview.com/lightweight-charts/)
+An entire of library of unparalleled usability, at just 45 KB.

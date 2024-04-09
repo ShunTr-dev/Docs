@@ -8,4 +8,9 @@ Clone Wars - Open source clones of popular sites
 ## [Playwright](https://github.com/microsoft/playwright)
 [Playwright](https://playwright.dev/) is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. 
 
-## 
+## [A Pure CSS 3 MAZE in 3D](https://codepen.io/ivorjetski/pen/poQpveN)
+
+## [screenshot-to-code](https://github.com/abi/screenshot-to-code)
+Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue) 
+
+## [infinite-craft](https://neal.fun/infinite-craft/)

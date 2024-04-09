@@ -3,7 +3,6 @@
 ## [HYPERUI](https://www.hyperui.dev/)
 Catálogo de +100 componentes
 
-
 ## [Tailframes](https://www.tailframes.com/)
 Tailwind
 Preparado para HTML y React
@@ -37,3 +36,51 @@ A fully customizableReact-TailwindCSScomponent library
 ## [toools](https://www.toools.design/)
 Discover highly useful Design Resources & Tools
 A growing archive of 1,500+ design resources, frequently updated for the community.
+
+## [Buttons cool](https://www.buttons.cool/)
+Collection of free buttons to copy & paste in your project, made in codepen by awesome people
+
+## [Sonner](https://sonner.emilkowal.ski/)
+An opinionated toast component for React
+
+## [Material design](https://m3.material.io/develop/web)
+
+## [React Magic Motion](https://www.react-magic-motion.com/)
+react-magic-motion is a react.js library that ✨ magically animates your components.
+
+## [auto-animate](https://auto-animate.formkit.com/)
+Add motion to your apps with a single line of code. 
+
+## [Daisy UI](https://daisyui.com/)
+The most popular component library for Tailwind CSS
+
+## [buttons-generator](https://markodenic.com/tools/buttons-generator/)
+
+## [tw-elements](https://tw-elements.com/)
+Bootstrap components recreated with Tailwind CSS, but with better design and more functionalities 
+
+## [CSS Loaders](https://css-loaders.com/)
+The Biggest Collection of Loading Animations
+
+## [Float UI](https://floatui.com/)
+Build and ship fast with Tailwind CSS UI components
+
+## [Keep design](https://react.keepdesign.io/)
+Elevate your web projects with Keep React's 40+ customizable components. Access open-source resources for efficient development and bring your ideas to life with ease.
+
+## [Park UI](https://park-ui.com/)
+Beautifully designed components built for your choice of JS and CSS frameworks.
+
+## [ibelick](https://ui.ibelick.com/)
+Collection of dark mode components and effects
+Crafted with React and Tailwind CSS.
+
+## [Animatiss](https://xsgames.co/animatiss/)
+Nice collection of CSS animations for your awesome web projects
+
+## [Animista](https://animista.net/)
+On demand CSS animation library <----------->
+
+## [Omatsuri](https://omatsuri.app/)
+Open source browser tools for everyday use
+
