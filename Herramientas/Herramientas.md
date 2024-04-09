@@ -38,3 +38,6 @@ Webpage load time is extremely important for conversion and revenue. Visualize w
 ## [lychee](https://lychee.cli.rs/#/)
 A fast, async link checker written in Rust
 Finds broken hyperlinks and mail addresses, supports Markdown, HTML and more, simple and lightweight
+
+## [counterscale](https://counterscale.dev/)
+Crear ru propio google analitics -> Scalable web analytics you run yourself on Cloudflare
