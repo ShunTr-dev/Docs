@@ -16,3 +16,5 @@ JS y TS, con React, Vue y Angular
 
 ### [Guía de Código](https://hansfelix.github.io/code-guide/)
 Estándares para desarrollar HTML y CSS consistentes, flexibles y sostenibles. 
+
+### [Elocuent javascript](https://eloquent-javascript-es.vercel.app/)
