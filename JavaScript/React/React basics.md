@@ -1,4 +1,14 @@
-# Crear un proyecto en React
+# [React](https://es.react.dev/)
+
+React es una biblioteca de JavaScript utilizada para construir interfaces de usuario interactivas y dinámicas. Fue desarrollada por Facebook y lanzada como software de código abierto en 2013. React permite a los desarrolladores crear componentes reutilizables que representan diferentes partes de la interfaz de usuario de una aplicación web. Utiliza un enfoque basado en componentes, lo que significa que las aplicaciones se construyen mediante la composición de estos componentes individuales.
+
+Una de las características principales de React es su capacidad para renderizar de manera eficiente los cambios en la interfaz de usuario. Utiliza un modelo de programación declarativa, donde los desarrolladores definen cómo debería ser la interfaz de usuario en función del estado de la aplicación, y React se encarga de actualizar automáticamente la interfaz de usuario cuando ese estado cambia.
+
+Por otro lado hay que contar con la universalidad de React, ya que es una aplicación que se puede ejecutar tanto en el cliente como en el servidor.
+
+Además, React se integra bien con otras bibliotecas y frameworks de JavaScript, lo que permite a los desarrolladores utilizarlo junto con herramientas como Redux para manejar el estado de la aplicación de manera más avanzada, o con herramientas de enrutamiento como React Router para gestionar la navegación en la aplicación.
+
+## Como crear un proyecto en React
 
 Después de instalar Node.js desde [https://nodejs.org/es](https://nodejs.org/es), sigue estos pasos para crear un proyecto en React:
 
@@ -29,3 +39,7 @@ npm install --save styled-components
 ```
 
 Esto instalará `styled-components` y lo agregará como una dependencia en tu proyecto.
+
+## Recursos
+
+- [Preguntas típicas de React - React Wiki](https://www.reactjs.wiki/)
