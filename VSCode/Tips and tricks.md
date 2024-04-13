@@ -1,20 +1,13 @@
-# Visual Studio Code Tips and Tricks
-
+# [Visual Studio Code Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks)
 
 ## Basics
-
-
 
 ### Command Palette
 
 Access all available commands based on your current context: `Ctrl+Shift+P`
 
-
 ### Keyboard reference sheets
 [Keyboard shortcut reference](IMG/VSCode/keyboard shorcuts.png)
-
-
-
 
 ## Status Bar
 
@@ -32,13 +25,6 @@ You can filter problems either by type ('errors', 'warnings') or text matching.
 
 
 ## Customization
-
-
-
-
-
-
-
 
 ### Add JSON validation
 
@@ -91,12 +77,6 @@ or a custom schema
 
 See more in the [JSON](/docs/languages/json.md) documentation.
 
-
-
-
-
-
-
 ## Files and folders
 
 ### Integrated Terminal
@@ -143,7 +123,6 @@ Keyboard Shortcut: `Ctrl+click`
 You can quickly open a file or image or create a new file by moving the cursor to the file link and using `Ctrl+click`.
 
 ![create and open file](IMG/VSCode/create_open_file.gif)
-
 
 ### Preventing dirty writes
 
@@ -340,13 +319,11 @@ Here is configuration to use ES6.
     }
 }
 ```
-
 ### package.json
 
 See IntelliSense for your `package.json` file.
 
 ![package json intellisense](IMG/VSCode/package_json_intellisense.gif)
-
 
 ## Snippets
 
@@ -394,7 +371,6 @@ You can resolve merge conflicts with the inline CodeLens which lets you **Accept
 git config --global merge.tool vscode
 git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 ```
-
 ### Set VS Code as default diff tool
 
 ```bash
