@@ -378,3 +378,7 @@ git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 git config --global diff.tool vscode
 git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
 ```
+
+## Resources
+
+[Using React in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial)
