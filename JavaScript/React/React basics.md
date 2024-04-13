@@ -43,3 +43,4 @@ Esto instalará `styled-components` y lo agregará como una dependencia en tu pr
 ## Recursos
 
 - [Preguntas típicas de React - React Wiki](https://www.reactjs.wiki/)
+- [Curso de Midudev de React](https://www.youtube.com/watch?v=7iobxzd_2wY&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&index=1)
