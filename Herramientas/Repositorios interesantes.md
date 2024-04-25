@@ -14,3 +14,6 @@ Clone Wars - Open source clones of popular sites
 Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue) 
 
 ## [infinite-craft](https://neal.fun/infinite-craft/)
+
+## [Google dorks for bug bounty](https://github.com/TakSec/google-dorks-bug-bounty)
+[With live tool](https://github.com/TakSec/google-dorks-bug-bounty/blob/main/README.md)
