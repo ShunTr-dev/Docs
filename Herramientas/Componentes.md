@@ -89,3 +89,6 @@ Simple UI examples from my social media
 
 ## [Tremor](https://www.tremor.so/)
 React components to build charts and dashboards
+
+## npm install embla-carousel
+Embla carrousel, puro JS
