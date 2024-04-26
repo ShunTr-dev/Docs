@@ -17,3 +17,5 @@ Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue)
 
 ## [Google dorks for bug bounty](https://github.com/TakSec/google-dorks-bug-bounty)
 [With live tool](https://github.com/TakSec/google-dorks-bug-bounty/blob/main/README.md)
+
+## [List of Free Learning Resources In Many Languages](https://github.com/EbookFoundation/free-programming-books)

@@ -17,3 +17,9 @@ The biggest icon pack: 2 million professional icons library
 
 ## [Lucide](https://lucide.dev/)
 Beautiful & consistent icons made by the community.
+
+## [Yesicon](https://yesicon.app/)
+169 Conjuntos de Iconos de Código Abierto y Gratis
+
+## [HugeIcons](https://hugeicons.com/)
+Beautiful icon library, made for creativity.

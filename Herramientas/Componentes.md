@@ -86,3 +86,6 @@ Open source browser tools for everyday use
 
 ## [atherosai](https://github.com/atherosai/ui?tab=readme-ov-file)
 Simple UI examples from my social media 
+
+## [Tremor](https://www.tremor.so/)
+React components to build charts and dashboards
