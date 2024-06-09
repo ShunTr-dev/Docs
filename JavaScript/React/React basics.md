@@ -8,7 +8,7 @@ Por otro lado hay que contar con la universalidad de React, ya que es una aplica
 
 Además, React se integra bien con otras bibliotecas y frameworks de JavaScript, lo que permite a los desarrolladores utilizarlo junto con herramientas como Redux para manejar el estado de la aplicación de manera más avanzada, o con herramientas de enrutamiento como React Router para gestionar la navegación en la aplicación.
 
-## Como crear un proyecto en React
+## Cómo crear un proyecto en React
 
 Después de instalar Node.js desde [https://nodejs.org/es](https://nodejs.org/es), sigue estos pasos para crear un proyecto en React:
 
@@ -19,6 +19,8 @@ npx create-react-app my-app
 cd my-app
 npm start
 ```
+
+También podemos usar el empaquetador [Vite](https://vitejs.dev/guide/)
 
 Esto creará un nuevo proyecto de React llamado `my-app`, cambiará al directorio del proyecto y comenzará el servidor de desarrollo.
 

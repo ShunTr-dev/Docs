@@ -92,3 +92,9 @@ React components to build charts and dashboards
 
 ## npm install embla-carousel
 Embla carrousel, puro JS
+
+## [React Google Maps](https://visgl.github.io/react-google-maps/)
+React components nad hooks for thje Google maps Javascript API
+
+## [Magic UI](https://magicui.design/)
+20+ free and open-source animated components built with React, Typescript, Tailwind CSS, and Framer Motion.

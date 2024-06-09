@@ -41,3 +41,6 @@ Finds broken hyperlinks and mail addresses, supports Markdown, HTML and more, si
 
 ## [counterscale](https://counterscale.dev/)
 Crear ru propio google analitics -> Scalable web analytics you run yourself on Cloudflare
+
+## [Font Source](https://fontsource.org/)
+Alternativa a google fonts

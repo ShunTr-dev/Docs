@@ -19,3 +19,6 @@ Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue)
 [With live tool](https://github.com/TakSec/google-dorks-bug-bounty/blob/main/README.md)
 
 ## [List of Free Learning Resources In Many Languages](https://github.com/EbookFoundation/free-programming-books)
+
+## [Athena crisis](https://github.com/nkzw-tech/athena-crisis)
+Athena Crisis is a modern-retro turn-based tactical strategy game. Athena Crisis is open core technology.
