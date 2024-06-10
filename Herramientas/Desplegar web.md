@@ -3,21 +3,17 @@
     @url: https://twitter.com/midudev/status/1745090991298658751
 */
 
-¿Buscas dónde DESPLEGAR tu WEB o API?
-¡Estos son los 5 mejores hostings con capa GRATUITA!
-
-FLY IO
+[FLY IO](https://fly.io/)
 〉 Apps de Python, Node, Go, Elixir, Ruby...
 〉 Hasta 2 apps sin pagar
 〉 160GB de transferencia sin coste
 → fly․io
 
-NORTHFLANK
+[NORTHFLANK](https://northflank.com/)
 〉 Proyectos de Go, Rust, Java...
 〉 Integración con GitHub, BitBucket y GitLab
 〉 Compatible tus Dockerfile
 〉 Gratis para 2 servicios y 2 cronjobs
-→ northflank․com
 
 [VERCEL](https://vercel.com/)
 〉 Perfecto para webs de JavaScript
@@ -25,24 +21,31 @@ NORTHFLANK
 〉 100GB de transferencia gratis
 → vercel․com
 
-ZEABUR
+[ZEABUR](https://zeabur.com/)
 〉 Compatible con cualquier lenguaje y framework
 〉 Sin necesidad de usar Dockerfile
 〉 Prueba con 1 proyecto gratis
 〉 SIN tarjeta de crédito
-→ zeabur․com
 
-RENDER
+[RENDER](https://render.com/)
 〉 Base de datos PostgreSQL
 〉 Sitios estáticos y Dockerfiles
 〉 Hasta 100GB de transferencia
-→ render․com
+
+[CLOUDFLARE](https://www.cloudflare.com/es-es/)
+〉 Transferencia y peticiones estáticas ilimitadas
+〉 500 builds al mes y Protección DDoS
+〉 CDN mundial y rápido
 
 
+[NETLIFY](https://www.netlify.com/)
+〉 Sitios estáticos y JAMstack
+〉 Funciones serverless
+〉 300 minutos de build
+〉 CDN mundial
 
-2/ NETLIFY DROP
-¿Necesitas desplegar una página web a Internet?
-¿Tienes el HTML, CSS y JAVASCRIPT?
-
-¡Arrastra los ficheros y ya lo tienes!
-→ netlify․com/drop
+[AWARDSPACE](https://www.awardspace.com/)
+〉 PHP, MySQL y WordPress
+〉 5GB de ancho de banda
+〉 1GB de almacenamiento
+〉 Hasta 4 aplicaciones web

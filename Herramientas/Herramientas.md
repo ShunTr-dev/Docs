@@ -32,9 +32,6 @@ Create amazing mockups
 ## [Can I use ](https://caniuse.com/)
 Saber si se puede usar una feature y donde.
 
-## [lightest](https://lightest.app/)
-Webpage load time is extremely important for conversion and revenue. Visualize web performance against competitors.
-
 ## [lychee](https://lychee.cli.rs/#/)
 A fast, async link checker written in Rust
 Finds broken hyperlinks and mail addresses, supports Markdown, HTML and more, simple and lightweight
