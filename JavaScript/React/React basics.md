@@ -10,17 +10,43 @@ Además, React se integra bien con otras bibliotecas y frameworks de JavaScript,
 
 ## Cómo crear un proyecto en React
 
-Después de instalar Node.js desde [https://nodejs.org/es](https://nodejs.org/es), sigue estos pasos para crear un proyecto en React:
+Realmente para usar React no se tiene por que usar un empaquetador (como WebPack o Vite), se puede usar directamente en un archivo poniendo:
+```js
+import ReactDOM from "https://esm.sh/react-dom@18.2.0/client"
 
-1. **Crear el proyecto:** Ejecuta los siguientes comandos en tu terminal:
+const appDomElement = document.getElementById('app') // Hacemos la refencia de dónde queremos montar la app
+
+const root = ReactDom.createRoot(appDomElement) // Se monta la raíz de la aplicación
+root.render('Hola mundo') // Podemos empezar a renderizar texto
+```
+
+```html
+<div id="app"></div>
+```
+
+Con esto podríamos imprimir texto, para empezar a imprimir HTML haría falta la librería de React:
+
+```js
+import React from "https://esm.sh/react@18.2.0/client"
+import ReactDOM from "https://esm.sh/react-dom@18.2.0/client"
+
+const appDomElement = document.getElementById('app') 
+
+const root = ReactDom.createRoot(appDomElement)
+const button = React.createElement('button', {"data-id": 'button-accept'}, 'Aceptar')
+
+root.render(app)
+```
+
+**Crear el proyecto con create React APP** 
+1. Descarga e instalación: 
+Ejecuta los siguientes comandos en tu terminal:
 
 ```bash
 npx create-react-app my-app
 cd my-app
 npm start
 ```
-
-También podemos usar el empaquetador [Vite](https://vitejs.dev/guide/)
 
 Esto creará un nuevo proyecto de React llamado `my-app`, cambiará al directorio del proyecto y comenzará el servidor de desarrollo.
 
@@ -32,8 +58,6 @@ npm install
 
 Esto instalará todas las dependencias listadas en el archivo `package.json`.
 
-3. **Agregar carpetas al VSCode:** Abre Visual Studio Code (VSCode) y añade la carpeta del proyecto. Para hacerlo, ve a `Archivo` > `Abrir carpeta...` y selecciona la carpeta de tu proyecto `my-app`.
-
 4. **Instalar componentes nuevos:** Si necesitas instalar nuevos componentes en tu proyecto, puedes hacerlo utilizando npm. Por ejemplo, para instalar `styled-components`, ejecuta el siguiente comando en el terminal:
 
 ```bash
@@ -41,6 +65,28 @@ npm install --save styled-components
 ```
 
 Esto instalará `styled-components` y lo agregará como una dependencia en tu proyecto.
+
+
+**Crear el proyecto con [Vite](https://vitejs.dev/guide/)** 
+
+1. **Descarga e instalación**
+
+```bash
+npm init -y # Inicializa el projecto y crea un package.json
+npm create vite@latest # Nos hace una serie de preguntas para configurar el proyecto
+npm install
+```
+
+
+
+
+
+
+
+
+
+
+
 
 ## Recursos
 
