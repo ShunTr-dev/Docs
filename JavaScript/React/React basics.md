@@ -58,7 +58,7 @@ npm install
 
 Esto instalará todas las dependencias listadas en el archivo `package.json`.
 
-4. **Instalar componentes nuevos:** Si necesitas instalar nuevos componentes en tu proyecto, puedes hacerlo utilizando npm. Por ejemplo, para instalar `styled-components`, ejecuta el siguiente comando en el terminal:
+3. **Instalar componentes nuevos:** Si necesitas instalar nuevos componentes en tu proyecto, puedes hacerlo utilizando npm. Por ejemplo, para instalar `styled-components`, ejecuta el siguiente comando en el terminal:
 
 ```bash
 npm install --save styled-components
@@ -77,12 +77,80 @@ npm create vite@latest # Nos hace una serie de preguntas para configurar el proy
 npm install
 ```
 
+2. **Punto de entrada**
+
+Puedes escoger "React" para que te cree una aplicación con el punto de entrada ya montado.
+O puedes escoger "Vanilla" para que vengan los archivos por defecto y configurarlos tú.
+Para crear el punto de entrada necesitas:
+
+Instala un plugin para poder hacer el punto de entrada:
+```bash
+npm install @vite/plugin-react -E
+```
+
+Ahora si vamos al package.json, no tenemos React. Hay que añadirlo.
+```bash
+npm install react react-dom -E
+```
+
+Configuración de vite.config.js
+```js
+import { defineConfig } from "vite" 
+import react from "@vite/plugin-react"
+
+export default defineConfig({
+    plugins: [react()]
+})
+```
+
+En el index.html tenemos un script que es el que cargamos al inicio en la página web.
+El main.js, que es el punto de entrada de la aplicación.
+
+```js
+import { createRoot } from 'react-dom/client'
+
+const root = createRoot(document.getElementById('root'))
+
+root.render(<h1>hola mundo</h1>)
+```
+
+Si hacemos un ''npm run dev'' dará un error por que en vite los archivos .js no está preparados para soportar el JSX.
+Por lo tanto tenemos que cambiar la extensión a .jsx
 
 
 
 
 
 
+
+
+3. **INSTALAR EL LINTER**
+
+```bash
+npm install standard -D
+```
+Ir al package.json y añadir el linter a la config
+
+```
+"eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
++ extensión en vs code de ESLint
+Se puede configurar un editor automático para cuando guarde
 
 
 
