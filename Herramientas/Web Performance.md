@@ -17,3 +17,9 @@ Te da las métricas más importantes de tu web
 ✓ Puntuación de SEO
 ✓ Te avisa de errores en tu página
 ✓ Crea reportes y gráficas de las peticiones
+
+## [Unlighthouse](https://unlighthouse.dev/)
+Like Google Lighthouse, but it scans every single page
+```shell
+npx unlighthouse --site #your-site
+```

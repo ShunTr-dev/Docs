@@ -17,3 +17,9 @@ Modern & Interactive Open-source Charts
 
 ## [lightweight-charts](https://www.tradingview.com/lightweight-charts/)
 An entire of library of unparalleled usability, at just 45 KB.
+
+## [Shadcn](https://ui.shadcn.com/)
+Beautifully designed components that you can copy and paste into your apps
+```shell
+npm shadcn-ui@latest add chart
+```
