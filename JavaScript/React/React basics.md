@@ -153,6 +153,7 @@ Ir al package.json y añadir el linter a la config
 Se puede configurar un editor automático para cuando guarde
 
 
+## Conceptos básicos de React
 
 
 

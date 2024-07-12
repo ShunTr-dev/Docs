@@ -40,7 +40,8 @@ Las mejores fotos de stock gratis, imágenes libres de regalías y vídeos compa
 La fuente de imágenes de internet.
 Con recursos de creadores de todo el mundo.
 
-
+## [Placeholder](https://via.placeholder.com/1080x300)
+Puedes usar este link para poner un placeholder del tamaño que tu quieras
 
 
 
