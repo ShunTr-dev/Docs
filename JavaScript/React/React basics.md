@@ -79,8 +79,8 @@ npm install
 
 2. **Punto de entrada**
 
-Puedes escoger "React" para que te cree una aplicación con el punto de entrada ya montado.
-O puedes escoger "Vanilla" para que vengan los archivos por defecto y configurarlos tú.
+Puedes escoger `React` para que te cree una aplicación con el punto de entrada ya montado.
+O puedes escoger `Vanilla` para que vengan los archivos por defecto y configurarlos tú.
 Para crear el punto de entrada necesitas:
 
 Instala un plugin para poder hacer el punto de entrada:
@@ -88,7 +88,7 @@ Instala un plugin para poder hacer el punto de entrada:
 npm install @vite/plugin-react -E
 ```
 
-Ahora si vamos al package.json, no tenemos React. Hay que añadirlo.
+Ahora si vamos al `package.json`, no tenemos React. Hay que añadirlo.
 ```bash
 npm install react react-dom -E
 ```
@@ -103,8 +103,8 @@ export default defineConfig({
 })
 ```
 
-En el index.html tenemos un script que es el que cargamos al inicio en la página web.
-El main.js, que es el punto de entrada de la aplicación.
+En el `index.html` tenemos un script que es el que cargamos al inicio en la página web.
+El `main.js`, que es el punto de entrada de la aplicación.
 
 ```js
 import { createRoot } from 'react-dom/client'
@@ -114,7 +114,7 @@ const root = createRoot(document.getElementById('root'))
 root.render(<h1>hola mundo</h1>)
 ```
 
-Si hacemos un ''npm run dev'' dará un error por que en vite los archivos .js no está preparados para soportar el JSX.
+Si hacemos un `npm run dev` dará un error por que en vite los archivos .js no está preparados para soportar el JSX.
 Por lo tanto tenemos que cambiar la extensión a .jsx
 
 
@@ -233,11 +233,11 @@ const listItems = items.map((item, index) =>
 ```
 
 8. **Rendering (Renderizado)**
-Lo que usa react para renderizar/dibujar los componentes es el Virtual DOM (Document Object Model), que es lo que usan todos los navegadores usan para mostrar los elementos en las páginas web. El proceso de dibujado es tal que así:
+Lo que usa react para renderizar/dibujar los componentes es el `Virtual DOM` (Document Object Model), que es lo que usan todos los navegadores usan para mostrar los elementos en las páginas web. El proceso de dibujado es tal que así:
 
-- Si cambia el estado de la aplicación, React actualiza el VDOM, que es más rápido que actualizar todo el DOM.
-- React usa un proceso en el que encuentra las diferencias entre los diferentes estados en el VDOM.
-- React lanza un proceso llamado "reconciliation" por el cual actualiza solo las partes que tuvieron cambios.
+- Si cambia el estado de la aplicación, React actualiza el `VDOM`, que es más rápido que actualizar todo el `DOM`.
+- React usa un proceso en el que encuentra las diferencias entre los diferentes estados en el `VDOM`.
+- React lanza un proceso llamado `reconciliation` por el cual actualiza solo las partes que tuvieron cambios.
 
 Es decir, sólo actualiza la parte que cambió en la página.
 
@@ -264,7 +264,7 @@ function Button() {
 
 10. **State**
 - Es una forma de hacer que los componentes respondan a la entrada del usuario y cambien su representación.
-- El estado es como una fotografía de un elemento. No son simplemente variables, si no que son funciones de propio React como useState()
+- El estado es como una fotografía de un elemento. No son simplemente variables, si no que son funciones de propio React como `useState()`
 
 ```js
 import { useState } from "react";
@@ -300,13 +300,13 @@ function ControlledInput() {
 - Permiten usar estado y otras características de React sin escribir una clase.
 - Hay principalmente 5 tipos:
 
-- Hooks de estado: useState(), useReducer. (Para manejar el estado)
-- Hooks de contexto: useContext(), para pasar datos a través del contexto.
-- Hooks de referencia: useRef().
-- Hooks de Efectos: useEffect(), perfectos para conectar con sistemas externos.
-- Hooks de Rendimiento: useMemo(), useCallback(). Mejoran el rendimiento evitando el trabajo extra.
+- Hooks de estado: `useState()`, `useReducer()`. (Para manejar el estado)
+- Hooks de contexto: `useContext()`, para pasar datos a través del contexto.
+- Hooks de referencia: `useRef()`.
+- Hooks de Efectos: `useEffect()`, perfecto para conectar con sistemas externos.
+- Hooks de Rendimiento: `useMemo()`, `useCallback()`. Mejoran el rendimiento evitando el trabajo extra.
 
-- Pero los que más se usan son: useState(), useEffect() y useRef().
+- Pero los que más se usan son: `useState()`, `useEffect()` y `useRef()`.
 
 
 13. **Purity (Pureza)**
