@@ -118,12 +118,6 @@ Si hacemos un ''npm run dev'' dará un error por que en vite los archivos .js no
 Por lo tanto tenemos que cambiar la extensión a .jsx
 
 
-
-
-
-
-
-
 3. **INSTALAR EL LINTER**
 
 ```bash
@@ -137,27 +131,336 @@ Ir al package.json y añadir el linter a la config
 }
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-+ extensión en vs code de ESLint
+- Extensión en VSCode de ESLint
 Se puede configurar un editor automático para cuando guarde
 
 
-## Conceptos básicos de React
+
+
+
+## Conceptos Básicos en React
+
+1. **Components (Componentes)**
+- Son las unidades básicas y reutilizables en React. Forman las partes visibles de nuestra aplicación, como pueden ser botones, inputs o páginas enteras.
+Su parte más interesante es la reutilización. Todos ellos devuelven código al ser ejecutados y pese a que se puede usar sin JSX, lo normal es usarlo gracias a la comodidad que ofrece.
+Pueden ser clases o funciones.
+
+```js
+function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
+}
+```
+
+2. **JSX**
+- Es una extensión de JavaScript que permite escribir HTML dentro de JavaScript.
+Es necesario una notación en concreto y se escribe en [camelCase](https://es.wikipedia.org/wiki/Camel_case)
+
+```js
+const element = <h1 className="tittle">Hello, world!</h1>;
+```
+
+3. **Curly braces (Llaves)**
+- Se usan para incluir expresiones de JavaScript dentro de JSX y así poder tener contenido dinámico.
+
+```js
+const name = 'React';
+const element = <h1>Hello, {name}!</h1>;
+```
+
+4. **Fragments**
+- Permiten agrupar una lista de hijos sin añadir nodos extra al DOM.
+
+```js
+function FragmentDemo() {
+    return (
+        <React.Fragment>
+            <h1>Title</h1>
+            <p>Description</p>
+        </React.Fragment>
+    );
+}
+
+// O también podríamos usar:
+
+function FragmentDemo() {
+    return (
+        <>
+            <h1>Title</h1>
+            <p>Description</p>
+        </>
+    );
+}
+```
+
+5. **Props**
+- Son los datos que se pasan a los componentes para configurar cómo se deben comportar o qué deben mostrar.
+Se puede pasar como prop cualquier cosa, desde datos, otros componentes, o funciones.
+
+```js
+function Greeting(props) {
+    return <h1>Hello, {props.name}</h1>;
+}
+```
+
+6. **Children**
+- Prop especial que permite pasar componentes o elementos secundarios a un componente.
+
+```js
+function Wrapper({ children }) {
+    return <div className="wrapper">{children}</div>;
+}
+
+function App() {
+    return (
+    <Wrapper>
+        <h1>Title</h1>
+        <p>Description</p>
+    </Wrapper>
+    );
+}
+```
+
+7. **Keys**
+- Es lo que usa React para identificar un componente de otro, al final la Key es un identificador único para ese componente.
+- Son necesarias para ayudar a React a identificar qué ítems han cambiado, agregado o eliminado en las listas.
+- Si no puedes usar una key siempre puedes usar el index para usarlo como identificador.
+
+```js
+const items = ['Apple', 'Banana', 'Cherry'];
+const listItems = items.map((item, index) =>
+    <li key={index}>{item}</li>
+);
+```
+
+8. **Rendering (Renderizado)**
+Lo que usa react para renderizar/dibujar los componentes es el Virtual DOM (Document Object Model), que es lo que usan todos los navegadores usan para mostrar los elementos en las páginas web. El proceso de dibujado es tal que así:
+
+- Si cambia el estado de la aplicación, React actualiza el VDOM, que es más rápido que actualizar todo el DOM.
+- React usa un proceso en el que encuentra las diferencias entre los diferentes estados en el VDOM.
+- React lanza un proceso llamado "reconciliation" por el cual actualiza solo las partes que tuvieron cambios.
+
+Es decir, sólo actualiza la parte que cambió en la página.
+
+```js
+ReactDOM.render(<Welcome name="Sara" />, document.getElementById('root'));
+```
+
+9. **Event Handling (Manejo de eventos)**
+- React maneja los eventos de una forma muy similar a como se manejan en HTML, pero con sintaxis de JSX.
+
+```js
+function Button() {
+    function handleClick() {
+        alert('Button clicked');
+    }
+
+    return (
+    <button onClick={handleClick}>
+        Click me
+    </button>
+    );
+}
+```
+
+10. **State**
+- Es una forma de hacer que los componentes respondan a la entrada del usuario y cambien su representación.
+- El estado es como una fotografía de un elemento. No son simplemente variables, si no que son funciones de propio React como useState()
+
+```js
+import { useState } from "react";
+
+const [likes, setlikes] = useState(0);
+
+const handleClick = () => {
+    setClicks(likes + 1)
+} 
+
+return (
+    <button onClick={handleClisk}>
+        Likes: {likes}
+    </button>
+)
+```
+
+11. **Controlled Components (Componentes controlados)**
+- Son componentes donde React controla el estado de los inputs de formularios.
+
+
+```js
+function ControlledInput() {
+    const [value, setValue] = useState('')
+
+    return(
+        <input value={value} onChange={(e) => setValue(e.target.value)} />
+    )
+}
+```
+
+12. **Hooks**
+- Permiten usar estado y otras características de React sin escribir una clase.
+- Hay principalmente 5 tipos:
+
+- Hooks de estado: useState(), useReducer. (Para manejar el estado)
+- Hooks de contexto: useContext(), para pasar datos a través del contexto.
+- Hooks de referencia: useRef().
+- Hooks de Efectos: useEffect(), perfectos para conectar con sistemas externos.
+- Hooks de Rendimiento: useMemo(), useCallback(). Mejoran el rendimiento evitando el trabajo extra.
+
+- Pero los que más se usan son: useState(), useEffect() y useRef().
+
+
+13. **Purity (Pureza)**
+- La pureza en React dice que un componente puro, siempre al tener un mismo input deba sacar siempre el mismo output.
+- Los componentes deben ser funciones puras, lo que significa que no deben modificar sus props ni tener efectos secundarios y devolver sólo JSX.
+
+```js
+function PureComponent(props) {
+    return <div>{props.value}</div>;
+}
+```
+
+14. **Strict Mode (Modo estricto)**
+- Ayuda a identificar componentes con posibles problemas al hacer que ciertos errores sean más obvios a la hora de desarrollar los componentes.
+- Se monta alrededor de el módulo de APP de la aplicación. Entre otras cosas lo que hace, a la hora de montar un componente, es montarlo, destruirlo, y volverlo a montar, para comprobar que todo está correcto.
+
+```js
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
+
+15. **Effects**
+- Con el hook `useEffect()`, puedes realizar efectos secundarios en componentes funcionales.
+- Si quieres hacer peticiones a elementos externos esta es una forma muy buena de hacerlo. Ya que se ejecuta en funcion del cambio de estado de los estados que le pasemos.
+
+```js
+import React, { useEffect } from 'react';
+
+function MyComponent() {
+    useEffect(() => {
+        console.log('Component mounted');
+    }, []);
+
+    return <div>Hello</div>;
+}
+```
+
+16. **Refs**
+- Son una forma de acceder directamente a un DOM node o a una instancia de un componente.
+
+```js
+<Button ref={ref}>
+```
+
+17. **Context**
+- Proporciona una forma de pasar datos a través del árbol de componentes sin tener que pasar props manualmente en cada nivel.
+
+```js
+function App() {
+    return (
+        <>
+            <AuthContext.Provider
+                value={{
+                    isLoggedIn: !!token,
+                    token: token,
+                    userId: userId,
+                    userEmail: userEmail,
+                    isAdmin: isAdmin,
+                    login: login,
+                    logout: logout
+                }}
+            >
+                    <RouterProvider router={router} />
+            </AuthContext.Provider>
+        </>
+    );
+}
+
+const ProductSingle = (props) => {
+    const productId = useParams().productId;
+    const auth = useContext(AuthContext);
+
+    return (
+        <>
+            <ProductDetail id={productId} />
+            {auth.isLoggedIn && auth.isAdmin && (
+                <>
+                    <ProductSellsStatisticsChart id={productId} />
+                    <ProductViewsStatisticsChart id={productId} />
+                </>
+            )}
+
+            <RelatedProducts id={productId} />
+        </>
+    );
+}
+```
+
+18. **Portals**
+- Permiten renderizar componentes fuera de su jerarquía padre, pero manteniendo su contexto. Son perfectos para modales, dropdowns y tooltips.
+
+
+19. **Suspense**
+- Permite mostrar un fallback mientras se espera a que algo se cargue, como componentes dinámicos o datos asíncronos.
+
+```js
+const OtherComponent = React.lazy(() => import('./OtherComponent'));
+
+function MyComponent() {
+    return (
+    <React.Suspense fallback={<div>Loading...</div>}>
+        <OtherComponent />
+    </React.Suspense>
+    );
+}
+```
+
+20. **Error Boundaries (Límites de error)**
+- Son componentes que capturan errores en el árbol de componentes hijo y muestran una interfaz de error en lugar de que la aplicación se bloquee.
+- Se refiere a la separación de responsabilidades entre componentes, donde cada componente tiene una responsabilidad clara y no debe hacer demasiado.
+
+```js
+import { ErrorBoundary } from 'react-error-boundary'
+
+function Fallback({error}){
+    return(
+        <div role="alert">
+            <p>No user provided: </p>
+            <pre>{error.message}</pre>
+        </div>
+    )
+}
+
+<ErrorBoundary FallbackComponent={Fallback}>
+    <App />
+</ErrorBoundary>
+```
+
+21. **Code Splitting**
+- Dividir el código en varios archivos para cargar solo lo necesario.
+
+```jsx
+import { Suspense, lazy } from 'react';
+
+const OtherComponent = lazy(() => import('./OtherComponent'));
+
+function MyComponent() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+        <   OtherComponent />
+        </Suspense>
+    );
+}
+```
+
 
 
 
 ## Recursos
 
 - [Preguntas típicas de React - React Wiki](https://www.reactjs.wiki/)
+- [Every React Concept Explained in 12 Minutes](https://www.youtube.com/watch?v=wIyHSOugGGw)
 - [Curso de Midudev de React](https://www.youtube.com/watch?v=7iobxzd_2wY&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&index=1)
