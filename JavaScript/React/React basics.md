@@ -38,7 +38,7 @@ const button = React.createElement('button', {"data-id": 'button-accept'}, 'Acep
 root.render(app)
 ```
 
-**Crear el proyecto con create React APP** 
+### **Crear el proyecto con create React APP** 
 1. Descarga e instalación: 
 Ejecuta los siguientes comandos en tu terminal:
 
@@ -67,7 +67,7 @@ npm install --save styled-components
 Esto instalará `styled-components` y lo agregará como una dependencia en tu proyecto.
 
 
-**Crear el proyecto con [Vite](https://vitejs.dev/guide/)** 
+### **Crear el proyecto con [Vite](https://vitejs.dev/guide/)** 
 
 1. **Descarga e instalación**
 
@@ -118,7 +118,7 @@ Si hacemos un `npm run dev` dará un error por que en vite los archivos .js no e
 Por lo tanto tenemos que cambiar la extensión a .jsx
 
 
-3. **INSTALAR EL LINTER**
+### **Instalar el linter y el prettier**
 
 ```bash
 npm install standard -D
@@ -136,6 +136,99 @@ Se puede configurar un editor automático para cuando guarde
 
 
 
+
+//----
+
+
+```bash
+npm i -D eslint #Lo instalamos sólo como dependencia de desarrollo
+npx eslint --init #npm init @eslint/config
+```
+
+Esto instalará eslint y el segundo comando nos irá preguntando por la configuración del mismo.
+Tras esto tendremos un archivo `.eslintrc.js` en la raíz.
+Añadimos la versión de react:
+```
+settings: {
+    react: {
+        version: 'detect'
+    },
+},
+```
+
+```bash
+npx eslint src/main.jsx # Se puede ver el estado del archivo
+```
+
+Para poder tener una salida en el editor hay que instalar la extensión de ESLint 
+
+```bash
+npm i -D prettier
+npx prettier src/main.jsx --write # Hace lo mismo que el otro, pero formateando el archivo
+```
+
+El problema que tiene esto es que Prettier y ESLint tienen diferentes opiniones de como hacer las cosas.
+Donde uno te pedirá hacer comillas simples otro te pedirá comillas dobles.
+Entonces, para evitar esto necesitamos crear un documento en el root `.prettierrc`.
+En la web de Prettier se pueden ver las confs por defecto.
+
+```js
+{
+    "printWidth": 120,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true
+
+
+    "useTabs": true,
+    "semi": true,
+    "singleQuote": true,
+    "quoteProps": "as-needed",
+    "jsxSingleQuote": false,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "bracketSameLine": false,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+}
+```
+Es necesario instalar la extensión de Prettier para usarlo con VSCode.
+En la condiguración se puede poner el `format on save`, para que se formatee al guardar.
+
+Para que estas dos cosas puedan coexistir hay que instalar un paquete.
+```bash
+npm i -D eslint-config-prettier
+```
+
+Tras esto tenemos que ir al archivo de configuración del linter `.eslintrc.js` y en el apartado de `extends` tenemos que añadir `eslint-config-prettier`.
+Con esto lo que conseguimos es que para determinar quién gana en un conflicto entre el linter y el prettier, ponemos esto, para que se determine por defecto el ganador prettier.
+
+Añadimos un archivo `.prettierignore` para decir que rutas/archivos no queremos que se formateen.
+```js
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+**/*.html
+
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+```
+Hacemos lo mismo para el linter `.eslintignore`, en este caso no hace falta meterse en todos los archivos ya que ESLint es sólo un linter para `.js` y `.jsx`
+```
+dist
+```
+
+Para automatizar esto, tenemos que añadir dos scripts en el `package.json`.
+```js
+"format": "prettier --write .",
+"lint": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
+```
 
 
 ## Conceptos Básicos en React
@@ -450,7 +543,7 @@ const OtherComponent = lazy(() => import('./OtherComponent'));
 function MyComponent() {
     return (
         <Suspense fallback={<div>Loading...</div>}>
-        <   OtherComponent />
+            <OtherComponent />
         </Suspense>
     );
 }
