@@ -29,7 +29,7 @@
 ## Herramientas
 
 -   [Resumego](https://www.resumego.net/resume-checker/)
-    Reiva si tu currículum es bueno y te da consejos.
+    Revisa si tu currículum es bueno y te da consejos.
 
 ## Tips
 
@@ -38,3 +38,5 @@
 -   [CV Template to apply to tech companies](https://delacruzdev.notion.site/Apply-to-tech-companies-with-this-CV-template-fd977e7e715d4445a6ba1878a500e327)
 -   [Tech Interview Handbook](https://www.techinterviewhandbook.org/)
 -   [Guía de hardvard para crear un CV perfecto](https://twitter.com/midudev/status/1736092613126631807?t=Hg6RPBYvD5RlqJGFCRwjHw&s=35)
+
+-   [Guía para entrevistas tecnicas como Ingeniero de software](https://github.com/DevCaress/guia-entrevistas-de-programacion)
