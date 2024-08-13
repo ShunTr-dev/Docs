@@ -334,24 +334,136 @@ for (let i = 0; i < 3; i++) {
 }
 ```
 
-## [Arrays](<https://es.wikipedia.org/wiki/Vector_(inform%C3%A1tica)>)
+### forEach
 
-Un [array](<https://es.wikipedia.org/wiki/Vector_(inform%C3%A1tica)>) y un par de ejemplos de su uso:
+Los métodos `forEach()` que proporcionan los constructores `Array`, `Map`, `Set` y `NodeList` proporcionan una abreviatura útil para iterar sobre una estructura de datos en el contexto de una función de devolución de llamada. A diferencia de otras formas de bucle, un bucle creado con cualquier `método forEach()` no se puede interrumpir usando `break` ni `continue`.
+
+`forEach` es un método que pertenece al prototipo de cada estructura de datos. Cada método `forEach` espera una función de devolución de llamada como argumento, aunque varían ligeramente en términos de los argumentos incluidos cuando se llama a esa función. Un segundo argumento opcional especifica un valor this para usar como contexto de invocación de la función de devolución de llamada.
+
+La función de devolución de llamada que se usa con Array.forEach proporciona parámetros que contienen el valor del elemento actual, el índice del elemento actual y el array en el que se invocó el método forEach:
 
 ```js
-const t = [1, -1, 3]
-
-t.push(5)
-
-console.log(t.length) // se imprime 4
-console.log(t[1]) // se imprime -1
-
-t.forEach((value) => {
-    console.log(value) // se imprimen los números 1, -1, 3, 5 cada uno en su propia línea
-})
+const myArray = [ true, false ];
+myArray.forEach( ( myElement, i, originalArray ) => {
+  console.log( i, myElement, originalArray  );
+});
+> 0 true Array(3) [ true, false ]
+> 1 false Array(3) [ true, false ]
 ```
 
-Cabe destacar el hecho de que el contenido de el array se puede modificar aunque esté definido como const. Como el array es un objeto, la variable siempre apunta al mismo objeto. Sin embargo, el contenido del array cambia a medida que se le agregan nuevos elementos.
+La función de devolución de llamada que se usa con `Map.forEach` proporciona parámetros que contienen el valor asociado con el elemento actual, la clave asociada con este y el mapa en el que se invocó el método `forEach`:
+
+```js
+const myMap = new Map([
+    ['myKey', true],
+    ['mySecondKey', false ],
+]);
+myMap.forEach( ( myValue, myKey, originalMap ) => {
+    console.log( myValue, myKey, originalMap  );
+});
+> true "myKey" Map { myKey → true, mySecondKey → false }
+> false "mySecondKey" Map { myKey → true, mySecondKey → false }
+```
+
+## Colecciones indexadas
+
+Una colección indexada es una estructura de datos en la que los elementos se almacenan y se accede a ellos mediante índices numerados. A los valores almacenados en una colección indexada se les asignan índices numerados a partir de `0`, un patrón llamado “indexación cero”. Luego, puedes acceder a los valores almacenados en una colección indexada mediante la referencia a sus índices.
+
+### [Arrays](<https://es.wikipedia.org/wiki/Vector_(inform%C3%A1tica)>)
+
+Un array es un contenedor que puede contener cero o más valores de cualquier tipo de datos, incluidos otros arrays o objetos complejos. A veces, los valores almacenados en un array se denominan “elementos” de este.
+
+Al igual que con los tipos de datos primitivos, existen dos enfoques para crear un array: como un literal de array o mediante la invocación del constructor integrado `Array()` de JavaScript con `new Array()`. Asignar un array a una variable proporciona una forma iterable y altamente portátil de asignar varios valores a un solo identificador.
+
+```js
+const myArray = []
+const myArray = new Array()
+```
+
+Cuando se pasa un solo valor numérico al constructor `Array`, ese valor no se asigna a la posición cero en el array resultante. En su lugar, se crea un arreglo con esa cantidad de ranuras vacías para los valores. Esto no impone ninguna limitación en el array. Los elementos se pueden agregar y quitar de la misma manera que con un literal de arreglo.
+
+Puedes acceder a elementos individuales dentro del array con la notación de corchetes (`[]`) que sigue al array o su identificador que contiene un número que hace referencia al índice del elemento.
+
+Los arrays en JavaScript no son asociativos, lo que significa que no puedes usar una string arbitraria como índice. Sin embargo, los valores numéricos que se usan para acceder a los elementos de un array se fuerzan a un valor de cadena en segundo plano, lo que significa que puedes usar un valor de cadena que solo contenga caracteres numéricos.
+
+```js
+const myArray = [ "My string", 50, true ];
+
+myArray[ 2 ];
+> true
+
+myArray[ "2" ];
+> true
+```
+
+Si intentas acceder a un elemento fuera de los definidos en el array, se generará `undefined`, no un error.
+
+#### Desestructuración
+
+La desestructuración de la asignación es una manera concisa de extraer un rango de valores de arreglos u objetos y asignarlos a un conjunto de identificadores, un proceso que a veces se denomina “desempaquetar” la estructura de datos original, aunque no modifica el objeto ni el arreglo original.
+
+La asignación de desestructuración usa una lista de identificadores similar a un objeto o arreglo para realizar un seguimiento de los valores. En su forma más simple, llamada desestructuración de patrón de vinculación, cada valor se descomprime del arreglo o el objeto y se asigna a una variable correspondiente, que se inicializa mediante `let` o `const` (o `var`).
+
+Usa llaves (`{}`) para desestructurar un objeto y corchetes (`[]`) para desestructurar un array.
+
+```js
+const myArray = [ false, true ];
+const myObject = { firstValue: false, secondValue: true };
+
+const [ myProp, mySecondProp ] = myObject;
+> Uncaught TypeError: myObject is not iterable
+
+const { myElement, mySecondElement } = myArray;
+
+myElement
+> undefined
+
+mySecondElement;
+> undefined
+```
+
+#### Operador de distribución
+
+Usa el operador de distribución (`...`), para expandir una estructura de datos iterable, como un array, una cadena o un literal de objeto, en elementos individuales. Al operador de dispersión le sigue inmediatamente la estructura de datos que se expandirá o el identificador de una variable que contiene esa estructura de datos.
+
+```js
+const myArray = [ 4, 5, 6 ];
+const mySecondArray = [1, 2, 3, ...myArray ];
+
+mySecondArray;
+> Array(6) [ 1, 2, 3, 4, 5, 6 ]
+```
+
+Puedes usar la sintaxis de distribución solo en los siguientes contextos:
+
+En el caso de los arrays y strings, la sintaxis de distribución solo se aplica cuando se esperan cero o más argumentos en una llamada a función o cuando se esperan elementos de un array. El primer ejemplo de sintaxis del operador de dispersión de esta sección funciona porque pasa `...myArray` como argumento al método integrado `console.log`.
+
+Por ejemplo, no puedes asignar los datos que se distribuyen a una variable fuera de otro arreglo.
+
+Para combinar los elementos que conforman dos o más arrays en uno solo:
+
+```js
+const myArray = [ 1, 2, 3 ];
+const mySecondArray = [ 4, 5, 6 ];
+const myNewArray = [ ...myArray, ...mySecondArray ];
+
+myNewArray;
+> Array(6) [ 1, 2, 3, 4, 5, 6 ]
+```
+
+Para pasar elementos de un array como argumentos individuales en una llamada a función:
+
+```js
+const myArray = [ true, false ];
+const myFunction = ( myArgument, mySecondArgument ) => {
+    console.log( myArgument, mySecondArgument );
+};
+
+myFunction( ...myArray );
+> true false
+```
+
+Cabe destacar el hecho de que el contenido de el array se puede modificar aunque esté definido como `const`. Como el array es un objeto, la variable siempre apunta al mismo objeto. Sin embargo, el contenido del array cambia a medida que se le agregan nuevos elementos.
 
 Una forma de iterar a través de los elementos del array es usar forEach como se ve en el ejemplo. forEach recibe una función definida usando la sintaxis de flecha como parámetro.
 
@@ -410,9 +522,88 @@ console.log(rest) // se imprime [3, 4 ,5]
 
 Gracias a la asignación, las variables `first` y `second` recibirán los dos primeros enteros del array como sus valores. Los enteros restantes se "recopilan" en un array propio que luego se asigna a la variable `rest`.
 
+## Colecciones con clave
+
+Puedes usar literales de objeto para almacenar pares clave-valor y arreglos para almacenar colecciones de valores iterables.
+
+### `Map`
+
+Un mapa es una estructura de datos iterable que almacena información como pares clave-valor, similar a un literal de objeto. A diferencia de los literales de objeto, un mapa permite que los valores y las claves tengan cualquier tipo de datos, y los elementos de orden que se agregan a un mapa se conservan cuando se itera sobre él.
+
+Puedes prepropagar datos de un mapa mediante una sintaxis similar a un array (o a cualquier objeto iterador) que contenga objetos similares a un array compuestos por dos elementos. El primer elemento de cada una de estas estructuras de datos de dos elementos se convierte en la clave, mientras que el segundo se convierte en el valor asociado con esa clave. La forma más simple de esto es, en efecto, un array en el que cada elemento es un array compuesto por dos elementos: la clave y el valor del elemento que se agregará al mapa.
+
+```js
+const myMap = new Map([
+    [ "myKey", "A string value" ],
+    [ "mySecondKey", 500 ],
+    [ "myThirdKey", true ]
+]);
+
+myMap;
+> Map(3) {'myKey' => 'A string value', 'mySecondKey' => 500, 'myThirdKey' => true}
+```
+
+Para obtener, configurar o borrar elementos de Map, usa los métodos heredados del constructor `Map`:
+
+```js
+const myMap = new Map();
+
+myMap;
+> Map(0)
+
+myMap.set( "myKey", "My value." );
+
+myMap.has( "myKey" );
+> true
+
+myMap.get( "myKey" );
+"My value."
+
+myMap.delete( "myKey" );
+
+myMap;
+> Map(0)
+```
+
+### `set`
+
+Un conjunto es una colección iterable de valores únicos similar a un array, aunque un conjunto solo puede contener valores únicos. Al igual que con un mapa, la iteración sobre un conjunto conserva los elementos de orden que se le agregaron.
+
+Debido a que un conjunto no permite elementos duplicados, cuando se crea un conjunto a partir de un array que contiene varias instancias del mismo valor, solo retiene la primera instancia de ese valor.
+
+```js
+const mySet = new Set([ 1, 2, 3, 2 ]);
+
+mySet;
+> Set(3) [ 1, 2, 3 ]
+```
+
+Para agregar o quitar elementos de un conjunto, usa los métodos heredados del constructor Set. Estos métodos actúan sobre un elemento según el valor de este, en lugar de hacer referencia a un índice.
+
+```js
+const mySet = new Set();
+
+mySet.add( "My value." );
+
+mySet;
+> Set [ "My value." ]
+
+mySet.has( "My value." );
+> true
+
+mySet.delete( "My value." );
+
+mySet;
+> Set []
+```
+
 ## [Objetos](<https://es.wikipedia.org/wiki/Objeto_(programaci%C3%B3n)>)
 
-Hay algunas formas diferentes de definir [objetos](<https://es.wikipedia.org/wiki/Objeto_(programaci%C3%B3n)>) en JavaScript. Un método muy común es usar objetos literales, que sucede al enumerar sus propiedades entre llaves:
+Los objetos son un tipo de datos discreto de la misma manera en que cada primitivo es un tipo de datos, con una diferencia crítica: a diferencia de las primitivas, los objetos son mutables. Un objeto puede contener datos asociados con identificadores, como una variable, pero mantiene su tipo de datos object sin importar los datos que contenga.
+
+Además de las primitivas, todos los valores de JavaScript son objetos, aunque incluso los literales primitivos muestran un comportamiento similar a un objeto debido a la herencia prototípica. Se suele decir que JavaScript está formado efectivamente por objetos.
+
+Un literal de objeto es un par de llaves que rodean cero o más pares clave-valor llamados “propiedades”, que pueden contener cualquier valor de JavaScript.
 
 ```js
 const object1 = {
@@ -437,19 +628,13 @@ const object3 = {
 }
 ```
 
-Los valores de las propiedades pueden ser de cualquier tipo, como `enteros`, `strings`, `arrays`, `objetos`...
-
 Se hace referencia a las propiedades de un objeto usando la notación "de punto", o usando corchetes:
 
 ```js
 console.log(object1.name) // se imprime Arto Hellas
 const fieldName = 'age'
 console.log(object1[fieldName]) // se imprime 35
-```
 
-También puedes agregar propiedades a un objeto sobre la marcha usando notación de puntos o corchetes:
-
-```js
 object1.address = 'Helsinki'
 object1['secret number'] = 12341
 ```
@@ -462,173 +647,169 @@ Los objetos también se pueden definir usando las llamadas funciones de construc
 
 ## [Funciones](https://es.wikipedia.org/wiki/Subrutina)
 
-Declaración de una [función](https://es.wikipedia.org/wiki/Subrutina):
+Una [función](https://es.wikipedia.org/wiki/Subrutina) es un bloque modular y reutilizable de sentencias que se usa para realizar un conjunto de tareas relacionadas. Al igual que con todos los valores no primitivos, las funciones son objetos. Son objetos únicos porque se los puede llamar para ejecutar código, pasar datos en forma de argumentos y devolver un valor.
+
+Se consideran funciones como objetos de "primera clase", lo que significa que, a pesar de su comportamiento único, pueden usarse en los mismos contextos que cualquier otro objeto de JavaScript. Por ejemplo, una función puede asignarse a una variable, pasarse como argumento a otras funciones y ser devuelta por otras funciones.
+
+Una función definida como una propiedad de un objeto se suele denominar `method`. Al igual que con las variables declaradas con `var`, las declaraciones de funciones realizadas fuera de una función contenedora se agregan al objeto global como métodos.
+
+Una declaración de función (también llamada "declaración de funciones" o "definición de la función") crea una función con nombre que se puede invocar en otro lugar del alcance que la contiene. Las declaraciones de funciones constan de la palabra clave function seguida de un identificador, una lista de parámetros separados por comas encerrados entre paréntesis y una declaración de bloque denominada "cuerpo de la función".
 
 ```js
-const sum = (p1, p2) => {
-    console.log(p1)
-    console.log(p2)
-    return p1 + p2
+function myFunction() {
+   console.log( "This is my function." );
+};
+
+myFunction();
+> "This is my function."
+```
+
+Los parámetros en la definición de la función actúan como variables de marcador de posición para los valores que se pueden pasar al cuerpo de la función cuando se la llama. Los valores entre paréntesis cuando se llama a una función son "argumentos". Si se omite un argumento esperado, el parámetro resultante contiene un valor `undefined` porque se declara el parámetro en el cuerpo de la función, pero no se inicializa con un valor.
+
+Para configurar los valores predeterminados de los parámetros, inicialízalos de la misma manera en que inicializarías una variable: un operador de asignación (`=`) seguido de un valor. Si más adelante especificas un argumento para esa función, ese valor nuevo anula el valor predeterminado.
+
+El cuerpo de una función no de flecha también tiene acceso a un objeto arguments tipo `array` con índice cero que contiene todos los valores pasados como argumentos, sin importar si la definición de la función especifica parámetros o no.
+
+```js
+function myFunction( myParameter = "omitted" ) {
+   console.log( `The value is: ${ myParameter }.` );
+};
+
+myFunction( "this string" );
+> "The value is: this string."
+
+myFunction();
+> "The value is: omitted."
+```
+
+### Expresiones de función
+
+Las expresiones de función son funciones creadas en las que se espera una expresión. Con frecuencia, encontrarás expresiones de funciones como valores asignados a una variable. Aunque una declaración de función siempre requiere un nombre, puedes usar expresiones de función para crear funciones anónimas omitiendo el identificador y siguiendo la palabra clave function con un par de paréntesis que contengan parámetros opcionales:
+
+```js
+const myVariable = function () {}
+```
+
+```js
+const myVariable = function myFunction() {
+    console.log( `I'm a ${ typeof myFunction }.`);
+};
+
+typeof myFunction;
+> "undefined"
+
+typeof myVariable;
+> "function"
+
+myVariable();
+> "I'm a function."
+```
+
+#### Expresiones de funciones de flecha
+
+Puedes crear una función de flecha donde se espere una expresión, por ejemplo, como un valor asignado a una variable. En su forma más común, una función de flecha se compone de un par de paréntesis coincidentes que contienen cero o más parámetros, una flecha compuesta por un solo signo igual y un carácter mayor que (`=>`), y un par de llaves coincidentes que contienen el cuerpo de la función:
+
+```js
+const myFunction = () => {}
+
+const myFunction = (myParameter) => {}
+```
+
+Sin embargo, a diferencia de las declaraciones de funciones, se puede acceder a una expresión de función con nombre con el nombre de una función solo dentro de la función en sí.
+
+Las funciones de flecha son únicas, ya que no tienen su propio contexto para los valores `arguments` o `this`. En cambio, heredan ambos valores del entorno que lo contiene de la función de flecha, la función de cierre más cercana que proporciona esos contextos.
+
+### La palabra clave `new`
+
+Si llamas a una función con `new`, se crea un objeto nuevo que usa la función llamada como "constructor" para ese objeto:
+
+```js
+function MyFunction() {}
+const myObject = new MyFunction();
+
+typeof myObject;
+> "object"`
+```
+
+Esto permite que una "función de constructor" proporcione una plantilla para la creación de objetos que siguen el mismo patrón estructural:
+
+```js
+function MyFunction() {
+    this.myProperty = true;
 }
+const myObject = new MyFunction();
+
+myObject.myProperty;
+> true
 ```
 
-y la función se llama:
+El valor de `this` dentro de una función de constructor se refiere al objeto que se crea, lo que permite que este se propague con propiedades y métodos en el momento de la creación. Esto permite la creación de objetos que contengan valores de datos y cualquier método necesario para actuar sobre esos datos como una sola unidad portátil, un concepto llamado "encapsulamiento".
 
 ```js
-const result = sum(1, 5)
-console.log(result)
-```
-
-Si hay un solo parámetro, podemos excluir los paréntesis de la definición:
-
-```js
-const square = (p) => {
-    console.log(p)
-    return p * p
+function MyFunction( myArgument ) {
+    this.myValue = myArgument;
+    this.doubleMyValue = () => myArgument * 2;
 }
+const myObject = new MyFunction( 10 );
+
+myObject.myValue;
+> 10
+
+myObject.doubleMyValue();
+> 20
 ```
 
-Si la función solo contiene una expresión, entonces las llaves no son necesarias. En este caso, la función solo devuelve el resultado de su única expresión. Ahora, si eliminamos la impresión de la consola, podemos acortar aún más la definición de la función:
+### La palabra clave `this`
+
+La palabra clave `this` se refiere al valor del objeto que está vinculado a la función en el momento de su llamada, lo que significa que su valor es diferente dependiendo de si se llama a una función como método, como función independiente o como constructor.
+
+Cuando se llama a una función, crea una instancia de la palabra clave `this` en segundo plano como referencia al objeto que contiene esa función, lo que otorga acceso a las propiedades y los métodos definidos junto a ella desde su alcance. En algunos casos, trabajar con `this` es similar a trabajar con una variable declarada con `const`. Al igual que una constante, `this` no se puede quitar y su valor no se puede reasignar, pero los métodos y las propiedades del objeto que contiene la palabra clave `this` se pueden modificar.
+
+#### Vinculación global
+
+Fuera de una función o del contexto de un objeto, `this` hace referencia a la propiedad `globalThis`, que es una referencia al objeto global en la mayoría de los entornos de JavaScript. En el contexto de una secuencia de comandos que se ejecuta en un navegador web, el objeto global es el objeto `window`. En Node.js, globalThis es el objeto `global`.
+
+#### Vinculación implícita
+
+Cuando se llama a una función como método de un objeto, una instancia de this dentro de ese método hace referencia al objeto que lo contiene, lo que otorga acceso a los métodos y las propiedades que se encuentran a su lado.
 
 ```js
-const square = (p) => p * p
+let myObject = {
+    myValue: "This is my string.",
+    myMethod() {
+            console.log( this.myValue );
+    }
+};
+
+myObject.myMethod();
+> "This is my string."
 ```
 
-Esta forma es particularmente útil cuando se manipulan arrays, por ejemplo, cuando se usa el método `map`:
+#### `this` en funciones de flecha
+
+En las funciones de flecha, `this` se resuelve en una vinculación en un entorno que lo encierra léxicamente. Esto significa que `this` en una función de flecha hace referencia al valor de `this` en el contexto envolvente más cercano.
 
 ```js
-const t = [1, 2, 3]
-const tSquared = t.map((p) => p * p)
-// tSquared ahora es [1, 4, 9]
+let myObject = {
+    myMethod() { console.log( this ); },
+    myArrowFunction: () => console.log( this ),
+    myEnclosingMethod: function () {
+        this.myArrowFunction = () => { console.log(this) };
+    }
+};
+
+myObject.myMethod();
+> Object { myMethod: myMethod(), myArrowFunction: myArrowFunction() }
+
+myObject.myArrowFunction();
+> Window {...}
 ```
-
-Hay dos formas de hacer referencia a la función; uno está dando un nombre en una declaración de función.
-
-```js
-function product(a, b) {
-    return a * b
-}
-
-const result = product(2, 6)
-// result ahora es 12
-```
-
-La otra forma de definir la función es usando una expresión de función. En este caso, no es necesario darle un nombre a la función y la definición puede residir entre el resto del código:
-
-```js
-const average = function (a, b) {
-    return (a + b) / 2
-}
-
-const result = average(2, 5)
-// result ahora es 3.5
-```
-
-## Métodos de objeto y "this"
-
-Las funciones de flecha y las funciones definidas usando la palabra clave `function` varían sustancialmente cuando se trata de cómo se comportan con respecto a la palabra clave `this`, que se refiere al objeto en sí.
-
-Podemos asignar métodos a un objeto definiendo propiedades que son funciones:
-
-```js
-const arto = {
-    name: 'Arto Hellas',
-    age: 35,
-    education: 'PhD',
-    greet: function () {
-        console.log('hello, my name is ' + this.name)
-    },
-}
-
-arto.greet() // se imprime "hello, my name is Arto Hellas"
-```
-
-Los métodos se pueden asignar a los objetos incluso después de la creación del objeto:
-
-```js
-const arto = {
-    name: 'Arto Hellas',
-    age: 35,
-    education: 'PhD',
-    greet: function () {
-        console.log('hello, my name is ' + this.name)
-    },
-}
-
-arto.growOlder = function () {
-    this.age += 1
-}
-console.log(arto.age) // se imprime 35
-arto.growOlder()
-console.log(arto.age) // se imprime 36
-```
-
-Modifiquemos ligeramente el objeto:
-
-```js
-const arto = {
-    name: 'Arto Hellas',
-    age: 35,
-    education: 'PhD',
-    greet: function () {
-        console.log('hello, my name is ' + this.name)
-    },
-    doAddition: function (a, b) {
-        console.log(a + b)
-    },
-}
-
-arto.doAddition(1, 4) // se imprime 5
-
-const referenceToAddition = arto.doAddition
-referenceToAddition(10, 15) // se imprime 25
-```
-
-Ahora el objeto tiene el método `doAddition` que calcula la suma de números que se le da como parámetros. El método se llama de la forma habitual, utilizando el objeto `arto.doAddition(1, 4)` o almacenando una referencia de método en una variable y llamando al método a través de la variable: `referenceToAddition(10, 15)`.
-
-Si intentamos hacer lo mismo con el método `greet` nos encontramos con un problema:
-
-```js
-arto.greet() // se imprime "hello, my name is Arto Hellas"
-
-const referenceToGreet = arto.greet
-referenceToGreet() // se imprime "hello, my name is undefined"
-```
-
-Al llamar al método a través de una referencia, el método pierde el conocimiento de cuál era el `this` original. A diferencia de otros lenguajes, en JavaScript el valor de `this` se define en función de cómo el método se llama. Cuando se llama al método a través de una referencia, el valor de this se convierte en el llamado objeto global y el resultado final a menudo no es lo que el desarrollador de software había previsto originalmente.
-
-Perder la pista de `this` al escribir código JavaScript genera algunos problemas potenciales. A menudo surgen situaciones en las que React o Node (o más específicamente el motor JavaScript del navegador web) necesita llamar a algún método en un objeto que el desarrollador ha definido.
-
-Una situación que lleva a la "desaparición" de `this` surge cuando establecemos un tiempo de espera para llamar a la función `greet` en el objeto `arto`, usando la función `setTimeout`.
-
-```js
-const arto = {
-    name: 'Arto Hellas',
-    greet: function () {
-        console.log('hello, my name is ' + this.name)
-    },
-}
-
-setTimeout(arto.greet, 1000)
-```
-
-Como se mencionó, el valor de `this` en JavaScript se define en función de cómo se llama al método. Cuando `setTimeout` llama al método, es el motor JavaScript el que realmente llama al método y, en ese punto, `this` se refiere al objeto global.
-
-Existen varios mecanismos mediante los cuales se puede conservar el `this`original. Uno de ellos es usar un método llamado `bind`:
-
-```js
-setTimeout(arto.greet.bind(arto), 1000)
-```
-
-Al llamar a `arto.greet.bind(arto)` se crea una nueva función donde `this` está obligado a apuntar a `arto`, independientemente de dónde y cómo se llame al método.
-
-Usando funciones de flecha es posible resolver algunos de los problemas relacionados con `this`. Sin embargo, no deben usarse como métodos para objetos porque entonces `this` no funciona en absoluto.
 
 ## [Clases](<https://es.wikipedia.org/wiki/Clase_(inform%C3%A1tica)>)
 
-No existe un mecanismo de clase como los de los lenguajes de programación orientados a objetos. Sin embargo, hay características en JavaScript que hacen posible "simular" [clases orientadas a objetos](<https://es.wikipedia.org/wiki/Clase_(inform%C3%A1tica)>).
+Las clases son funciones especiales que sirven como plantillas para crear objetos que ya contienen datos, propiedades asociadas con esos datos y métodos relacionados con la manipulación de esos datos. Estos objetos, propiedades y métodos se denominan, en conjunto, "miembros" de la clase.
 
-En el siguiente ejemplo definimos una "clase" llamada `Person` y dos objetos `Person`:
+Para definir una clase, usa la palabra clave `class`. Con las prácticas recomendadas y la convención establecida por las funciones de constructor integradas de JavaScript, comienza cualquier identificador de una clase con mayúscula. El objetivo de las clases es proporcionar formas más accesibles de trabajar con funciones avanzadas de prototipos y funciones de constructor.
 
 ```js
 class Person {
@@ -648,9 +829,46 @@ const janja = new Person('Janja Garnbret', 23)
 janja.greet()
 ```
 
+Las funciones definidas dentro del cuerpo de una clase se exponen como métodos de cada instancia de esa clase.
+
+```js
+class MyClass {
+    classMethod() {
+        console.log( "My class method." );
+    }
+}
+
+const myClassInstance = new MyClass();
+
+myClassInstance.classMethod();
+> "My class method."
+
+```
+
+Cuando se crea una instancia de una clase, se llama a un método `constructor()` especial que realiza cualquier "configuración" necesaria para la instancia recién creada y, luego, inicializa las propiedades asociadas a ella. Cualquier argumento que se pase a la clase cuando se crea la instancia estará disponible para el método `constructor()`. Dentro del cuerpo de una clase, el valor de this hace referencia a la instancia en sí, con cualquier propiedad definida en this expuesta como propiedades de cada instancia de esa clase.
+
+```js
+class MyClass {
+    constructor( myPassedValue ) {
+        this.instanceProp = myPassedValue;
+    }
+    myMethod() {
+        console.log( this.instanceProp );
+    }
+}
+
+const myClassInstance = new MyClass( "A string." );
+
+myClassInstance.myMethod();
+> "A string."
+```
+
+Si no defines un `constructor()` para tu clase, el motor de JavaScript usa un constructor vacío "predeterminado". Cada clase solo puede tener un método especial llamado `constructor()`.
+
 Cuando se trata de sintaxis, las clases y los objetos creados a partir de ellos recuerdan mucho a las clases y objetos de Java. Su comportamiento también es bastante similar al de los objetos Java. En el núcleo, siguen siendo objetos basados en la herencia prototípica de JavaScript. El tipo de ambos objetos es en realidad `Object`, ya que JavaScript esencialmente solo define los tipos `Boolean`, `Null`, `Undefined`, `Number`, `String`, `Symbol`, `BigInt` y `Object`.
 
 ## Materiales JavaScript
 
 -   [Elocuent Javascript](https://eloquentjavascript.net/)
 -   [The Modern JavaScript Tutorial](https://javascript.info/)
+-   [Curso de Google](https://web.dev/learn/javascript)
