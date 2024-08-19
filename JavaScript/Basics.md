@@ -407,14 +407,14 @@ Se puede actuar sobre el [objeto](<https://es.wikipedia.org/wiki/Objeto_(program
 
 ```js
 const myPromise = new Promise( ( fulfill, reject ) => {
-  const myResult = true;
-  setTimeout(() => {
-    if( myResult === true ) {
-        fulfill( "This Promise was fulfilled." );
-    } else {
-        reject( new Error( "This Promise has been rejected." ) );
-    }
-  }, 100);
+    const myResult = true;
+    setTimeout(() => {
+        if( myResult === true ) {
+            fulfill( "This Promise was fulfilled." );
+        } else {
+            reject( new Error( "This Promise has been rejected." ) );
+        }
+    }, 100);
 });
 
 myPromise.then( successfulResult => console.log( successfulResult ), failedResult => console.error( failedResult ) );
@@ -425,20 +425,20 @@ También puedes usar then() para controlar solo el estado entregado y catch para
 
 ```js
 const myPromise = new Promise( ( fulfill, reject ) => {
-  const myResult = false;
-  setTimeout(() => {
-    if( myResult === true ) {
-        fulfill( "This Promise was fulfilled." );
-    } else {
-        reject( new Error( "This Promise has been rejected." ) );
-    }
-  }, 100);
+    const myResult = false;
+    setTimeout(() => {
+        if( myResult === true ) {
+            fulfill( "This Promise was fulfilled." );
+        } else {
+            reject( new Error( "This Promise has been rejected." ) );
+        }
+    }, 100);
 });
 
 myPromise
-  .then( fulfilledResult => console.log(fulfilledResult ) )
-  .catch( rejectedResult => console.log( rejectedResult ) )
-  .finally( () => console.log( "The Promise has settled." ) );
+    .then( fulfilledResult => console.log(fulfilledResult ) )
+    .catch( rejectedResult => console.log( rejectedResult ) )
+    .finally( () => console.log( "The Promise has settled." ) );
 > "Error: This Promise has been rejected."
 > "The Promise has settled."
 ```
