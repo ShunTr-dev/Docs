@@ -14,31 +14,31 @@ También es posible escribir código [JavaScript](https://es.wikipedia.org/wiki/
 
 -   [`String`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String): Cualquier conjunto de caracteres (letras, números, símbolos, etc.) entre un conjunto de comillas dobles (`"`), comillas simples (`'`) o comilla invertida (\`) es una primitiva de string. Cuando se llama como función, el [objeto](<https://es.wikipedia.org/wiki/Objeto_(programaci%C3%B3n)>) `String()` convierte un valor especificado en un literal de string.
 
-Las comillas simples, las comillas dobles y las comillas simples se pueden usar indistintamente para crear primitivas de strings. Sin embargo, también puedes usar comillas simples para especificar literales de plantillas (a veces llamados "cadenas de plantillas"). A diferencia de los literales de string que se crean con comillas simples o dobles, los literales de plantilla permiten la interpolación de cadenas y las cadenas de varias líneas.
+    Las comillas simples, las comillas dobles y las comillas simples se pueden usar indistintamente para crear primitivas de strings. Sin embargo, también puedes usar comillas simples para especificar literales de plantillas (a veces llamados "cadenas de plantillas"). A diferencia de los literales de string que se crean con comillas simples o dobles, los literales de plantilla permiten la interpolación de cadenas y las cadenas de varias líneas.
 
-```js
-const myString = "This
-is a string.";
-> Uncaught SyntaxError: "" string literal contains an unescaped line break
+    ```js
+    const myString = "This
+    is a string.";
+    > Uncaught SyntaxError: "" string literal contains an unescaped line break
 
-const myString = `This
-is a string.`;
+    const myString = `This
+    is a string.`;
 
-console.log( myString );
+    console.log( myString );
 
-> This
-is a string.
-```
+    > This
+    is a string.
+    ```
 
-Los literales de plantilla pueden contener expresiones de marcador de posición marcadas por un signo de dólar y llaves (`${}`). Estos marcadores de posición se “interpolan” de forma predeterminada, lo que significa que el resultado de la expresión reemplaza al marcador de posición en la string final.
+    Los literales de plantilla pueden contener expresiones de marcador de posición marcadas por un signo de dólar y llaves (`${}`). Estos marcadores de posición se “interpolan” de forma predeterminada, lo que significa que el resultado de la expresión reemplaza al marcador de posición en la string final.
 
-```js
-console.log( "The result is " + ( 2 + 4 ) + "." );
-> The result is 6.
+    ```js
+    console.log( "The result is " + ( 2 + 4 ) + "." );
+    > The result is 6.
 
-console.log( `The result is ${ 2 + 4 }.` );
-> The result is 6.
-```
+    console.log( `The result is ${ 2 + 4 }.` );
+    > The result is 6.
+    ```
 
 -   [`Boolean`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Boolean): La primitiva booleana es un tipo de datos lógico con solo dos valores: `true` y `false`. Los valores que generan `false` incluyen `0`, `null`, `undefined`, `NaN`, una cadena vacía (`""`), un `valor omitido` y un booleano `false`. Todos los demás valores dan como resultado `true`.
 
@@ -46,30 +46,30 @@ console.log( `The result is ${ 2 + 4 }.` );
 
 -   [`undefined`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/undefined): es un valor básico asignado a variables que se acaban de declarar o al valor resultante de una operación que no muestra un valor significativo.
 
-Aunque `undefined` y `null` tienen algunas superposiciones funcionales, tienen propósitos diferentes. En el sentido más estricto, `null` representa un valor definido intencionalmente como "en blanco", y `undefined` representa la falta de un valor asignado.
+    Aunque `undefined` y `null` tienen algunas superposiciones funcionales, tienen propósitos diferentes. En el sentido más estricto, `null` representa un valor definido intencionalmente como "en blanco", y `undefined` representa la falta de un valor asignado.
 
 -   [`BigInt`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/BigInt): permite operaciones matemáticas en números fuera del rango permitido por `Number`. Para crear un `BigInt`, agrega `n` al final de un literal de número o pasa un valor de cadena entero o numérico a la función `BigInt()`.
 
-```js
-const myNumber = 9999999999999999;
-const myBigInt = 9999999999999999n;
+    ```js
+    const myNumber = 9999999999999999;
+    const myBigInt = 9999999999999999n;
 
-typeof myNumber;
-> "number"
+    typeof myNumber;
+    > "number"
 
-typeof myBigInt;
-> "bigint"
+    typeof myBigInt;
+    > "bigint"
 
-myNumber;
-> 10000000000000000
+    myNumber;
+    > 10000000000000000
 
-myBigInt;
-> 9999999999999999n
-```
+    myBigInt;
+    > 9999999999999999n
+    ```
 
-En este ejemplo, `9999999999999999` está fuera del rango de dígitos que `Number` puede representar de forma segura, lo que genera un error de redondeo.
+    En este ejemplo, `9999999999999999` está fuera del rango de dígitos que `Number` puede representar de forma segura, lo que genera un error de redondeo.
 
-Los valores de `BigInt` no heredan los métodos ni las propiedades que proporciona el [objeto](<https://es.wikipedia.org/wiki/Objeto_(programaci%C3%B3n)>) `Number`, y no se pueden usar con los métodos que proporciona el [objeto](<https://es.wikipedia.org/wiki/Objeto_(programaci%C3%B3n)>) `Math` integrado de JavaScript. Lo más importante es que no puedes mezclar las primitivas `BigInt` y `Number` en operaciones aritméticas estándar.
+    Los valores de `BigInt` no heredan los métodos ni las propiedades que proporciona el [objeto](<https://es.wikipedia.org/wiki/Objeto_(programaci%C3%B3n)>) `Number`, y no se pueden usar con los métodos que proporciona el [objeto](<https://es.wikipedia.org/wiki/Objeto_(programaci%C3%B3n)>) `Math` integrado de JavaScript. Lo más importante es que no puedes mezclar las primitivas `BigInt` y `Number` en operaciones aritméticas estándar.
 
 -   [`Symbol`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Symbol): Una primitiva de símbolo representa un valor único que nunca coincide con ningún otro valor, incluidos los de otras primitivas de símbolos.
     Te permite usar símbolos como claves de propiedad únicas en un objeto, lo que evita colisiones con claves que cualquier otro código podría agregar a ese [objeto](<https://es.wikipedia.org/wiki/Objeto_(programaci%C3%B3n)>).
@@ -80,12 +80,12 @@ Los valores de `BigInt` no heredan los métodos ni las propiedades que proporcio
     -   Símbolos compartidos que se configuran y recuperan de un registro de símbolos global con `Symbol.for()`
     -   Los "símbolos conocidos" se definen como propiedades estáticas del [objeto](<https://es.wikipedia.org/wiki/Objeto_(programaci%C3%B3n)>) `Symbol`. Estos símbolos contienen métodos internos que no se pueden reemplazar accidentalmente.
 
-`Symbol()` acepta una descripción (o "nombre del símbolo") como argumento opcional. Estas descripciones son etiquetas legibles para fines de depuración y no afectan la unicidad del resultado. Todas las llamadas a `Symbol` muestran un tipo primitivo de símbolo completamente único, incluso si varias llamadas tienen descripciones idénticas:
+    `Symbol()` acepta una descripción (o "nombre del símbolo") como argumento opcional. Estas descripciones son etiquetas legibles para fines de depuración y no afectan la unicidad del resultado. Todas las llamadas a `Symbol` muestran un tipo primitivo de símbolo completamente único, incluso si varias llamadas tienen descripciones idénticas:
 
-```js
-Symbol( "My symbol." ) === Symbol( "My symbol." );
-> false
-```
+    ```js
+    Symbol( "My symbol." ) === Symbol( "My symbol." );
+    > false
+    ```
 
 ## [Variables](<https://es.wikipedia.org/wiki/Variable_(programaci%C3%B3n)>)
 
