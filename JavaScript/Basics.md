@@ -342,7 +342,7 @@ La función de devolución de llamada que se usa con `Array.forEach` proporciona
 ```js
 const myArray = [ true, false ];
 myArray.forEach( ( myElement, i, originalArray ) => {
-  console.log( i, myElement, originalArray  );
+    console.log( i, myElement, originalArray  );
 });
 > 0 true Array(3) [ true, false ]
 > 1 false Array(3) [ true, false ]
@@ -458,20 +458,20 @@ const successfulPromises = [ firstPromise, secondPromise, thirdPromise ];
 const oneFailedPromise = [ failedPromise, ...successfulPromises ];
 
 Promise.all( successfulPromises )
-  .then( ( allValues ) => {
-    console.log( allValues );
-  })
-  .catch( ( failValue ) => {
-    console.error( failValue );
-  });
+    .then( ( allValues ) => {
+        console.log( allValues );
+    })
+    .catch( ( failValue ) => {
+        console.error( failValue );
+    });
 > Array(3) [ "Successful. ", "Successful. ", "Successful. " ]
 
 Promise.all( oneFailedPromise  )
     .then( ( allValues ) => {
-      console.log( allValues );
+        console.log( allValues );
     })
     .catch( ( failValue ) => {
-     console.error( failValue );
+        console.error( failValue );
     });
 > "Failed."
 ```
@@ -488,7 +488,7 @@ Cuando usas la palabra clave `async` antes de una declaración de función o una
 
 ```js
 async function myFunction() {
-  return "This is my returned value.";
+    return "This is my returned value.";
 }
 
 myFunction().then( myReturnedValue => console.log( myReturnedValue ) );
@@ -499,26 +499,28 @@ La expresión `await` pausa la ejecución de una función asíncrona mientras se
 
 ```js
 async function myFunction() {
-  const myPromise  = new Promise( ( fulfill, reject ) => { setTimeout( () => fulfill( "Successful. "), 5000 ); });
-  const myPromisedResult = await myPromise;
-  return myPromisedResult;
+    const myPromise  = new Promise( ( fulfill, reject ) => { setTimeout( () => fulfill( "Successful. "), 5000 ); });
+    const myPromisedResult = await myPromise;
+    return myPromisedResult;
 }
 
 myFunction()
-  .then( myResult => console.log( myResult ) )
-  .catch( myFailedResult => console.error( myFailedResult ) );
+    .then( myResult => console.log( myResult ) )
+    .catch( myFailedResult => console.error( myFailedResult ) );
 > "Successful."
+```
+
 Cualquier valor que no sea promesa incluido en una expresión await se muestra como una promesa completada:
 
-
+```js
 async function myFunction() {
-  const myPromisedResult = await "String value.";
-  return myPromisedResult;
+    const myPromisedResult = await "String value.";
+    return myPromisedResult;
 }
 
 myFunction()
-  .then( myResult => console.log( myResult ) )
-  .catch( myFailedResult => console.error( myFailedResult ) );
+    .then( myResult => console.log( myResult ) )
+    .catch( myFailedResult => console.error( myFailedResult ) );
 > "String value."
 ```
 
@@ -799,7 +801,7 @@ Una declaración de función (también llamada "declaración de funciones" o "de
 
 ```js
 function myFunction() {
-   console.log( "This is my function." );
+    console.log( "This is my function." );
 };
 
 myFunction();
@@ -919,7 +921,7 @@ Cuando se llama a una función como método de un objeto, una instancia de this 
 let myObject = {
     myValue: "This is my string.",
     myMethod() {
-            console.log( this.myValue );
+        console.log( this.myValue );
     }
 };
 
@@ -955,7 +957,7 @@ Para definir una clase, usa la [palabra clave](https://es.wikipedia.org/wiki/Pal
 
 ```js
 class Person {
-    [constructor](https://es.wikipedia.org/wiki/Constructor_(inform%C3%A1tica))(name, age) {
+    constructor(name, age) {
         this.name = name
         this.age = age
     }
@@ -990,7 +992,7 @@ Cuando se crea una instancia de una clase, se llama a un método `constructor()`
 
 ```js
 class MyClass {
-    [constructor](https://es.wikipedia.org/wiki/Constructor_(inform%C3%A1tica))( myPassedValue ) {
+    constructor( myPassedValue ) {
         this.instanceProp = myPassedValue;
     }
     myMethod() {
