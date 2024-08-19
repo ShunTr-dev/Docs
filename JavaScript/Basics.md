@@ -1011,5 +1011,5 @@ Cuando se trata de sintaxis, las clases y los [objetos](<https://es.wikipedia.or
 ## Materiales JavaScript
 
 -   [Elocuent Javascript](https://eloquentjavascript.net/)
--   [The Modern [JavaScript](https://es.wikipedia.org/wiki/JavaScript) Tutorial](https://javascript.info/)
+-   [The Modern JavaScript Tutorial](https://javascript.info/)
 -   [Curso de Google](https://web.dev/learn/javascript)
