@@ -2,30 +2,30 @@ Aggregation Framework - RETRIEVING DATA EFFICIENTLY AND IN A STRUCTURED WAY
 
 https://www.mongodb.com/docs/manual/aggregation/
 
-
 ```
 db.orders.aggregate( [{
    // Stage 1: FILTER
    $match: { size: "medium" }
 },{
-   // Stage 2: GROUP remaining documents by pizza name and calculate total quantity   
+   // Stage 2: GROUP remaining documents by pizza name and calculate total quantity
    $group: { _id: "$name", totalQuantity: { $sum: "$quantity" } }
 }] )
 ```
 
 The $match stage:
-- Filters the pizza order documents to pizzas with a size of medium.
-- Passes the remaining documents to the $group stage.
-The $group stage:
-- Groups the remaining documents by pizza name.
-- Uses $sum to calculate the total order quantity for each pizza name. The total is stored in the totalQuantity field returned by the aggregation pipeline.
+
+-   Filters the pizza order documents to pizzas with a size of medium.
+-   Passes the remaining documents to the $group stage.
+    The $group stage:
+-   Groups the remaining documents by pizza name.
+-   Uses $sum to calculate the total order quantity for each pizza name. The total is stored in the totalQuantity field returned by the aggregation pipeline.
 
 ```
 //Sacar las personas female agrupadas por estado
 db.persons.aggregate([
     { $match: { gender: 'female' } },
     { $group: { _id: { state: "$location.state" }, totalPersons: { $sum: 1 } } },
-        // Le asignamos un DOCUMENT al ID, 
+        // Le asignamos un DOCUMENT al ID,
         // esto se interpretará de una manera especial que permitira agrupar los campos
         // totalPersons es una key
         // sumamos 1 por cada uno que encuentre
@@ -33,8 +33,6 @@ db.persons.aggregate([
         // solo podemos ordernar TRAS tener totalPersons
 ]).pretty();
 ```
-
-
 
 ```
 db.persons.aggregate([{
@@ -106,7 +104,7 @@ db.persons.aggregate([{
 db.friends.aggregate([
     { $unwind: "$hobbies" }, // divide las colecciones padre del array y si tiene dos elementos
     // crea dos elementos cada uno con un atriburo diferente
-    //{ $group: { _id: { age: "$age" }, allHobbies: { $push: "$hobbies" } } } 
+    //{ $group: { _id: { age: "$age" }, allHobbies: { $push: "$hobbies" } } }
     // introduce un elemento nuevo para cada entrada de elemento, pero como elementos en conjunto, no por separado
     { $group: { _id: { age: "$age" }, allHobbies: { $addToSet: "$hobbies" } } }
     // mete los valores pero evita valores repetidos
@@ -202,7 +200,7 @@ Learn more about the default optimizations MongoDB performs in this article: htt
 // creamos el indice para poder hacer los cálculos
 db.transformedPersons.createIndex({location: "2dsphere"})
 
-// 
+//
 db.transformedPersons.aggregate([
     {
       $geoNear: { // Encuenta elementos en la coleccion que están cerca de nuestro punto
@@ -220,5 +218,6 @@ db.transformedPersons.aggregate([
 ```
 
 Helpful Articles/ Docs:
-- Official Aggregation Framework Docs: https://docs.mongodb.com/manual/core/aggregation-pipeline/
-- Learn more about $cond: https://docs.mongodb.com/manual/reference/operator/aggregation/cond/
+
+-   Official Aggregation Framework Docs: https://docs.mongodb.com/manual/core/aggregation-pipeline/
+-   Learn more about $cond: https://docs.mongodb.com/manual/reference/operator/aggregation/cond/

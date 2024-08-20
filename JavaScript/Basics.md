@@ -12,9 +12,9 @@ También es posible escribir código [JavaScript](https://es.wikipedia.org/wiki/
 
 -   [`Number`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number): Un valor numérico se compone de cualquier serie de caracteres numéricos. Aparte de esto también pueden representar conceptos numéricos como `Infinity` o `NaN`. Para transformar valor a número se puede usar la función `Number()`.
 
--   [`String`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String): Cualquier conjunto de caracteres (letras, números, símbolos, etc.) entre un conjunto de comillas dobles (`"`), comillas simples (`'`) o comilla invertida (\`) es una primitiva de string. Cuando se llama como función, el [objeto](<https://es.wikipedia.org/wiki/Objeto_(programaci%C3%B3n)>) `String()` convierte un valor especificado en un literal de string.
+-   [`String`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String): Cualquier conjunto de caracteres (letras, números, símbolos, etc.) entre un conjunto de comillas dobles (`"`), comillas simples (`'`) o comilla invertida (\`) es una primitiva de string. Cuando se llama como función, el [objeto](<https://es.wikipedia.org/wiki/Objeto_(programaci%C3%B3n)>) `String()` convierte un valor especificado en un literal de `string`.
 
-    Las comillas simples, las comillas dobles y las comillas simples se pueden usar indistintamente para crear primitivas de strings. Sin embargo, también puedes usar comillas simples para especificar literales de plantillas (a veces llamados "cadenas de plantillas"). A diferencia de los literales de string que se crean con comillas simples o dobles, los literales de plantilla permiten la interpolación de cadenas y las cadenas de varias líneas.
+    Las comillas simples, las comillas dobles y las comillas simples se pueden usar indistintamente para crear primitivas de `string`. Sin embargo, también puedes usar comillas simples para especificar literales de plantillas (a veces llamados "cadenas de plantillas"). A diferencia de los literales de `string` que se crean con comillas simples o dobles, los literales de plantilla permiten la interpolación de cadenas y las cadenas de varias líneas.
 
     ```js
     const myString = "This
@@ -30,7 +30,7 @@ También es posible escribir código [JavaScript](https://es.wikipedia.org/wiki/
     is a string.
     ```
 
-    Los literales de plantilla pueden contener expresiones de marcador de posición marcadas por un signo de dólar y llaves (`${}`). Estos marcadores de posición se “interpolan” de forma predeterminada, lo que significa que el resultado de la expresión reemplaza al marcador de posición en la string final.
+    Los literales de plantilla pueden contener expresiones de marcador de posición marcadas por un signo de dólar y llaves (`${}`). Estos marcadores de posición se “interpolan” de forma predeterminada, lo que significa que el resultado de la expresión reemplaza al marcador de posición en la `string` final.
 
     ```js
     console.log( "The result is " + ( 2 + 4 ) + "." );
@@ -96,7 +96,7 @@ El nombre de una variable se denomina [identificador](https://es.wikipedia.org/w
 -   Los identificadores pueden contener letras [`Unicode`](https://es.wikipedia.org/wiki/Unicode), signos de dólar (`$`), guiones bajos (`_`), dígitos (`0-9`) y algunos caracteres Unicode.
 -   Los identificadores no pueden contener espacios en blanco, ya que el analizador usa espacios en blanco para separar los elementos de entrada. Por ejemplo, si intentas llamar a una variable `my Variable` en lugar de `myVariable`, el analizador ve dos identificadores, `my` y `Variable`, y arroja un error de sintaxis ("token inesperado: identificador").
 -   Los identificadores deben comenzar con una letra, un guion bajo (`_`) o un signo de dólar (`$`). No pueden empezar con dígitos para evitar confusiones entre identificadores y números.
--   Las "palabras reservadas" que ya son sintácticamente significativas no se pueden usar como identificadores.
+-   Las "palabras reservadas" o [palabras clave](https://es.wikipedia.org/wiki/Palabra_clave) que ya son sintácticamente significativas no se pueden usar como identificadores.
 -   Los identificadores no pueden contener caracteres especiales (`!` `.` `,` `/` `\` `+` `-` `*` `=`).
 
 A partir del ejemplo establecido por los métodos y las propiedades integrados de JavaScript, la mayúscula medial (también estilizada como "[camelCase](https://es.wikipedia.org/wiki/Camel_case)") es una convención muy común para los identificadores compuestos por varias palabras.
@@ -115,7 +115,7 @@ console.log(x, y) // se imprime 1, sometext
 x = 4 // provoca un error
 ```
 
-`const` no define realmente una variable sino una constante para la cual el valor ya no se puede cambiar. Por otra parte `let` define una variable normal. El tipo de datos asignados a la variable puede cambiar durante la ejecución. Al principio y almacena un número entero y al final un string.
+`const` no define realmente una variable sino una constante para la cual el valor ya no se puede cambiar. Por otra parte `let` define una variable normal. El tipo de datos asignados a la variable puede cambiar durante la ejecución. Al principio y almacena un número entero y al final un `string`.
 
 También es posible definir variables en [JavaScript](https://es.wikipedia.org/wiki/JavaScript) usando la [palabra clave](https://es.wikipedia.org/wiki/Palabra_clave) `var`. `var` fue, durante mucho tiempo, la única forma de definir variables. `const` y `let` se agregaron recientemente en la versión ES6. En situaciones específicas, `var` funciona de una manera diferente comparada con las definiciones de variables de la mayoría de los lenguajes.
 

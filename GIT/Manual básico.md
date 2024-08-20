@@ -1,15 +1,18 @@
-```markdown
+````markdown
 # Guía Básica de Git
+
 Git es un sistema de control de versiones distribuido ampliamente utilizado para el seguimiento de cambios en archivos de código fuente durante el desarrollo de software. Permite a los desarrolladores trabajar en colaboración, mantener un historial de cambios, crear ramas para el desarrollo paralelo y fusionar cambios de manera eficiente. Git es conocido por su velocidad, flexibilidad y robustez, y es fundamental en el desarrollo de software moderno.
 
 ## Herramientas Gráficas para Utilizar Git
-- Sourcetree
-- GitKraken
-- GitHub Desktop
+
+-   Sourcetree
+-   GitKraken
+-   GitHub Desktop
 
 Para comenzar, es necesario instalar Git desde [git-scm.com/downloads](https://git-scm.com/downloads). Si estás utilizando Windows, es imprescindible instalar Git BASH en lugar de utilizar la terminal de Windows.
 
 ## Configuración Inicial
+
 ```bash
 git --version
 git config --global user.name "Tu Nombre"
@@ -18,8 +21,10 @@ git config --global color.ui auto # Habilita la colorización de la salida de Gi
 git config --global core.editor "code --wait" # Configura VSCode como el editor por defecto
 git config --global -e # Abre el archivo de configuración global en el editor
 ```
+````
 
 ### Configuración de core.autocrlf
+
 En entornos Windows, se utilizan los caracteres CR y LF para los saltos de línea, mientras que en Linux/Mac se utiliza solo LF. Por lo tanto, los usuarios de Windows deben configurar esto en TRUE, mientras que los usuarios de Linux/Mac deben configurarlo en INPUT.
 
 ```bash
@@ -27,6 +32,7 @@ git config --global core.autocrlf true
 ```
 
 Para ver las opciones de configuración global disponibles:
+
 ```bash
 git config -h
 ```
@@ -43,6 +49,7 @@ mkdir # Crea un nuevo directorio
 La opción de `git remote --verbose`, se utiliza para mostrar información detallada sobre los repositorios remotos asociados con un proyecto de Git. Esta orden mostrará tanto la URL del repositorio remoto como su nombre (por defecto, "origin") y permitirá al usuario ver qué operaciones (como push o fetch) están configuradas para cada repositorio remoto. La opción `--verbose` o `-v` muestra una salida más detallada que simplemente `git remote`.
 
 ## Iniciar un Repositorio
+
 ```bash
 # En la ruta del repositorio
 git init [nombre del proyecto]
@@ -50,6 +57,7 @@ git clone [URL del proyecto] # Descarga un proyecto con todo su historial desde 
 ```
 
 ## Añadir Archivos a un Repositorio
+
 ```bash
 git add archivo.txt
 git add *.txt # Añade todos los archivos .txt
@@ -62,12 +70,14 @@ git status -s
 ```
 
 ## Realizar un COMMIT
+
 ```bash
 git commit -m "Propósito del commit"
 git commit # Abre el editor para ingresar un mensaje de commit
 ```
 
 ## Uso Habitual
+
 ```bash
 git add [archivo] # Añade un archivo al área de preparación
 git diff [archivo] # Muestra los cambios entre el directorio de trabajo y el área de preparación
@@ -84,6 +94,7 @@ git restore archivo.txt # Recupera un archivo del repositorio
 ```
 
 ## Ramificación en Git
+
 ```bash
 git branch [-a] # Lista todas las ramas locales del repositorio
 git branch [nombre_rama] # Crea una nueva rama, referenciando la rama actual
@@ -93,11 +104,13 @@ git branch -d [nombre_rama] # Elimina la rama seleccionada, si ya ha sido fusion
 ```
 
 ## Actualizar los cambios de la rama principal (upstream) al fork (main)
+
 ```bash
 git upstream main
 ```
 
 ## Revisar tu Trabajo
+
 ```bash
 git log [-n cantidad] # Muestra el historial de commits de la rama actual
 git log --oneline --graph --decorate # Ofrece una visión general del historial con etiquetas de referencia y gráfico de historia
@@ -126,6 +139,7 @@ git push -u origin main
 ```
 
 En el archivo `.gitignore`, se pueden añadir los archivos o rutas que no deseas que sean incluidos en el repositorio.
+
 ```
 # Ejemplo de .gitignore para varios lenguajes
 # Enlace: https://github.com/github/gitignore
@@ -137,6 +151,7 @@ En el archivo `.gitignore`, se pueden añadir los archivos o rutas que no deseas
 ## Listado de comandos a tener en cuenta
 
 1. Core:
+
 ```bash
 git init  # Inicializa un nuevo repositorio Git en el directorio actual.
 git clone  # Clona un repositorio Git existente en un nuevo directorio.
@@ -154,6 +169,7 @@ git pull  # Descarga los cambios desde un repositorio remoto y los integra con e
 ```
 
 2. Branching:
+
 ```bash
 git branch  # Lista todas las ramas en el repositorio. También se puede utilizar para crear, renombrar o eliminar ramas.
 git checkout -b <nombre_rama>  # Crea una nueva rama y se cambia a ella en un solo paso.
@@ -165,12 +181,14 @@ git cherry-pick <commit>  # Aplica los cambios de un commit específico en la ra
 ```
 
 3. Merging:
+
 ```bash
 git merge <nombre_rama>  # Fusiona los cambios de una rama específica en la rama actual. Crea un nuevo commit de fusión que integra los cambios de ambas ramas.
 git rebase <nombre_rama>  # Reorganiza la historia del commit, moviendo los cambios de la rama actual al final de la rama especificada. A diferencia de merge, no crea un commit de fusión adicional, sino que reescribe la historia del commit.
 ```
 
 4. Stashing:
+
 ```bash
 git stash  # Guarda temporalmente los cambios locales que no se han confirmado en un área de almacenamiento temporal (stash).
 git stash pop  # Aplica el último stash guardado y lo elimina del stash. Los cambios guardados se aplican al directorio de trabajo.
@@ -180,6 +198,7 @@ git stash drop  # Elimina el último stash guardado de la lista de stashes. Los 
 ```
 
 5. Remotes:
+
 ```bash
 git remote  # Muestra una lista de los repositorios remotos configurados actualmente.
 git remote add <nombre_remoto> <url_remoto>  # Añade un nuevo repositorio remoto con el nombre especificado y la URL proporcionada.
@@ -191,6 +210,7 @@ git clone --mirror <url_repositorio>  # Clona un repositorio remoto, incluyendo 
 ```
 
 6. Configuration:
+
 ```bash
 git config  # Muestra la configuración de Git. Puede ser utilizado para ver, establecer y modificar la configuración a nivel local.
 git config --global  # Permite establecer opciones de configuración a nivel global, que se aplicarán a todos los repositorios de Git en tu sistema.
@@ -198,6 +218,7 @@ git config --unset <clave>  # Elimina la configuración de Git asociada con una 
 ```
 
 7. Plumbing:
+
 ```bash
 git cat-file  # Proporciona contenido y tipo de objeto de un objeto Git en la base de datos.
 git checkout-index  # Copia los archivos de Git al área de trabajo.
@@ -218,6 +239,7 @@ git update-ref  # Actualiza el valor de una referencia a un nuevo valor SHA-1.
 ```
 
 8. Porcelain:
+
 ```bash
 git blame <archivo>  # Muestra quién modificó por última vez cada línea de un archivo y quién lo hizo.
 git bisect  # Ayuda a encontrar el commit que introdujo un problema, utilizando una búsqueda binaria.
@@ -236,16 +258,19 @@ git tag <nombre>  # Crea, lista o borra etiquetas (tags) para marcar puntos espe
 ```
 
 9. Alias:
+
 ```bash
 git config --global alias.<alias> <command>  # Crea un alias global para un comando de Git. Esto permite crear abreviaciones personalizadas para comandos Git frecuentemente utilizados, lo que facilita su uso.
 ```
 
 10. Hook:
+
 ```bash
 git config --local core.hooksPath <path>  # Establece la ruta local del directorio donde se encuentran los ganchos (hooks) de Git. Los ganchos son scripts que se ejecutan automáticamente en ciertos eventos de Git, como pre-commit, post-commit, pre-push, etc. Esta opción permite personalizar la ubicación de estos ganchos para un repositorio específico.
 ```
 
 11. Experimental:
+
 ```bash
 git annex  # Permite gestionar archivos grandes y binarios de manera eficiente, manteniendo el control de versiones con Git.
 git am  # Aplica los cambios en forma de parche generados por git format-patch.

@@ -3,13 +3,13 @@
 Para obtener los tamaños de los archivos en un servidor FTP, puedes seguir estos pasos:
 
 1. Conéctate al servidor FTP utilizando el cliente `lftp`:
-   
+
 ```bash
 lftp -u ns3089822.ip-54-36-61.eu,j6JnjgdgPu ftpback-rbx6-7.ovh.net
 ```
 
 2. Es posible que necesites desactivar la verificación de certificados si estás experimentando problemas de conexión debido a diferentes versiones de certificados:
-   
+
 ```bash
 set ssl:verify-certificate false
 ```

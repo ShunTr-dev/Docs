@@ -1,6 +1,5 @@
 # [Visual Studio Code Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks)
 
-
 ## Basics
 
 ### Command Palette
@@ -8,6 +7,7 @@
 Access all available commands based on your current context: `Ctrl+Shift+P`
 
 ### Keyboard reference sheets
+
 [Keyboard shortcut reference](../IMG/VSCode/keyboard shorcuts.png)
 
 ## Status Bar
@@ -23,7 +23,6 @@ Cycle through errors with `F8` or `Shift+F8`
 ![errors and warnings](../IMG/VSCode/Errors_Warnings.gif)
 
 You can filter problems either by type ('errors', 'warnings') or text matching.
-
 
 ## Customization
 
@@ -88,8 +87,8 @@ Keyboard Shortcut: `Ctrl+`
 
 Further reading:
 
-* [Integrated Terminal](https://code.visualstudio.com/docs/terminal/basics) documentation
-* [Mastering VS Code's Terminal article](https://www.growingwiththeweb.com/2017/03/mastering-vscodes-terminal.html)
+-   [Integrated Terminal](https://code.visualstudio.com/docs/terminal/basics) documentation
+-   [Mastering VS Code's Terminal article](https://www.growingwiththeweb.com/2017/03/mastering-vscodes-terminal.html)
 
 ### Toggle Sidebar
 
@@ -320,6 +319,7 @@ Here is configuration to use ES6.
     }
 }
 ```
+
 ### package.json
 
 See IntelliSense for your `package.json` file.
@@ -372,6 +372,7 @@ You can resolve merge conflicts with the inline CodeLens which lets you **Accept
 git config --global merge.tool vscode
 git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 ```
+
 ### Set VS Code as default diff tool
 
 ```bash

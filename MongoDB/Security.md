@@ -6,8 +6,6 @@ db.createUser({user: "max", pwd: "pwd", roles["userAdminAnyDatabase"]})
 deb.auth("max", "max")
 ```
 
-
-
 ```
 mongo -u max -p max --authenticationDatabase admin
 use shop

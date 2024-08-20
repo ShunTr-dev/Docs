@@ -15,9 +15,9 @@ Las transiciones CSS se definen mediante la propiedad `transition`, que se aplic
 }
 ```
 
-- **Propiedad:** Indica qué propiedad CSS se animará durante la transición, como `color`, `width`, `height`, etc.
-- **Duración:** Especifica la duración de la transición en segundos (s) o milisegundos (ms).
-- **Función de tiempo:** Define cómo cambia la velocidad de la transición a lo largo del tiempo. Pueden ser funciones predefinidas como `ease`, `ease-in`, `ease-out`, `ease-in-out`, `linear`, o funciones de temporización personalizadas.
+-   **Propiedad:** Indica qué propiedad CSS se animará durante la transición, como `color`, `width`, `height`, etc.
+-   **Duración:** Especifica la duración de la transición en segundos (s) o milisegundos (ms).
+-   **Función de tiempo:** Define cómo cambia la velocidad de la transición a lo largo del tiempo. Pueden ser funciones predefinidas como `ease`, `ease-in`, `ease-out`, `ease-in-out`, `linear`, o funciones de temporización personalizadas.
 
 ## Ejemplo de uso
 
@@ -25,8 +25,8 @@ Las transiciones CSS se definen mediante la propiedad `transition`, que se aplic
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Transiciones CSS</title>
         <style>
             /* Estilos de la caja */
@@ -53,10 +53,9 @@ En este ejemplo, cuando pasas el cursor sobre la caja, la propiedad `width` camb
 
 ## Ventajas
 
-- **Mejora la experiencia del usuario:** Las transiciones suaves hacen que la interacción con la página web sea más agradable y atractiva.
-- **Fácil de implementar:** Se pueden aplicar fácilmente con solo unas pocas líneas de código CSS.
-- **Personalización:** Se pueden ajustar la duración y la función de tiempo para adaptarse a las necesidades específicas de diseño.
-
+-   **Mejora la experiencia del usuario:** Las transiciones suaves hacen que la interacción con la página web sea más agradable y atractiva.
+-   **Fácil de implementar:** Se pueden aplicar fácilmente con solo unas pocas líneas de código CSS.
+-   **Personalización:** Se pueden ajustar la duración y la función de tiempo para adaptarse a las necesidades específicas de diseño.
 
 ## `transition-duration`
 
@@ -116,24 +115,27 @@ La propiedad `transition-timing-function` se utiliza para especificar cómo camb
 5. **linear:** La animación avanza a una velocidad constante.
 
 ### `steps()`
+
 La función `steps()` en `transition-timing-function` se utiliza para crear una animación de transición con pasos en lugar de una animación continua y fluida. Esta función permite dividir la transición en un número específico de pasos, dando la impresión de que la animación avanza en incrementos definidos.
 
 ```css
 transition-timing-function: steps(n, start|end);
 ```
 
-- **n:** Número entero que especifica la cantidad de pasos en la transición.
-- **start|end:** Especifica dónde se ubicarán los puntos de inicio o finalización de cada paso. `start` indica que los valores cambiarán al inicio de cada paso, mientras que `end` indica que los valores cambiarán al final de cada paso.
+-   **n:** Número entero que especifica la cantidad de pasos en la transición.
+-   **start|end:** Especifica dónde se ubicarán los puntos de inicio o finalización de cada paso. `start` indica que los valores cambiarán al inicio de cada paso, mientras que `end` indica que los valores cambiarán al final de cada paso.
 
 ### `cubic-bezier()`
+
 La función `cubic-bezier()` en la propiedad `transition-timing-function` permite crear funciones de temporización personalizadas para controlar la velocidad de una transición animada de manera más precisa. Esta función utiliza la interpolación de curvas cúbicas de Bézier para definir la aceleración y desaceleración de la animación en diferentes puntos de su duración.
 
 ```css
 transition-timing-function: cubic-bezier(x1, y1, x2, y2);
 ```
-- **x1, y1, x2, y2:** Coordenadas de control que definen la forma de la curva cúbica de Bézier. Estos valores deben estar en el rango de 0 a 1.
 
-Dentro de las herramientas de desarrollador puedes crear la animación tuya persinalizada sin tener que preocuaparte de hacerla a mano. 
+-   **x1, y1, x2, y2:** Coordenadas de control que definen la forma de la curva cúbica de Bézier. Estos valores deben estar en el rango de 0 a 1.
+
+Dentro de las herramientas de desarrollador puedes crear la animación tuya persinalizada sin tener que preocuaparte de hacerla a mano.
 
 Para ver las diferencias entre todo este tipo de animaciones se puede acudir a esta [web](https://easings.co/)
 
@@ -147,11 +149,11 @@ selector {
 }
 ```
 
-- **selector:** Especifica el elemento al que se aplicará la transición.
-- **propiedad:** Indica qué propiedad CSS deseas animar durante la transición.
-- **duración:** Especifica la duración de la transición en segundos (s) o milisegundos (ms).
-- **tipo:** Define cómo cambia la velocidad de la transición a lo largo del tiempo. Puede ser `ease`, `ease-in`, `ease-out`, `ease-in-out`, `linear`, o una función de temporización personalizada.
-- **retraso (opcional):** Especifica un tiempo de espera antes de que comience la transición.
+-   **selector:** Especifica el elemento al que se aplicará la transición.
+-   **propiedad:** Indica qué propiedad CSS deseas animar durante la transición.
+-   **duración:** Especifica la duración de la transición en segundos (s) o milisegundos (ms).
+-   **tipo:** Define cómo cambia la velocidad de la transición a lo largo del tiempo. Puede ser `ease`, `ease-in`, `ease-out`, `ease-in-out`, `linear`, o una función de temporización personalizada.
+-   **retraso (opcional):** Especifica un tiempo de espera antes de que comience la transición.
 
 ```css
 /* Aplica una transición en el color de fondo con una duración de 1 segundo */
@@ -160,14 +162,12 @@ selector {
 }
 
 .otro-elemento {
-    transition: 
-        background 300ms linear,
-        scale 500ms ease-in-out,
-        box-shadow 1s ease;
+    transition: background 300ms linear, scale 500ms ease-in-out, box-shadow 1s ease;
 }
 ```
 
 ## `@media prefers-reduced-motion`
+
 La regla `@media prefers-reduced-motion` en CSS es una forma de consultar si el usuario prefiere reducir o deshabilitar las animaciones y transiciones en una página web debido a condiciones como la sensibilidad a los movimientos o el consumo de recursos.
 
 ```css
@@ -194,10 +194,12 @@ Las animaciones permiten crear efectos visuales dinámicos y atractivos sin nece
 
     ```css
     @keyframes nombre-de-la-animacion {
-        0% { /* también se puede poner from */
+        0% {
+            /* también se puede poner from */
             /* Estilos en el inicio de la animación */
         }
-        100% { /* también se puede poner to */
+        100% {
+            /* también se puede poner to */
             /* Estilos en el final de la animación */
         }
     }
@@ -218,15 +220,6 @@ Las animaciones permiten crear efectos visuales dinámicos y atractivos sin nece
     - **iteracion (opcional):** El número de veces que se repite la animación, o `infinite` para repetirla indefinidamente.
     - **direccion (opcional):** La dirección de la animación, como `normal`, `reverse`, `alternate`, etc.
     - **relleno (opcional):** Controla cómo se aplican los estilos al elemento antes y después de la animación.
-
-
-
-
-
-
-
-
-
 
 ```css
 /* Definición de keyframes */
@@ -252,15 +245,12 @@ En este ejemplo, se define una animación llamada `mover` que desplaza el elemen
 
 ### Ventajas:
 
-- **Sin JavaScript:** Las animaciones en CSS permiten agregar interactividad y dinamismo a una página web sin necesidad de usar JavaScript.
-- **Mejora del rendimiento:** Las animaciones en CSS suelen ser más eficientes que las animaciones en JavaScript, ya que aprovechan la aceleración por hardware del navegador.
-- **Facilidad de uso:** Con una sintaxis simple, las animaciones en CSS son fáciles de implementar y mantener.
-
-
-
-
+-   **Sin JavaScript:** Las animaciones en CSS permiten agregar interactividad y dinamismo a una página web sin necesidad de usar JavaScript.
+-   **Mejora del rendimiento:** Las animaciones en CSS suelen ser más eficientes que las animaciones en JavaScript, ya que aprovechan la aceleración por hardware del navegador.
+-   **Facilidad de uso:** Con una sintaxis simple, las animaciones en CSS son fáciles de implementar y mantener.
 
 ## Ejemplo de pulser
+
 ```html
 <div class="pulser"></div>
 
@@ -284,7 +274,7 @@ En este ejemplo, se define una animación llamada `mover` que desplaza el elemen
         boder-radius: 50%;
         z-index: -1;
         scale: 2;
-        opacity: .5;
+        opacity: 0.5;
 
         animation-name: pulse;
         animation-duration: 2s;
@@ -324,13 +314,14 @@ En este ejemplo, se define una animación llamada `mover` que desplaza el elemen
 ```
 
 ## `animation-fill-mode`
+
 La propiedad `animation-fill-mode` es una propiedad que especifica cómo se aplicarán los estilos al elemento objetivo antes y después de que se ejecute la animación. Esta propiedad determina si el elemento mantiene los estilos aplicados al final de la animación o si vuelve a su estado original.
 
-- **valor:** Puede ser uno de los siguientes:
-  - `none`: No se aplican estilos al elemento antes o después de la animación.
-  - `forwards`: Los estilos del último keyframe se mantienen aplicados al elemento después de la animación.
-  - `backwards`: Los estilos del primer keyframe se aplican al elemento antes de que comience la animación.
-  - `both`: Se aplican los estilos del primer keyframe antes de que comience la animación y los estilos del último keyframe después de que finalice la animación.
+-   **valor:** Puede ser uno de los siguientes:
+    -   `none`: No se aplican estilos al elemento antes o después de la animación.
+    -   `forwards`: Los estilos del último keyframe se mantienen aplicados al elemento después de la animación.
+    -   `backwards`: Los estilos del primer keyframe se aplican al elemento antes de que comience la animación.
+    -   `both`: Se aplican los estilos del primer keyframe antes de que comience la animación y los estilos del último keyframe después de que finalice la animación.
 
 ```css
 /* Aplica estilos del primer keyframe antes de la animación y del último keyframe después de la animación */
@@ -352,4 +343,4 @@ La propiedad `animation-fill-mode` es una propiedad que especifica cómo se apli
 
 # Enlaces
 
-- [Scroll driven animations](https://scroll-driven-animations.style/)
+-   [Scroll driven animations](https://scroll-driven-animations.style/)

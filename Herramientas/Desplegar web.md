@@ -1,7 +1,7 @@
-/*
-    @author: midudev
-    @url: https://twitter.com/midudev/status/1745090991298658751
-*/
+/_
+@author: midudev
+@url: https://twitter.com/midudev/status/1745090991298658751
+_/
 
 [FLY IO](https://fly.io/)
 〉 Apps de Python, Node, Go, Elixir, Ruby...
@@ -36,7 +36,6 @@
 〉 Transferencia y peticiones estáticas ilimitadas
 〉 500 builds al mes y Protección DDoS
 〉 CDN mundial y rápido
-
 
 [NETLIFY](https://www.netlify.com/)
 〉 Sitios estáticos y JAMstack

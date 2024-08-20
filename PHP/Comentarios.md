@@ -6,7 +6,7 @@ Aquí se presenta un ejemplo de un comentario detallado para una función en PHP
 /**
  *
  * Función de envío de notificaciones de OneSignal.
- * 
+ *
  * @param (Array) $content - Un diccionario que contiene los mensajes de notificación en diferentes idiomas.
  * @param (Array) $filters - Filtros de búsqueda en OneSignal (usuarios, grupos, etc.), deben ser agregados como etiquetas dentro de OneSignal.
  * @param (CakeObj) $data_from_moncake - Datos recibidos por la aplicación final.
@@ -26,6 +26,6 @@ Aquí se presenta un ejemplo de un comentario detallado para una función en PHP
  * }
  * $oneSignalResponse = $this->sendOnesignalNotifications(content, $filters, null, $included_segments);
  * @since 18/03/2020 - CakePHP 3.6
- * @link https://documentation.onesignal.com/reference 
+ * @link https://documentation.onesignal.com/reference
  */
 ```

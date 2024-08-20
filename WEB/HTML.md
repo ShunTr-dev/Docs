@@ -1,9 +1,10 @@
 # HTML - Hypertext Markup Language
 
 ## ¿De qué se encarga HTML?
-- NO: La presentación -> CSS
-- NO: La interactividad -> JavaScript
-- SI: Describir el contenido
+
+-   NO: La presentación -> CSS
+-   NO: La interactividad -> JavaScript
+-   SI: Describir el contenido
 
 Los archivos con HTML tienen extensión `.html`, el archivo raíz es el `index.html`.
 
@@ -26,7 +27,6 @@ El atributo `id=""` funciona como un identificador. Y debe ser único.
 El atributo `class=""` funciona como una referencia y puede ser múltiple.
 
 La etiqueta de `b` está deprecated, porque hace referencia a la presentación (los estilos) del documento. Sin embargo, tenemos etiquetas que sí hacen referencia a los estilos, como `h1`, esto es porque los navegadores tienen una serie de estilos por defecto. Se llaman `USER AGENT STYLESHEET`.
-
 
 ## Página mínima
 
@@ -52,34 +52,43 @@ En el body ponemos nuestro contenido.
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8"> <!-- codificación -->
-        <meta name="viewport" content="width=device-width"> <!-- Le decimos que el ancho del contenido es el ancho de la pantalla -->
-        <title>Title</title> <!-- Título de la pestaña, tiene MUCHO peso en SEO, es el título que aparece en el buscador -->
-        <meta name="description" content="Descripción del contenido de la página"> <!-- SUPER importante para el SEO, es lo que puede aparecer en la entradilla en el buscador -->
-        <meta name="author" content="name">
-        <meta name="keywords" content="keywords">
+        <meta charset="UTF-8" />
+        <!-- codificación -->
+        <meta name="viewport" content="width=device-width" />
+        <!-- Le decimos que el ancho del contenido es el ancho de la pantalla -->
+        <title>Title</title>
+        <!-- Título de la pestaña, tiene MUCHO peso en SEO, es el título que aparece en el buscador -->
+        <meta name="description" content="Descripción del contenido de la página" />
+        <!-- SUPER importante para el SEO, es lo que puede aparecer en la entradilla en el buscador -->
+        <meta name="author" content="name" />
+        <meta name="keywords" content="keywords" />
         <!-- OPEN GRAPH -->
         <!-- Conjunto de etiquetas creadas por Facebook para que cuando se comparte un contenido se vea bien -->
         <!-- Puedes ir a https://www.opengraph.xyz para ver como ses vería compartido un elemento -->
         <!-- Facebook Meta Tags -->
-        <meta property="og:url" content="https://tuURL/">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Título que queremos que aparezca en la caja">
-        <meta property="og:description" content="Descripción que aparece debajo del título">
-        <meta property="og:image" content="https://tuUrl/img/tuIMG.jpg">
-        <meta property="og:image:alt" content="Descripción de la imagen">
+        <meta property="og:url" content="https://tuURL/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Título que queremos que aparezca en la caja" />
+        <meta property="og:description" content="Descripción que aparece debajo del título" />
+        <meta property="og:image" content="https://tuUrl/img/tuIMG.jpg" />
+        <meta property="og:image:alt" content="Descripción de la imagen" />
         <!-- Twitter Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta property="twitter:domain" content="tuURL.es">
-        <meta property="twitter:url" content="https://www.tuURL.es/">
-        <meta name="twitter:title" content="Título que queremos que aparezca en la caja">
-        <meta name="twitter:description" content="Descripción que aparece debajo del título">
-        <meta name="twitter:image" content="https://tuUrl/img/tuIMG.jpg">
-        <meta name="robots" content="index, follow"> <!-- Le decimos a los buscadores si tienen que indexar la página y si tienen que seguir los enlaces -->
-        <meta name="theme-color" content="#09f"> <!-- Cambia la parte de arriba del navegador, haciendo la página más amigable y corporativa -->
-        <link rel="icon" type="image/jpg" href="/img/favicon.jpg"> <!-- Favicon, por defecto suele intentar cargar el favicon.ico -->
-        <link rel="alternate" href="https://tuUrl/en" hreflang="en-GB"> <!-- Enlazar a un link alternativo (Por ejemplo la página pero en otro idioma), MUY importante para el SEO, si no se pone puede advertir como contenido duplicado -->
-        <link rel="canonical" href="https://tuUrl/"> <!-- Indicamos la página principal del sitio, importante para el SEO -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="tuURL.es" />
+        <meta property="twitter:url" content="https://www.tuURL.es/" />
+        <meta name="twitter:title" content="Título que queremos que aparezca en la caja" />
+        <meta name="twitter:description" content="Descripción que aparece debajo del título" />
+        <meta name="twitter:image" content="https://tuUrl/img/tuIMG.jpg" />
+        <meta name="robots" content="index, follow" />
+        <!-- Le decimos a los buscadores si tienen que indexar la página y si tienen que seguir los enlaces -->
+        <meta name="theme-color" content="#09f" />
+        <!-- Cambia la parte de arriba del navegador, haciendo la página más amigable y corporativa -->
+        <link rel="icon" type="image/jpg" href="/img/favicon.jpg" />
+        <!-- Favicon, por defecto suele intentar cargar el favicon.ico -->
+        <link rel="alternate" href="https://tuUrl/en" hreflang="en-GB" />
+        <!-- Enlazar a un link alternativo (Por ejemplo la página pero en otro idioma), MUY importante para el SEO, si no se pone puede advertir como contenido duplicado -->
+        <link rel="canonical" href="https://tuUrl/" />
+        <!-- Indicamos la página principal del sitio, importante para el SEO -->
         <link href="style.css" rel="stylesheet" type="text/css" />
         <style type="text/css">
             body {
@@ -225,8 +234,8 @@ Ejemplo de HTML Semántico
 </body>
 ```
 
-
 Enlaces útiles:
-- [ARIA Techniques](https://developer.mozilla.org/es/docs/Web/Accessibility/ARIA/ARIA_Techniques)
-- [ARIA Roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/roles)
-- [A collection of bad practices in HTML, copied from real websites.](https://www.htmhell.dev/)
+
+-   [ARIA Techniques](https://developer.mozilla.org/es/docs/Web/Accessibility/ARIA/ARIA_Techniques)
+-   [ARIA Roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/roles)
+-   [A collection of bad practices in HTML, copied from real websites.](https://www.htmhell.dev/)

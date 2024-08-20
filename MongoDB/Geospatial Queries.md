@@ -24,15 +24,10 @@ db.coll.find({location: {$geoWithin: {$geometry: {type: "Polygon", coordinates: 
 
 ```
 
-
-
-
 ```
 Mirar si el usuario está dentro del área
 geointersects: Muestra si un punto está dentro de un área
 ```
-
-
 
 ```
 Devuelve el area con el que corta
@@ -41,4 +36,3 @@ Devuelve el area con el que corta
 ```
 saber los elementos que están en un radio. Los valores se tienen que convertir que están en radianes
 ```
-

@@ -54,10 +54,10 @@ En el código anterior, hemos agregado una nueva sección de configuración y lo
 <?php add_settings_section( $id, $title, $callback, $page ); ?>
 ```
 
-- id Un slug personalizado para la sección de configuración.
-- title Título de la sección de configuración. Asegúrate de que sea traducible.
-- callback Una función que agrega marcados a la sección de configuración.
-- page El slug de la página en la que queremos agregar nuestra sección de configuración.
+-   id Un slug personalizado para la sección de configuración.
+-   title Título de la sección de configuración. Asegúrate de que sea traducible.
+-   callback Una función que agrega marcados a la sección de configuración.
+-   page El slug de la página en la que queremos agregar nuestra sección de configuración.
 
 Como hemos usado una función de devolución de llamada (my_setting_section_callback_function), definámosla.
 
@@ -96,7 +96,7 @@ La función settings_fields no solo es para tener configuraciones y marcados de 
 
 El uso
 
- de la función settings_fields es como:
+de la función settings_fields es como:
 
 ```php
 add_settings_field(
@@ -116,11 +116,11 @@ que es en realidad
 
 y los argumentos son:
 
-- id Un slug personalizado para el campo de configuración.
-- title Título del campo de configuración.
-- page El slug de la página en la que queremos mostrar el campo de configuración.
-- section La sección en la que queremos mostrar el campo de configuración.
-- $args Argumentos adicionales. Ver más aquí.
+-   id Un slug personalizado para el campo de configuración.
+-   title Título del campo de configuración.
+-   page El slug de la página en la que queremos mostrar el campo de configuración.
+-   section La sección en la que queremos mostrar el campo de configuración.
+-   $args Argumentos adicionales. Ver más aquí.
 
 Al igual que al agregar una sección de configuración, tenemos una función de devolución de llamada que genera el marcado.
 

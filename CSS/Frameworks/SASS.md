@@ -8,6 +8,7 @@ sass --watch estilos.scss styles.css
 ```
 
 Creamos un archivo.scss - En el HTML importamos el styles.css
+
 ```
 $font: sans-serif, Helvetica, Arial;
 $color-fondo: #ccc;
@@ -15,7 +16,7 @@ $color-secundario: red;
 
 body {
     background-color: $color-fondo;
-    
+
     h1 {
         color: $color-secundario;
     }
@@ -23,12 +24,14 @@ body {
 
 ```
 
-Puedes importar el archivo _base.css con
+Puedes importar el archivo \_base.css con
+
 ```
 @use 'base';
 ```
 
 mixin: conjunto de instrucciones que se van a ejecutar
+
 ```
 @mixin crearBordes($color, $size, $shadow) {
     border: 5px solid $color;
@@ -42,6 +45,7 @@ mixin: conjunto de instrucciones que se van a ejecutar
 ```
 
 Herencia
+
 ```
 <div class="alert"></div>
 
@@ -59,6 +63,7 @@ Herencia
 ```
 
 Operadores
+
 ```
 h1 {
     font-size: 20px + 5px;
@@ -70,6 +75,7 @@ h1 {
 ```
 
 Condicionales
+
 ```
 @if $color-fondo == #ccc {
     color: black;
@@ -79,6 +85,7 @@ Condicionales
 ```
 
 Bucles (existen también el while, each pero víctor robles es un cancer de instructor y los mandó a la mierda)
+
 ```
 $contador: 1;
 @for $contador from 1 through 8 {
