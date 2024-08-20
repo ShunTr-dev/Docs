@@ -71,4 +71,4 @@ Para visualizar las guías, necesitas tener un visor de Markdown o usar editores
 
 ## Licencia
 
-Este proyecto está bajo la Licencia MIT. Puedes consultar más detalles en el archivo [LICENSE](./LICENSE).
+Este proyecto está bajo la Licencia Creative Commons Attribution 4.0 International (CC BY 4.0). Puedes consultar más detalles en el archivo [LICENSE](./LICENSE).
