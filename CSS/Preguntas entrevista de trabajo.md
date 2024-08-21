@@ -137,3 +137,19 @@ Un ejemplo es `:hover`, que aplica estilos cuando el cursor está sobre un eleme
 
 -   **Bloque:** Ocupa todo el ancho disponible y empieza en una nueva línea (ej., `div`, `p`).
 -   **En línea:** Solo ocupa el ancho necesario y no inicia una nueva línea (ej., `span
+
+`, `a`).
+
+### 34. ¿Cuál es la diferencia entre CSS Grid y Flexbox? ¿Cuándo usarías uno sobre el otro?
+
+Flexbox es mejor para layouts unidimensionales (filas o columnas), mientras que CSS Grid es para layouts bidimensionales más complejos (filas y columnas simultáneamente).
+
+### 35. ¿Cuál es la diferencia entre layouts fijos, fluidos y responsivos?
+
+-   **Fijo:** Tamaño definido y no cambia con el viewport.
+-   **Fluido:** Usa unidades relativas y se ajusta al tamaño del viewport.
+-   **Responsivo:** Combina ambos con media queries para adaptar el diseño a diferentes dispositivos.
+
+### Referencias
+
+[Front-end-Developer-Interview-Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/main/src/questions/css-questions.md)
