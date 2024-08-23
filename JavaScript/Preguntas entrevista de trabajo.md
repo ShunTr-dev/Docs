@@ -2,7 +2,7 @@
 
 ### 1. Explica la delegación de eventos.
 
-La delegación de eventos es una técnica en JavaScript en la que asignas un evento a un elemento padre en lugar de asignarlo a cada uno de los elementos hijos individuales. Esto funciona debido a la propagación de eventos (event bubbling). En lugar de agregar un manejador de eventos a cada elemento hijo, se asigna a un ancestro común. El evento se propaga desde el elemento hijo al padre y se puede detectar cuál fue el origen del evento usando `event.target`.
+La delegación de eventos es una técnica en JavaScript en la que asignas un evento a un elemento padre en lugar de asignarlo a cada uno de los elementos hijos individuales. Esto funciona debido a la propagación de eventos (`event bubbling`). En lugar de agregar un manejador de eventos a cada elemento hijo, se asigna a un ancestro común. El evento se propaga desde el elemento hijo al padre y se puede detectar cuál fue el origen del evento usando `event.target`.
 
 **Ejemplo:**
 
@@ -497,7 +497,7 @@ function foo2() {
 ```
 
 No, no devolverán lo mismo.
-En `foo2`, el retorno se interrumpe debido a la nueva línea antes de la llave `{`. En JavaScript, un retorno vacío (`return;`) se asume cuando hay un salto de línea después de return. Como resultado, `foo2` devuelve undefined.
+En `foo2`, el retorno se interrumpe debido a la nueva línea antes de la llave `{`. En JavaScript, un retorno vacío (`return;`) se asume cuando hay un salto de línea después de return. Como resultado, `foo2` devuelve `undefined`.
 
 ### Referencias
 
