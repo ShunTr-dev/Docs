@@ -34,7 +34,7 @@ Este Código de Conducta se aplica tanto dentro de los espacios del proyecto com
 
 ## Ejecución
 
-Las instancias de comportamiento abusivo, acosador o inaceptable pueden ser reportadas contactando al equipo del proyecto en [tu-email@ejemplo.com]. Todas las quejas serán revisadas e investigadas y resultarán en una respuesta considerada necesaria y apropiada a las circunstancias. El equipo del proyecto está obligado a mantener la confidencialidad respecto al informante del incidente. Se pueden publicar más detalles sobre políticas de ejecución específicas por separado.
+Las instancias de comportamiento abusivo, acosador o inaceptable pueden ser reportadas contactando al equipo del proyecto en [shuntr.dev@gmail.com]. Todas las quejas serán revisadas e investigadas y resultarán en una respuesta considerada necesaria y apropiada a las circunstancias. El equipo del proyecto está obligado a mantener la confidencialidad respecto al informante del incidente. Se pueden publicar más detalles sobre políticas de ejecución específicas por separado.
 
 Los mantenedores que no sigan o apliquen el Código de Conducta de buena fe pueden enfrentar repercusiones temporales o permanentes según lo determinado por otros miembros del liderazgo del proyecto.
 
