@@ -70,23 +70,6 @@ const server = http.createServer((req, res) => {
 server.listen(3000)
 ```
 
-**Routing con `Express`:**
-
-```js
-const express = require('express')
-const app = express()
-
-app.get('/', (req, res) => {
-    res.send('Home Page')
-})
-
-app.get('/about', (req, res) => {
-    res.send('About Page')
-})
-
-app.listen(3000)
-```
-
 ---
 
 ### 4. **Redirección de peticiones**
@@ -116,7 +99,7 @@ server.listen(3000)
 
 ### 5. **Parseo del cuerpo de peticiones**
 
-Node.js no parsea el cuerpo de la petición por defecto, es necesario manejar esto manualmente o usar un middleware como `body-parser` en `Express`.
+Node.js no parsea el cuerpo de la petición por defecto, es necesario manejar esto manualmente o usar un middleware como `body-parser`.
 
 #### Parseo manual de JSON:
 
@@ -141,21 +124,6 @@ const server = http.createServer((req, res) => {
 })
 
 server.listen(3000)
-```
-
-#### Con `Express` y `body-parser`:
-
-```js
-const express = require('express')
-const app = express()
-
-app.use(express.json()) // Middleware para parsear JSON
-
-app.post('/data', (req, res) => {
-    res.send(`Received data: ${req.body.name}`)
-})
-
-app.listen(3000)
 ```
 
 ---
