@@ -1,43 +1,74 @@
-# Chirpy Starter
+# Documentación en varios lenguajes.
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+Este repositorio contiene un conjunto de guías técnicas y herramientas en formato Markdown para diferentes lenguajes de programación. El objetivo es proporcionar recursos útiles y bien organizados para desarrolladores de todos los niveles.
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+## Estructura del Proyecto
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+El proyecto está organizado en carpetas, donde cada una corresponde a un lenguaje de programación o tecnología específica. Dentro de cada carpeta encontrarás archivos en formato `.md` (Markdown) que contienen las guías.
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
-
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+```
+├── README.md
+├── JavaScript/
+│   ├── Code Snippet
+│   ├── Basics.md
+└── ...
 ```
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+## Contenido
 
-## Usage
+### Guías y Documentación
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+-   **CSS**: Guías, consejos y buenas prácticas para escribir hojas de estilo en CSS.
+-   **Docker**: Guía básica para aprender a usar Docker y contenedores.
+-   **GIT**: Guías y tutoriales para aprender a usar Git y GitHub.
+-   **Javascript**: Tutoriales y ejemplos para aprender JavaScript desde cero.
+-   **MongoDB**: Guías y ejemplos para trabajar con MongoDB y bases de datos NoSQL.
+-   **Node.js**: Documentación y ejemplos para aprender a usar Node.js y Express.
+-   **NPM**: Guías y ejemplos para aprender a usar NPM y gestionar paquetes en JavaScript.
+-   **PHP**: Tutoriales y ejemplos para aprender PHP desde cero.
+-   **Postgres**: Guías y ejemplos para trabajar con Postgres y bases de datos relacionales.
+-   **React**: Documentación y ejemplos para aprender a usar React y crear aplicaciones web.
+-   **Shell**: Guías y ejemplos para aprender a usar la línea de comandos y scripts en Shell.
+-   **VSCode**: Guías y consejos para mejorar la productividad usando Visual Studio Code.
+-   **Web**: Guías y ejemplos para aprender a desarrollar aplicaciones web con tecnologías modernas.
+-   **Wordpress**: Tutoriales y ejemplos para aprender a usar Wordpress y crear sitios web.
 
-## Contributing
+### Herramientas
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+-   **APIS**: Guías y ejemplos para trabajar con APIs y servicios web.
+-   **Best Practics**: Recomendaciones y buenas prácticas para escribir código limpio y eficiente.
+-   **Buscar Trabajo**: Consejos y recursos para buscar empleo en el sector tecnológico.
+-   **Componentes**: Guías y ejemplos para trabajar con componentes y librerías en diferentes lenguajes.
+-   **Desplegar web**: Tutoriales y ejemplos para desplegar aplicaciones web en servidores y plataformas en la nube.
+-   **Documentación**: Consejos y ejemplos para escribir documentación técnica y mantenerla actualizada.
+-   **Gráficos**: Recursos y librerías para crear gráficos y visualizaciones de datos en aplicaciones web.
+-   **Herramientas**: Guías y ejemplos para trabajar con diferentes herramientas y utilidades de desarrollo.
+-   **IA**: Tutoriales y ejemplos para trabajar con Inteligencia Artificial y Machine Learning.
+-   **Iconos**: Recursos y librerías para encontrar y utilizar iconos en aplicaciones web y móviles.
+-   **Imágenes**: Recursos y herramientas para encontrar y optimizar imágenes en aplicaciones web.
+-   **JSON**: Guías y ejemplos para trabajar con archivos JSON y APIs REST.
+-   **Librerías**: Recomendaciones y ejemplos de librerías y frameworks para diferentes lenguajes y tecnologías.
+-   **Optimizar web**: Consejos y técnicas para optimizar el rendimiento y la velocidad de carga de sitios web.
+-   **Repositorios interesantes**: Recopilación de repositorios interesantes y útiles en GitHub.
+-   **Web Performance**: Recursos y herramientas para medir y mejorar el rendimiento de aplicaciones web.
 
-## License
+### IMG
 
-This work is published under [MIT][mit] License.
+-   **img**: Imágenes y recursos gráficos utilizados en las guías.
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+## Cómo Contribuir
+
+Si deseas contribuir a este proyecto, puedes hacerlo de la siguiente manera:
+
+1. **Fork** este repositorio.
+2. Crea una rama nueva (`git checkout -b feature/nueva-guia`).
+3. Agrega tus guías o mejoras.
+4. Haz un **Pull Request** y describe brevemente los cambios.
+
+## Requisitos
+
+Para visualizar las guías, necesitas tener un visor de Markdown o usar editores como [Visual Studio Code](https://code.visualstudio.com/) que permitan una vista previa de archivos `.md`.
+
+## Licencia
+
+Este proyecto está bajo la Licencia Creative Commons Attribution 4.0 International (CC BY 4.0). Puedes consultar más detalles en el archivo [LICENSE](./LICENSE).
