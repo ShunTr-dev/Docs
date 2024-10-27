@@ -1,3 +1,10 @@
+---
+title: Deshacer el último commit
+date: 2020-01-01 00:00:00 -100
+categories: [GIT]
+tags: [git]     # TAG names should always be lowercase
+---
+
 Guía de cómo deshacer el último commit con git
 
 Si no has hecho push:

@@ -1,3 +1,9 @@
+---
+title: Solución para el fallo en el pull por archivo tocado en PROD
+date: 2020-01-01 00:00:00 -100
+categories: [GIT]
+tags: [git]     # TAG names should always be lowercase
+---
 # Solución para el fallo en el pull por archivo tocado en PROD
 
 Si has tenido un fallo al intentar hacer un pull debido a un archivo modificado en el entorno de producción, puedes seguir estos pasos para resolverlo:

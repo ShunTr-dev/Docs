@@ -1,3 +1,10 @@
+---
+title: Diferencia entre git merge y git rebase
+date: 2020-01-01 00:00:00 -100
+categories: [GIT]
+tags: [git]     # TAG names should always be lowercase
+---
+
 /_
 @author: midudev
 @url: https://twitter.com/midudev/status/1758124622627627357

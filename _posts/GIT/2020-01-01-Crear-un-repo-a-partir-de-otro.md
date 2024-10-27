@@ -1,3 +1,10 @@
+---
+title: Crear un repo a partir de otro
+date: 2020-01-01 00:00:00 -100
+categories: [GIT]
+tags: [git]     # TAG names should always be lowercase
+---
+
 # Crear un repositorio a partir de otro
 
 En esta guía se detallan los pasos necesarios para crear un nuevo repositorio a partir de otro existente.

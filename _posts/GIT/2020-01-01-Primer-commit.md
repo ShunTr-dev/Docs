@@ -1,3 +1,10 @@
+---
+title: Primer commit
+date: 2020-01-01 00:00:00 -100
+categories: [GIT]
+tags: [git, commit]     # TAG names should always be lowercase
+---
+
 ## Guía para realizar un primer commit en un nuevo repositorio
 
 A continuación se detallan los pasos necesarios para realizar el primer commit en un nuevo repositorio Git:

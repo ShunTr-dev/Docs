@@ -1,3 +1,10 @@
+---
+title: Crear un repo
+date: 2020-01-01 00:00:00 -100
+categories: [GIT]
+tags: [git]     # TAG names should always be lowercase
+---
+
 # Crear un repositorio
 
 En esta guía se detallan los pasos necesarios para crear un nuevo repositorio desde cero y añadirlo a un servidor remoto.

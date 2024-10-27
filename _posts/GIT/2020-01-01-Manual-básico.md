@@ -1,3 +1,10 @@
+---
+title: Manual básico
+date: 2020-01-01 00:00:00 -100
+categories: [GIT]
+tags: [git, basico]     # TAG names should always be lowercase
+---
+
 ````markdown
 # Guía Básica de Git
 

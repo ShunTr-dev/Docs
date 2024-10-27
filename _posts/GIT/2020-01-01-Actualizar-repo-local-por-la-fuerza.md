@@ -1,3 +1,10 @@
+---
+title: Actualizar repo local por la fuerza
+date: 2020-01-01 00:00:00 -100
+categories: [GIT]
+tags: [git]     # TAG names should always be lowercase
+---
+
 ## Actualizar repo local por la fuerza
 
 Realizar con cuidado, ya que esto sobrescribirá la versión local del repositorio:
