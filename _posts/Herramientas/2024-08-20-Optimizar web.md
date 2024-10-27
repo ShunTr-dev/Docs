@@ -29,6 +29,10 @@ Analiza la calidad de tu código CSS.
 Rendimiento, buenas prácticas y mantenibilidad.
 Detecta el código y te da consejos para arreglarlo.
 
+## [Cruxvis](https://cruxvis.withgoogle.com/#/)
+Página de google para ver los core web vitals.
+Para ver la experiencia de los usuarios.
+
 ## Lista para mejorar la velocidad de tu web:
 
 1. Carga sólo el JavaScript y CSS que necesitas.
