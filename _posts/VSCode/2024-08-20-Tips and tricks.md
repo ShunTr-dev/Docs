@@ -15,7 +15,7 @@ Access all available commands based on your current context: `Ctrl+Shift+P`
 
 ### Keyboard reference sheets
 
-[Keyboard shortcut reference](../IMG/VSCode/keyboard-shorcuts.png)
+[Keyboard shortcut reference](../../IMG/VSCode/keyboard-shorcuts.png)
 
 ## Status Bar
 
@@ -27,7 +27,7 @@ Quickly jump to errors and warnings in the project.
 
 Cycle through errors with `F8` or `Shift+F8`
 
-![errors and warnings](../IMG/VSCode/Errors_Warnings.gif)
+![errors and warnings](../../IMG/VSCode/Errors_Warnings.gif)
 
 You can filter problems either by type ('errors', 'warnings') or text matching.
 
@@ -88,7 +88,7 @@ or a custom schema
 
 Keyboard Shortcut: `Ctrl+`
 
-![Integrated terminal](../IMG/VSCode/integrated_terminal.png)
+![Integrated terminal](../../IMG/VSCode/integrated_terminal.png)
 
 Further reading:
 
@@ -99,7 +99,7 @@ Further reading:
 
 Keyboard Shortcut: `Ctrl+B`
 
-![toggle side bar](../IMG/VSCode/toggle_side_bar.gif)
+![toggle side bar](../../IMG/VSCode/toggle_side_bar.gif)
 
 ### Toggle Panel
 
@@ -109,7 +109,7 @@ Keyboard Shortcut: `Ctrl+J`
 
 Keyboard Shortcut: `Ctrl+K Z`
 
-![zen mode](../IMG/VSCode/zen_mode.gif)
+![zen mode](../../IMG/VSCode/zen_mode.gif)
 
 Press `Esc` twice to exit Zen Mode.
 
@@ -119,7 +119,7 @@ Keyboard Shortcut: `Ctrl+\`
 
 You can also drag and drop editors to create new editor groups and move editors between groups.
 
-![split editors](../IMG/VSCode/split_editor.gif)
+![split editors](../../IMG/VSCode/split_editor.gif)
 
 ### Create or open a file
 
@@ -127,7 +127,7 @@ Keyboard Shortcut: `Ctrl+click`
 
 You can quickly open a file or image or create a new file by moving the cursor to the file link and using `Ctrl+click`.
 
-![create and open file](../IMG/VSCode/create_open_file.gif)
+![create and open file](../../IMG/VSCode/create_open_file.gif)
 
 ### Preventing dirty writes
 
@@ -135,7 +135,7 @@ VS Code will show you an error message when you try to save a file that cannot b
 
 In order to resolve the save conflict, click the **Compare** action in the error message to open a diff editor that will show you the contents of the file on disk (to the left) compared to the contents in VS Code (on the right):
 
-![dirty write](../IMG/VSCode/dirty-write.png)
+![dirty write](../../IMG/VSCode/dirty-write.png)
 
 Use the actions in the editor toolbar to resolve the save conflict. You can either **Accept** your changes and thereby overwriting any changes on disk, or **Revert** to the version on disk. Reverting means that your changes will be lost.
 
@@ -153,22 +153,22 @@ To set cursors above or below the current position use:
 
 Keyboard Shortcut: `Ctrl+Alt+Up` or `Ctrl+Alt+Down`
 
-![multi cursor](../IMG/VSCode/multicursor.gif)
+![multi cursor](../../IMG/VSCode/multicursor.gif)
 
 You can add additional cursors to all occurrences of the current selection with `Ctrl+Shift+L`.
 
-![add cursor to all occurrences of current selection](../IMG/VSCode/add_cursor_current_selection.gif)
+![add cursor to all occurrences of current selection](../../IMG/VSCode/add_cursor_current_selection.gif)
 
 If you do not want to add all occurrences of the current selection, you can use `Ctrl+D` instead.
 This only selects the next occurrence after the one you selected so you can add selections one by one.
 
-![add cursor to next occurrences of current selection one by one](../IMG/VSCode/add_cursor_current_selection_one_by_one.gif)
+![add cursor to next occurrences of current selection one by one](../../IMG/VSCode/add_cursor_current_selection_one_by_one.gif)
 
 ### Column (box) selection
 
 You can select blocks of text by holding `Shift+Alt` while you drag your mouse. A separate cursor will be added to the end of each selected line.
 
-![Column text selection](../IMG/VSCode/column-select.gif)
+![Column text selection](../../IMG/VSCode/column-select.gif)
 
 ### Fast scrolling
 
@@ -180,13 +180,13 @@ Keyboard Shortcut: `Shift+Alt+Up` or `Shift+Alt+Down`
 
 > The commands **Copy Line Up/Down** are unbound on Linux because the VS Code default keybindings would conflict with Ubuntu keybindings, see [Issue #509](https://github.com/microsoft/vscode/issues/509). You can still set the commands `editor.action.copyLinesUpAction` and `editor.action.copyLinesDownAction` to your own preferred keyboard shortcuts.
 
-![copy line down](../IMG/VSCode/copy_line_down.gif)
+![copy line down](../../IMG/VSCode/copy_line_down.gif)
 
 ### Move line up and down
 
 Keyboard Shortcut: `Alt+Up` or `Alt+Down`
 
-![move line up and down](../IMG/VSCode/move_line.gif)
+![move line up and down](../../IMG/VSCode/move_line.gif)
 
 ### Shrink / expand selection
 
@@ -202,13 +202,13 @@ Keyboard Shortcut: `Ctrl+G`
 
 Keyboard Shortcut: `Ctrl+K Ctrl+X`
 
-![trailing whitespace](../IMG/VSCode/trim_whitespace.gif)
+![trailing whitespace](../../IMG/VSCode/trim_whitespace.gif)
 
 ### Transform text commands
 
 You can change selected text to uppercase, lowercase, and title case with the **Transform** commands from the Command Palette.
 
-![Transform text commands](../IMG/VSCode/transform-text-commands.png)
+![Transform text commands](../../IMG/VSCode/transform-text-commands.png)
 
 ### Code formatting
 
@@ -216,13 +216,13 @@ Currently selected source code: `Ctrl+K Ctrl+F`
 
 Whole document format: `Shift+Alt+F`
 
-![code formatting](../IMG/VSCode/code_formatting.gif)
+![code formatting](../../IMG/VSCode/code_formatting.gif)
 
 ### Code folding
 
 Keyboard Shortcut: `Ctrl+Shift+[` and `Ctrl+Shift+]`
 
-![code folding](../IMG/VSCode/code_folding.gif)
+![code folding](../../IMG/VSCode/code_folding.gif)
 
 You can also fold/unfold all regions in the editor with **Fold All** (`Ctrl+K Ctrl+0`) and **Unfold All** (`Ctrl+K Ctrl+J`).
 
@@ -250,19 +250,19 @@ Keyboard Shortcut: `Ctrl+K V`
 
 The preview and editor will synchronize with your scrolling in either view.
 
-![side by side Markdown preview](../IMG/VSCode/markdown-preview-side-by-side.png)
+![side by side Markdown preview](../../IMG/VSCode/markdown-preview-side-by-side.png)
 
 ### Peek
 
 Select a symbol then type `Alt+F12`. Alternatively, you can use the context menu.
 
-![peek](../IMG/VSCode/peek.gif)
+![peek](../../IMG/VSCode/peek.gif)
 
 ### Go to Definition
 
 Select a symbol then type `F12`. Alternatively, you can use the context menu or `Ctrl+click`.
 
-![go to definition](../IMG/VSCode/goto_definition.gif)
+![go to definition](../../IMG/VSCode/goto_definition.gif)
 
 You can go back to your previous location with the **Go** > **Back** command or `Alt+Left`.
 
@@ -272,13 +272,13 @@ You can also see the type definition if you press `Ctrl` when you are hovering o
 
 Select a symbol then type `Shift+F12`. Alternatively, you can use the context menu.
 
-![peek references](../IMG/VSCode/find_all_references.gif)
+![peek references](../../IMG/VSCode/find_all_references.gif)
 
 ### Rename Symbol
 
 Select a symbol then type `F2`. Alternatively, you can use the context menu.
 
-![rename symbol](../IMG/VSCode/rename_symbol.gif)
+![rename symbol](../../IMG/VSCode/rename_symbol.gif)
 
 ### .eslintrc.json
 
@@ -329,7 +329,7 @@ Here is configuration to use ES6.
 
 See IntelliSense for your `package.json` file.
 
-![package json intellisense](../IMG/VSCode/package_json_intellisense.gif)
+![package json intellisense](../../IMG/VSCode/package_json_intellisense.gif)
 
 ## Snippets
 
@@ -339,7 +339,7 @@ See IntelliSense for your `package.json` file.
 
 From the **Source Control** view, select a file to open the diff.
 
-![git diff from source control](../IMG/VSCode/msee-changes.gif)
+![git diff from source control](../../IMG/VSCode/msee-changes.gif)
 
 Alternatively, click the **Open Changes** button in the top right corner to diff the current open file.
 
@@ -363,7 +363,7 @@ You can make edits directly in the pending changes of the diff view.
 
 Click the (...) button and then select **Undo Last Commit** to undo the previous commit. The changes are added to the Staged Changes section.
 
-![undo last commit](../IMG/VSCode/mundo-last-commit.gif)
+![undo last commit](../../IMG/VSCode/mundo-last-commit.gif)
 
 ### Resolve merge conflicts
 
