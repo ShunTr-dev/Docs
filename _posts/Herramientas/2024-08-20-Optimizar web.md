@@ -84,7 +84,9 @@ Revisa y aprende a usar CSS ya que:
 
 ¡Ojo! Usa esta técnica para imágenes que sabes que no están en pantalla desde el principio.
 
+```html
 <img loading="lazy" src="imagen.webp" alt="..." />
+```
 
 7. Cuantas menos fuentes, mejor
    Las fuentes son críticas para mostrar nuestra web.

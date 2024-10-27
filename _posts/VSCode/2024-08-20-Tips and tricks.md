@@ -111,7 +111,7 @@ Keyboard Shortcut: `Ctrl+J`
 
 Keyboard Shortcut: `Ctrl+K Z`
 
-![zen mode](i../IMG/VSCode/zen_mode.gif)
+![zen mode](../IMG/VSCode/zen_mode.gif)
 
 Press `Esc` twice to exit Zen Mode.
 
