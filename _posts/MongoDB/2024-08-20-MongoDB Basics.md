@@ -1,5 +1,5 @@
 ---
-title: Basics
+title: MongoDB Basics
 date: 2024-08-20 00:00:00 -100
 categories: [MongoDB]
 tags: [herramientas]

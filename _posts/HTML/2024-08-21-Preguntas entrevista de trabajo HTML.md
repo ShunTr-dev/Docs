@@ -1,5 +1,5 @@
 ---
-title: Preguntas entrevista de trabajo
+title: Preguntas entrevista de trabajo HTML
 date: 2024-08-21 00:00:00 -100
 categories: [HTML]
 tags: [herramientas]
