@@ -15,7 +15,7 @@ Access all available commands based on your current context: `Ctrl+Shift+P`
 
 ### Keyboard reference sheets
 
-[Keyboard shortcut reference](../IMG/VSCode/keyboard shorcuts.png)
+[Keyboard shortcut reference](../IMG/VSCode/keyboard-shorcuts.png)
 
 ## Status Bar
 
@@ -81,8 +81,6 @@ or a custom schema
     }
 ]
 ```
-
-See more in the [JSON](/docs/languages/json.md) documentation.
 
 ## Files and folders
 
