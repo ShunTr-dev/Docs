@@ -1,8 +1,8 @@
 ---
-title: Node basics
+title: Node básico
 date: 2024-10-24 00:00:00 -100
 categories: [Node.js]
-tags: [herramientas]
+tags: [node, basico]
 ---
 
 ### 1. **Enviar respuestas**

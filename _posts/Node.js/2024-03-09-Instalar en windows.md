@@ -2,7 +2,7 @@
 title: Instalar en windows
 date: 2024-03-09 00:00:00 -100
 categories: [Node.js]
-tags: [herramientas]
+tags: [node]
 ---
 
 # Instalar en Windows Node.js
