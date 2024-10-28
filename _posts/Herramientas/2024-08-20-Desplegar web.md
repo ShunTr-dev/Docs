@@ -4,7 +4,7 @@ date: 2024-08-20 00:00:00 -100
 categories: [Herramientas]
 tags: [herramientas, server, deploy, hosting]
 authors: [<midudev>,<shuntr>]
-url: https://twitter.com/midudev/status/1745090991298658751
+# url: https://twitter.com/midudev/status/1745090991298658751
 ---
 
 [FLY IO](https://fly.io/)

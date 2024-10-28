@@ -4,7 +4,7 @@ date: 2024-10-27 00:00:00 -100
 categories: [JavaScript, Code Snippet]
 tags: [javasctipt, code-snippet, tierlist]
 authors: [<midudev>,<shuntr>]
-url: https://www.youtube.com/watch?v=LPzG0PnOzgA&ab_channel=midulive
+# url: https://www.youtube.com/watch?v=LPzG0PnOzgA&ab_channel=midulive
 ---
 
 ```html

@@ -4,7 +4,7 @@ date: 2024-08-20 00:00:00 -100
 categories: [GIT]
 tags: [herramientas]
 author: <midudev>
-url: https://twitter.com/midudev/status/1758124622627627357
+# url: https://twitter.com/midudev/status/1758124622627627357
 ---
 
 # Diferencia entre git merge y git rebase
