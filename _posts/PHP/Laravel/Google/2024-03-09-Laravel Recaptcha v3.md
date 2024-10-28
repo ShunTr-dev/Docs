@@ -2,7 +2,7 @@
 title: Laravel Recaptcha v3
 date: 2024-03-09 00:00:00 -100
 categories: [PHP, Laravel, Google]
-tags: [herramientas]
+tags: [php, laravel, google]
 ---
 
 ### Vista Blade

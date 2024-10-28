@@ -2,7 +2,7 @@
 title: Instalar paquete
 date: 2024-08-20 00:00:00 -100
 categories: [NPM]
-tags: [herramientas]
+tags: [npm, instalar]
 ---
 
 # Instalar un Paquete en NPM

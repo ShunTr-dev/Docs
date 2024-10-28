@@ -2,7 +2,7 @@
 title: Reiniciar secuencias
 date: 2024-03-09 00:00:00 -100
 categories: [Postgres]
-tags: [herramientas]
+tags: [postgress, secuencias]
 ---
 
 # Reiniciar secuencias en PostgreSQL

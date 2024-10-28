@@ -2,7 +2,7 @@
 title: Consultas
 date: 2024-03-09 00:00:00 -100
 categories: [PHP, CakePHP]
-tags: [herramientas]
+tags: [php, cakephp, consultas]
 ---
 
 Estos son algunos ejemplos de consultas complejas en CakePHP:

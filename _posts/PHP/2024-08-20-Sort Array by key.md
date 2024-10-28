@@ -2,7 +2,7 @@
 title: Sort Array by key
 date: 2024-08-20 00:00:00 -100
 categories: [PHP]
-tags: [herramientas]
+tags: [php, ordenacion]
 ---
 
 # Ordenar un array por clave

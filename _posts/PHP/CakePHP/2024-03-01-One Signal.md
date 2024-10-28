@@ -2,12 +2,12 @@
 title: One Signal
 date: 2024-03-01 00:00:00 -100
 categories: [PHP, CakePHP]
-tags: [herramientas]
+tags: [php, cakephp, one signal]
 ---
 
 Función
 
-```
+```php
 /**
  * 
  * Función de enviado de notificaciones de One signal.
@@ -83,7 +83,7 @@ public function sendOnesignalNotifications ($content = null, $filters = null, $d
 ```
 Llamada
 
-```
+```php
 if($oneSignalMessage->group_id > 0){
   $filters = ["field" => "tag", "key" => "group", "relation" => "=", "value" => $oneSignalMessage->group_id];
   $included_segments = null;

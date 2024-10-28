@@ -2,7 +2,7 @@
 title: Devolver elementos sin ORM
 date: 2024-03-09 00:00:00 -100
 categories: [PHP, CakePHP]
-tags: [herramientas]
+tags: [php, cakephp, orm]
 ---
 
 # Devolver elementos sin ORM

@@ -2,7 +2,7 @@
 title: Duplicar BDD
 date: 2024-03-09 00:00:00 -100
 categories: [Postgres]
-tags: [herramientas]
+tags: [postgress, duplicar]
 ---
 
 # Duplicar Base de Datos en PostgreSQL

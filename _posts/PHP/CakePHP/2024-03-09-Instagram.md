@@ -2,7 +2,7 @@
 title: Instagram
 date: 2024-03-09 00:00:00 -100
 categories: [PHP, CakePHP]
-tags: [herramientas]
+tags: [php, cakephp, instagram]
 ---
 
 # Tomar las 3 últimas imágenes de Instagram con CakePHP

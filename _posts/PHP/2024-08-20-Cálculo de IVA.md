@@ -2,7 +2,7 @@
 title: Cálculo de IVA
 date: 2024-08-20 00:00:00 -100
 categories: [PHP]
-tags: [herramientas]
+tags: [php, iva]
 ---
 
 # Cálculo de IVA en PHP
