@@ -2,7 +2,7 @@
 title: React basics
 date: 2024-08-20 00:00:00 -100
 categories: [React]
-tags: [herramientas]
+tags: [react, basico]
 ---
 
 # [React](https://es.react.dev/)

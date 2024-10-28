@@ -2,7 +2,7 @@
 title: useOptimistic
 date: 2024-07-17 00:00:00 -100
 categories: [React, Hooks]
-tags: [herramientas]
+tags: [react, hooks, useoptimistic]
 ---
 
 # useOptimistic
