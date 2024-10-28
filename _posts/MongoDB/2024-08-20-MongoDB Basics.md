@@ -2,7 +2,7 @@
 title: MongoDB Basics
 date: 2024-08-20 00:00:00 -100
 categories: [MongoDB]
-tags: [herramientas]
+tags: [mongodb]
 ---
 
 show dbs //Show Databases
@@ -20,7 +20,7 @@ explain() antes de lo que quiera hacer verbose de lo que pasa
 
 -   executionsStats
 
-```
+```js
 db.runCommand({
   collMod: 'posts',
   validator: {
@@ -67,7 +67,7 @@ db.runCommand({
 
 CREATE
 
-```
+```js
 db.coll.insertOne({name: "Max"})
 db.coll.insertMany([{name: "Max"}, {name:"Alex"}])
 db.coll.insertMany([{name: "Max"}, {name:"Alex"}], {ordered: false}) //continua metiendo datos aunque algo falle
@@ -86,7 +86,7 @@ db.coll.insert({name: "Max"}, {"writeConcern": {"w": "majority", "wtimeout": 500
 
 FIND
 
-```
+```js
 db.coll.findOne() // returns a single document (the first that finds)
 db.coll.find()    // returns a cursor - show 20 results - "it" to display more
 db.coll.find().pretty() //human readable
@@ -178,7 +178,7 @@ db.coll.find().readConcern("majority")
 
 UPDATE
 
-```
+```js
 db.coll.updateOne({$set: {values} })
 
 unset // quita campos
@@ -233,7 +233,7 @@ Official Document Updating Docs: https://docs.mongodb.com/manual/tutorial/update
 
 DELETE
 
-```
+```js
 delete, deleteMany¿?
 
 db.coll.remove({name: "Max"})
@@ -272,7 +272,7 @@ Important data type limits are:
     Example for Node.js: http://mongodb.github.io/node-mongodb-native/3.1/api/Long.html
     This will allow you to build a NumberLong value like this:
 
-```
+```js
 const Long = require('mongodb').Long;
 
 db.collection('wealth').insert( {

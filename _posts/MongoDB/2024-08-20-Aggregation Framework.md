@@ -2,14 +2,14 @@
 title: Aggregation Framework
 date: 2024-08-20 00:00:00 -100
 categories: [MongoDB]
-tags: [herramientas]
+tags: [mongodb]
 ---
 
 Aggregation Framework - RETRIEVING DATA EFFICIENTLY AND IN A STRUCTURED WAY
 
 https://www.mongodb.com/docs/manual/aggregation/
 
-```
+```js
 db.orders.aggregate( [{
    // Stage 1: FILTER
    $match: { size: "medium" }
@@ -27,7 +27,7 @@ The $match stage:
 -   Groups the remaining documents by pizza name.
 -   Uses $sum to calculate the total order quantity for each pizza name. The total is stored in the totalQuantity field returned by the aggregation pipeline.
 
-```
+```js
 //Sacar las personas female agrupadas por estado
 db.persons.aggregate([
     { $match: { gender: 'female' } },
@@ -41,7 +41,7 @@ db.persons.aggregate([
 ]).pretty();
 ```
 
-```
+```js
 db.persons.aggregate([{
   $project: {
     _id: 0,
@@ -107,7 +107,7 @@ db.persons.aggregate([{
 ]).pretty();
 ```
 
-```
+```js
 db.friends.aggregate([
     { $unwind: "$hobbies" }, // divide las colecciones padre del array y si tiene dos elementos
     // crea dos elementos cada uno con un atriburo diferente
@@ -118,20 +118,20 @@ db.friends.aggregate([
   ]).pretty();
 ```
 
-```
+```js
 db.friends.aggregate([
     { $project: { _id: 0, examScore: { $slice: ["$examScores", 2, 1] } } }
   ]).pretty();
 ```
 
-```
+```js
 // length of array (numero de exámenes)
 db.friends.aggregate([
     { $project: { _id: 0, numScores: { $size: "$examScores" } } }
   ]).pretty();
 ```
 
-```
+```js
 // Exámenes con nota má sde 60
 db.friends.aggregate([
     {
@@ -144,7 +144,7 @@ db.friends.aggregate([
   ]).pretty();
 ```
 
-```
+```js
 // La mayor puntuación para cada persona
 db.friends.aggregate([
     { $unwind: "$examScores" },
@@ -155,7 +155,7 @@ db.friends.aggregate([
   ]).pretty();
 ```
 
-```
+```js
 // Agrupar personas por edad
 
 db.persons
@@ -187,7 +187,7 @@ db.persons.aggregate([
   ]).pretty();
 ```
 
-```
+```js
 // Pagination
 db.persons.aggregate([
     { $match: { gender: "male" } },
@@ -201,7 +201,7 @@ db.persons.aggregate([
 MongoDB actually tries its best to optimize your Aggregation Pipelines without interfering with your logic.
 Learn more about the default optimizations MongoDB performs in this article: https://docs.mongodb.com/manual/core/aggregation-pipeline-optimization/
 
-```
+```js
 { $out: "transformedPersons" } // Puedes añadirlo al final de un aggregate para crear una colección nueva con la respuesta
 
 // creamos el indice para poder hacer los cálculos

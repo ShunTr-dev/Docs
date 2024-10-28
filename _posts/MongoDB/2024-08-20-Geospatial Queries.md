@@ -2,10 +2,10 @@
 title: Geospatial Queries
 date: 2024-08-20 00:00:00 -100
 categories: [MongoDB]
-tags: [herramientas]
+tags: [mongodb]
 ---
 
-```
+```js
 location: {
       type: "Point",
       coordinates: [-73.856077, 40.848447]

@@ -2,12 +2,12 @@
 title: Transactions
 date: 2024-08-20 00:00:00 -100
 categories: [MongoDB]
-tags: [herramientas]
+tags: [mongodb]
 ---
 
 Transactions - Fail together
 
-```
+```js
 // Necesitas crear una sesión, un objeto que permite agrupar todas las acciones
 const sesion = db.getMongo().startSession()
 session.startTransaction()

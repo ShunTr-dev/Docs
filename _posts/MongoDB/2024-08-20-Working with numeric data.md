@@ -2,7 +2,7 @@
 title: Working with numeric data
 date: 2024-08-20 00:00:00 -100
 categories: [MongoDB]
-tags: [herramientas]
+tags: [mongodb]
 ---
 
 There's one important thing you have to keep in mind about the MongoDB Shell (which we're using via the mongo command): It is based on JavaScript, it's running on JavaScript.
