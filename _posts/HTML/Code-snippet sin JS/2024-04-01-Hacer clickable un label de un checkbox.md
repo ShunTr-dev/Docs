@@ -2,7 +2,7 @@
 title: Hacer clickable un label de un checkbox
 date: 2024-04-01 00:00:00 -100
 categories: [HTML, Code-snippet sin JS]
-tags: [herramientas]
+tags: [html]
 ---
 
 Para hacer que el texto de un checkbox sea cliclable, puedes envolver el input checkbox dentro de un elemento `<label>` y colocar el texto dentro de ese `<label>`. Cuando haces clic en el texto, también activa el checkbox asociado.

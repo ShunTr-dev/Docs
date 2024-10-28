@@ -1,8 +1,8 @@
 ---
-title: HTML
+title: HTML Básico
 date: 2024-08-20 00:00:00 -100
 categories: [HTML]
-tags: [herramientas]
+tags: [html]
 ---
 
 # HTML - Hypertext Markup Language

@@ -2,7 +2,7 @@
 title: Etiquetas nuevas
 date: 2024-08-20 00:00:00 -100
 categories: [HTML]
-tags: [herramientas]
+tags: [etiquetas, html, label]
 ---
 
 # Etiquetas nuevas

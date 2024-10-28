@@ -2,7 +2,7 @@
 title: Agrupar details
 date: 2024-04-01 00:00:00 -100
 categories: [HTML, Code-snippet sin JS]
-tags: [herramientas]
+tags: [html]
 ---
 
 En HTML, puedes usar el atributo `name` para agrupar elementos de `details` y `summary` juntos, de modo que cuando uno se abre, los demás se cierren automáticamente. Esto se logra utilizando la misma cadena de texto en el atributo `name` de cada elemento `details` que deseas agrupar. Aquí te muestro un ejemplo:
