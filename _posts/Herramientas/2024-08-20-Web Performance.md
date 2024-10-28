@@ -2,7 +2,7 @@
 title: Web Performance
 date: 2024-08-20 00:00:00 -100
 categories: [Herramientas]
-tags: [herramientas]
+tags: [herramientas, web, performance]
 ---
 
 # Web Performance

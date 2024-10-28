@@ -2,7 +2,7 @@
 title: Optimizar web
 date: 2024-08-20 00:00:00 -100
 categories: [Herramientas]
-tags: [herramientas]
+tags: [herramientas, optimizacion, web]
 ---
 
 # Herramientas para optimizar tu web

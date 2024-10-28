@@ -2,7 +2,7 @@
 title: Repositorios interesantes
 date: 2024-08-20 00:00:00 -100
 categories: [Herramientas]
-tags: [herramientas]
+tags: [herramientas, repositorios]
 ---
 
 # Repositorios interesantes

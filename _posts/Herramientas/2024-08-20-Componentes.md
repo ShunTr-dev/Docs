@@ -2,7 +2,7 @@
 title: Componentes
 date: 2024-08-20 00:00:00 -100
 categories: [Herramientas]
-tags: [herramientas]
+tags: [componentes, react, herramientas]
 ---
 
 # Componentes
