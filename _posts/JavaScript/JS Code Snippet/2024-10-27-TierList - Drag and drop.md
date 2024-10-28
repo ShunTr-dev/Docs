@@ -2,7 +2,9 @@
 title: TierList - Drag and drop
 date: 2024-10-27 00:00:00 -100
 categories: [JavaScript, Code Snippet]
-tags: [herramientas]
+tags: [javasctipt, code-snippet, tierlist]
+authors: [<midudev>,<shuntr>]
+url: https://www.youtube.com/watch?v=LPzG0PnOzgA&ab_channel=midulive
 ---
 
 ```html
