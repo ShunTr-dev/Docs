@@ -1,15 +1,13 @@
 ---
 title: scroll sin JS
 date: 2024-10-27 00:00:00 -100
-categories: [CSS, code-snippet]
-tags: [herramientas]
+categories: [CSS, css code-snippet]
+tags: [css, scroll]
+author: <midudev>
+url: https://www.youtube.com/watch?v=RwjgfNX41TE
 ---
 
 ```html
-<!--
-    @Author: Midudev
-    @URL: https://www.youtube.com/watch?v=RwjgfNX41TE
--->
 
 <style type="text/css">
     body {

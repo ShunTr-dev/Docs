@@ -2,7 +2,7 @@
 title: CSS Transitions y CSS Animations
 date: 2024-08-20 00:00:00 -100
 categories: [CSS]
-tags: [herramientas]
+tags: [css, transitions, animations]
 ---
 
 # CSS Transitions

@@ -1,8 +1,8 @@
 ---
 title: Effecto de cambio de modo claro-oscuro
 date: 2024-08-20 00:00:00 -100
-categories: [CSS, code-snippet]
-tags: [herramientas]
+categories: [CSS, css code-snippet]
+tags: [css, darkmode]
 ---
 
 [theme-toggle](https://theme-toggle.rdsx.dev/)

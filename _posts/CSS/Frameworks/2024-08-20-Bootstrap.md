@@ -2,7 +2,7 @@
 title: Bootstrap
 date: 2024-08-20 00:00:00 -100
 categories: [CSS, Frameworks]
-tags: [herramientas]
+tags: [css, frameworks, bootstrap]
 ---
 
 container fluid
