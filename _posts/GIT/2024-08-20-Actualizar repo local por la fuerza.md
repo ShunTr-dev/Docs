@@ -2,7 +2,7 @@
 title: Actualizar repo local por la fuerza
 date: 2024-08-20 00:00:00 -100
 categories: [GIT]
-tags: [herramientas]
+tags: [git, repo]
 ---
 
 ## Actualizar repo local por la fuerza

@@ -2,7 +2,7 @@
 title: Manual básico
 date: 2024-08-20 00:00:00 -100
 categories: [GIT]
-tags: [herramientas]
+tags: [git, basico]
 ---
 
 ````markdown

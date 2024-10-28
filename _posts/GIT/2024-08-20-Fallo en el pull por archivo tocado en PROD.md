@@ -2,7 +2,7 @@
 title: Fallo en el pull por archivo tocado en PROD
 date: 2024-08-20 00:00:00 -100
 categories: [GIT]
-tags: [herramientas]
+tags: [git, fallo, error]
 ---
 
 # Solución para el fallo en el pull por archivo tocado en PROD

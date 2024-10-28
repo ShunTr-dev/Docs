@@ -2,7 +2,7 @@
 title: Crear un repo
 date: 2024-08-20 00:00:00 -100
 categories: [GIT]
-tags: [herramientas]
+tags: [git, crear, repo]
 ---
 
 # Crear un repositorio

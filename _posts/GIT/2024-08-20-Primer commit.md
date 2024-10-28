@@ -2,7 +2,7 @@
 title: Primer commit
 date: 2024-08-20 00:00:00 -100
 categories: [GIT]
-tags: [herramientas]
+tags: [git, commit]
 ---
 
 ## Guía para realizar un primer commit en un nuevo repositorio

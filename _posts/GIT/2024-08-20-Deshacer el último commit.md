@@ -2,7 +2,7 @@
 title: Deshacer el último commit
 date: 2024-08-20 00:00:00 -100
 categories: [GIT]
-tags: [herramientas]
+tags: [git, undo, deshacer]
 ---
 
 Guía de cómo deshacer el último commit con git

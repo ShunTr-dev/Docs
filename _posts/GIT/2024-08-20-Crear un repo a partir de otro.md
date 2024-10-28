@@ -2,7 +2,7 @@
 title: Crear un repo a partir de otro
 date: 2024-08-20 00:00:00 -100
 categories: [GIT]
-tags: [herramientas]
+tags: [git, repo, copy]
 ---
 
 # Crear un repositorio a partir de otro
