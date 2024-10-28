@@ -2,7 +2,7 @@
 title: Comprimir
 date: 2024-08-20 00:00:00 -100
 categories: [Shell]
-tags: [herramientas]
+tags: [shell, comprimir]
 ---
 
 # Comandos para Comprimir Archivos

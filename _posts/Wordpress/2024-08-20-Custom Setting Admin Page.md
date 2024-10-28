@@ -2,7 +2,7 @@
 title: Custom Setting Admin Page
 date: 2024-08-20 00:00:00 -100
 categories: [Wordpress]
-tags: [herramientas]
+tags: [wordpress, admin panel]
 ---
 
 # Página de Administrador Personalizada en WordPress

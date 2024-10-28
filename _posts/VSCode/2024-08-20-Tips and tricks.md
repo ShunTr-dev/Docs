@@ -2,7 +2,7 @@
 title: Tips and tricks
 date: 2024-08-20 00:00:00 -100
 categories: [VSCode]
-tags: [herramientas]
+tags: [vscode, shortcut]
 ---
 
 # [Visual Studio Code Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks)

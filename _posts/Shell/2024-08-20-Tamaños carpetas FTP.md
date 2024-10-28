@@ -2,7 +2,7 @@
 title: Tamaños carpetas FTP
 date: 2024-08-20 00:00:00 -100
 categories: [Shell]
-tags: [herramientas]
+tags: [shell, ftp]
 ---
 
 # Tamaños de Carpetas en FTP
