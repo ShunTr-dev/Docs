@@ -3,38 +3,67 @@ title: Deshacer el último commit
 date: 2024-08-20 00:00:00 -100
 categories: [GIT]
 tags: [git, undo, deshacer]
+author: <midudev>
 ---
 
-Guía de cómo deshacer el último commit con git
+# Deshacer el Último Commit
 
-Si no has hecho push:
+## Si aún no has hecho `push`
 
--   Para mantener cambios: git reset --soft HEAD~1
--   Para eliminar cambios: git reset --hard HEAD~1
--   Para arreglar el commit (mensaje o añadir cambios):
-    git commit --amend -m "Mensaje corregido"
+1. **Para mantener los cambios en el área de staging (index):**
+   ```bash
+   git reset --soft HEAD~1
+   ```
+   Este comando deshace el último commit pero deja los cambios en el área de staging, listos para ser modificados y confirmados nuevamente si es necesario.
 
-Ya has hecho push:
+2. **Para eliminar los cambios completamente:**
+   ```bash
+   git reset --hard HEAD~1
+   ```
+   Esto elimina el último commit y los cambios que contenía. ⚠️ **Precaución:** Cualquier cambio en el directorio de trabajo desde el último commit se perderá.
 
--   git revert <hash> para crear un nuevo commit que invierte los cambios. Si hay conflictos, prepárate para manejarlos.
--   git log para recuperar el hash del commit que quieres revertir.
+3. **Para modificar el commit (mensaje o archivos):**
+   ```bash
+   git commit --amend -m "Nuevo mensaje"
+   ```
+   Este comando permite editar el último commit. Puedes cambiar el mensaje o añadir archivos adicionales antes de confirmar de nuevo.
 
-Nivel experto:
+## Si ya has hecho `push`
 
--   git rebase -i para modificar tu historial de commits localmente. Puedes cambiar el orden, combinar, editar o eliminar commits.
--   Luego ejecuta "git push --force-with-lease"
--   ⚠️ Aviso: Sólo usa rebase y push forzado en ramas donde seas el único colaborador o en situaciones donde todos los colaboradores estén al tanto y de acuerdo con reescribir la historia.
+1. **Revertir el commit creando un nuevo commit de reversión:**
+   ```bash
+   git revert <hash_del_commit>
+   ```
+   Esto crea un nuevo commit que invierte los cambios del commit especificado, sin modificar el historial. Si hay conflictos, deberás resolverlos antes de continuar.
 
-Te explico los comandos y parámetros que igual no te suenan o no son tan comunes:
+2. **Obtener el hash del commit a revertir:**
+   ```bash
+   git log
+   ```
+   Usa `git log` para encontrar el hash del commit que deseas revertir y úsalo en el comando `git revert` de arriba.
 
-git reset: Este comando se usa para restablecer el índice y el directorio de trabajo al estado de un commit específico.
+## Opciones avanzadas (Nivel experto)
 
---soft: Indica que el reset no debe alterar el índice (staging area) ni el directorio de trabajo, pero sí mueve el HEAD al commit especificado. Los cambios que estaban en el commit deshecho se quedan en staging, listos para ser recommitidos si se desea.
+1. **Editar el historial de commits localmente:**
+   ```bash
+   git rebase -i HEAD~n
+   ```
+   Con `git rebase -i`, puedes modificar el historial local de commits. Esto permite cambiar el orden, combinar, editar o eliminar commits. Reemplaza `HEAD~n` con el número de commits que deseas editar en el historial.
 
---hard: Indica que el reset debe cambiar el índice (staging area) y el directorio de trabajo para reflejar el estado del commit especificado. Cualquier cambio en el directorio de trabajo desde el último commit se perderá.
+2. **Forzar el push tras modificar el historial:**
+   ```bash
+   git push --force-with-lease
+   ```
+   ⚠️ **Precaución:** Solo usa `rebase` y `push --force-with-lease` en ramas donde trabajas solo o en casos donde todos los colaboradores estén informados y de acuerdo en reescribir el historial.
 
-HEAD~1: Se refiere al commit anterior al último. HEAD es un puntero al último commit de la rama actual, y ~1 mueve ese puntero un commit hacia atrás.
+## Explicación de los comandos y parámetros clave
 
---force-with-lease: Una opción más segura que --force, ya que solo forzará el push si tu copia local está actualizada respecto a los cambios en el remoto. Evita sobreescribir el trabajo de otras personas accidentalmente.
+- **`git reset`**: Restaura el índice y el directorio de trabajo a un commit específico.
+   - `--soft`: Deshace el commit sin modificar el índice ni el directorio de trabajo, dejando los cambios en el área de staging.
+   - `--hard`: Restaura el índice y el directorio de trabajo al commit especificado, eliminando cualquier cambio realizado desde ese commit.
+   
+- **`HEAD~1`**: Representa el commit anterior al último. `HEAD` es un puntero al último commit en la rama actual; `~1` mueve ese puntero un commit atrás.
 
-Author: [Midudev](https://twitter.com/midudev/status/1757051558443745693)
+- **`--force-with-lease`**: Es una alternativa más segura a `--force` al hacer `push`. Este comando solo forzará el `push` si tu copia local está al día respecto a la versión en el remoto, previniendo sobrescribir cambios de otros colaboradores por error.
+
+
