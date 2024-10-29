@@ -9,8 +9,9 @@ tags: [git, pull request]
 
 Antes de empezar, revisa el archivo `CONTRIBUTE.md` del repositorio para asegurarte de seguir las pautas proporcionadas por los desarrolladores.
 
-### 1. Clonar el repositorio y hacer cambios
-Descarga el repositorio y realiza los cambios que quieras proponer. Luego, crea una nueva rama para trabajar en ellos, siguiendo las instrucciones a continuación.
+### 1. Hacer un fork del proyecto principal.
+
+En GitHub, en la página del proyecto, le damos al botón de `Fork` para poder nosotros tener la posibilidad de modificar cosas en el proyecto.
 
 ### 2. Crear una nueva rama
 
