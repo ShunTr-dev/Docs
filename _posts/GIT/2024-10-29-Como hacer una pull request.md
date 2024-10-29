@@ -83,3 +83,7 @@ Al crear la Pull Request, puedes elegir entre dos opciones en el botón `Create 
 
 1. **Pull Request normal:** lista para revisión y posible fusión.
 2. **Draft Pull Request:** funciona como un borrador. El autor del repositorio no podrá fusionar esta PR hasta que se marque como "lista", lo que te permite trabajar en cambios adicionales antes de la revisión final.
+
+## Recursos
+---
+- [Cómo hacer una PR by Midudev](https://www.youtube.com/watch?v=BPns9r76vSI)
