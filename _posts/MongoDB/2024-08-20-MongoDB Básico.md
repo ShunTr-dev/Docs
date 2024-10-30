@@ -1,8 +1,8 @@
 ---
-title: MongoDB Basics
+title: MongoDB básico
 date: 2024-08-20 00:00:00 -100
 categories: [MongoDB]
-tags: [mongodb]
+tags: [mongodb, basico]
 ---
 
 show dbs //Show Databases

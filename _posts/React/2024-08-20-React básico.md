@@ -1,5 +1,5 @@
 ---
-title: React basics
+title: React Básico
 date: 2024-08-20 00:00:00 -100
 categories: [React]
 tags: [react, basico]
