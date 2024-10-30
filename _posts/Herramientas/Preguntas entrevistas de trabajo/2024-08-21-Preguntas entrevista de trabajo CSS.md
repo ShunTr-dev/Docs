@@ -1,8 +1,8 @@
 ---
 title: Preguntas entrevista de trabajo CSS
 date: 2024-08-21 00:00:00 -100
-categories: [CSS]
-tags: [css, trabajo]
+categories: [Herramientas, Trabajo]
+tags: [heramientas, trabajo, preguntas, entrevista, css]
 ---
 
 Aquí tienes las traducciones y respuestas a las preguntas en castellano:

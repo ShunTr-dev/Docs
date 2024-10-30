@@ -1,8 +1,8 @@
 ---
 title: Preguntas entrevista de trabajo JS
 date: 2024-08-21 00:00:00 -100
-categories: [JavaScript]
-tags: [javascript, trabajo]
+categories: [Herramientas, Trabajo]
+tags: [heramientas, trabajo, preguntas, entrevista, javascript]
 ---
 
 # Preguntas en entrevista de trabajo

@@ -1,8 +1,8 @@
 ---
 title: Preguntas entrevista de trabajo HTML
 date: 2024-08-21 00:00:00 -100
-categories: [HTML]
-tags: [html, trabajo]
+categories: [Herramientas, Trabajo]
+tags: [heramientas, trabajo, preguntas, entrevista, html]
 ---
 
 ### 1. ¿Qué hace un doctype?
