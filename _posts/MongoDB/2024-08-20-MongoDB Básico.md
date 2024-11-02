@@ -8,6 +8,8 @@ tags: [mongodb, basico]
 
 MongoDB es una base de datos NoSQL orientada a documentos que utiliza una estructura flexible de esquemas para almacenar datos en documentos JSON. Esta guía cubre los comandos básicos para manejar bases de datos y colecciones, además de operaciones comunes de CRUD, búsqueda avanzada y actualización en MongoDB.
 
+Sintácticamente Mongo cambia un poco a lo que respecta de las BDD SQL, tenemos `Documentos` en vez de `Tuplas` y `Colecciones` en vez de `Tablas`.
+
 ---
 
 ## Mostrar Bases de Datos y Selección de Base de Datos

@@ -25,11 +25,11 @@ git switch -c nombre-de-la-rama-con-cambios
 
 Alternativamente, en VSCode puedes crear una rama haciendo clic en el botón de selección de rama:
 
-![Crear rama en VSCode](../../IMG/git/vscode-branch-button.png)
+![Crear rama en VSCode](../IMG/git/vscode-branch-button.png)
 
 Luego selecciona `+ Crear una rama` y asigna un nombre:
 
-![Nombrar la rama en VSCode](../../IMG/git/vscode-branch.png)
+![Nombrar la rama en VSCode](../IMG/git/vscode-branch.png)
 
 ### 3. Cambiar a la nueva rama
 
@@ -51,11 +51,11 @@ Escribe una descripción clara para tu commit y envíalo. Si estás usando GitHu
 
 Para publicar la rama, puedes usar el botón en VSCode:
 
-![Publicar rama en VSCode](../../IMG/git/publish-branch-button.png)
+![Publicar rama en VSCode](../IMG/git/publish-branch-button.png)
 
 Selecciona la opción de publicar en `origin`, que es donde tienes permiso para crear nuevas ramas:
 
-![Publicar en origin](../../IMG/git/publish-branch-origin.png)
+![Publicar en origin](../IMG/git/publish-branch-origin.png)
 
 También puedes usar la terminal para hacer push de tu rama:
 
@@ -67,11 +67,11 @@ git push origin nombre-de-la-rama-con-cambios
 
 GitHub detectará automáticamente que has hecho un `push` de una nueva rama y sugerirá crear una Pull Request para integrar tus cambios en la rama principal:
 
-![GitHub detecta la PR](../../IMG/git/VSCode-github-detect.png)
+![GitHub detecta la PR](../IMG/git/VSCode-github-detect.png)
 
 Si esto no ocurre, en la página de inicio de tu fork en GitHub verás una notificación de actividad reciente, desde donde podrás comparar y abrir una Pull Request:
 
-![Notificación de actividad reciente en GitHub](../../IMG/git/github-compare-pr.png)
+![Notificación de actividad reciente en GitHub](../IMG/git/github-compare-pr.png)
 
 Al abrir la Pull Request, GitHub te pedirá que confirmes los cambios que deseas enviar y el repositorio de destino. Describe brevemente tu Pull Request, indicando qué problema resuelve o qué mejoras incluye. Puedes añadir imágenes o diagramas si lo consideras útil.
 
@@ -79,7 +79,7 @@ Al abrir la Pull Request, GitHub te pedirá que confirmes los cambios que deseas
 
 Al crear la Pull Request, puedes elegir entre dos opciones en el botón `Create Pull Request`:
 
-![Opciones de Create Pull Request](../../IMG/git/create-pr-dpr.png)
+![Opciones de Create Pull Request](../IMG/git/create-pr-dpr.png)
 
 1. **Pull Request normal:** lista para revisión y posible fusión.
 2. **Draft Pull Request:** funciona como un borrador. El autor del repositorio no podrá fusionar esta PR hasta que se marque como "lista", lo que te permite trabajar en cambios adicionales antes de la revisión final.
